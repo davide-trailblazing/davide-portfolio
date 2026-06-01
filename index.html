@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Davide Dantonio · Innovation Economy Operator · Portfolio</title>
+<meta name="description" content="Davide Dantonio, gener8tor Director of Accelerator Programs. Portfolio for Innovation Economy / Startup Banking roles.">
+<style>
+  :root {
+    --navy: #11315E;
+    --gold: #2E5A9E;
+    --cream: #f8f5ef;
+    --sand: #E7EEF7;          /* SECTION 1, soft sage (growth/portfolio) */
+    --blush: #EAE7E0;         /* SECTION 2, coral/warm pink (network/people) */
+    --blue-gray: #E7EEF7;     /* legacy alias mapped to sage */
+    --sage-banner: #CBD9EC;
+    --sage-banner-line: #2E5A9E;
+    --coral-banner: #DCD9CF;
+    --coral-banner-line: #9AA0A8;
+    --body: #1a1a1a;
+    --mid-gray: #4a5568;
+    --border: #cbd5e0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--body);
+    background: #fff;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+  .sans { font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+  /* Personal handwritten note at top */
+  .personal-note {
+    background: var(--cream);
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  .personal-note p {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13.5px;
+    color: var(--mid-gray);
+    font-style: italic;
+    max-width: 700px; margin: 0 auto;
+  }
+  .personal-note p b { color: var(--navy); font-style: normal; }
+  .personal-note .sig {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+    font-size: 22px;
+    color: var(--navy);
+    font-style: normal;
+  }
+
+  /* Header */
+  header {
+    background: var(--cream);
+    border-bottom: 4px solid var(--navy);
+    padding: 28px 0 20px;
+  }
+  .header-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 28px;
+    align-items: end;
+  }
+  .name {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  .tagline {
+    font-style: italic;
+    color: var(--mid-gray);
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .header-right { text-align: right; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .pill {
+    display: inline-block;
+    background: var(--navy);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 12px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .header-contact {
+    font-size: 12px;
+    color: var(--mid-gray);
+    line-height: 1.6;
+  }
+  .header-contact a { color: #2E5A9E; text-decoration: underline; }
+  .header-contact a:hover { text-decoration: underline; }
+
+  /* Section heading */
+  .section-title {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin: 28px 0 12px;
+    border-bottom: 1.5px solid var(--navy);
+    padding-bottom: 4px;
+  }
+  .section-title::before { content: "▸ "; color: var(--gold); }
+  .zone-label {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin: 32px 0 4px;
+  }
+  .zone-label::before { content: "▌ "; }
+
+  /* Professional overview band */
+  .overview-band {
+    background: var(--cream);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+  .overview-band .container > div {
+    font-size: 16px; color: var(--navy); font-style: italic; line-height: 1.55;
+  }
+  .overview-band .container > div + div { margin-top: 6px; }
+  .overview-band .container > div::before {
+    content: "▸ "; color: var(--gold); font-family: 'Helvetica Neue', Arial, sans-serif; font-style: normal; font-weight: 700;
+  }
+
+  /* Section banners, sage (S1) and coral (S2) */
+  .section-banner-row {
+    padding: 14px 0;
+    border-top: 3px solid;
+    border-bottom: 2px solid;
+  }
+  .section-banner-row.s1 { background: var(--sage-banner); border-color: var(--sage-banner-line); }
+  .section-banner-row.s2 { background: var(--coral-banner); border-color: var(--coral-banner-line); }
+  .section-banner-row .label {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+  }
+  .section-banner-row.s1 .label { color: #11315E; }
+  .section-banner-row.s2 .label { color: #4A4F58; }
+  .section-banner-row .headline {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px; font-weight: 600; line-height: 1.4; margin-top: 4px;
+  }
+  .section-banner-row.s1 .headline { color: #11315E; }
+  .section-banner-row.s2 .headline { color: #2E333B; }
+
+  /* Hero KPIs */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 22px 0 8px;
+  }
+  .kpi-row.s1 { grid-template-columns: repeat(5, 1fr); }
+  .kpi-row.s2 { grid-template-columns: repeat(4, 1fr); }
+  .kpi-card {
+    background: #fff;
+    border-top: 3px solid var(--gold);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    padding: 14px 10px;
+    text-align: center;
+  }
+  .kpi-num { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 28px; font-weight: 800; color: var(--navy); line-height: 1; }
+  .kpi-lbl { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; color: var(--mid-gray); text-transform: uppercase; letter-spacing: 0.6px; margin-top: 6px; }
+
+  /* gBETA tiles */
+  .gbeta-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .gbeta-tile { background: var(--navy); color: #fff; padding: 12px; border-radius: 3px; }
+  .gbeta-name { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; font-weight: 700; color: var(--gold); }
+  .gbeta-focus { font-size: 11px; color: #e2e8f0; line-height: 1.4; margin-top: 4px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+  /* Timeline */
+  .timeline-row {
+    display: grid;
+    grid-template-columns: 0.7fr 1fr 2.6fr;
+    gap: 12px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .timeline-date { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: var(--gold); font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; }
+  .timeline-name { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: var(--navy); }
+
+  /* Sector rows */
+  section.zone { padding: 32px 0; }
+  section.zone-cream { background: var(--cream); }
+  section.zone-sand { background: var(--sand); }
+  section.zone-blush { background: var(--blush); }
+  section.zone-bluegray { background: var(--sand); }
+
+  .sector-row {
+    display: grid;
+    grid-template-columns: 0.2fr 1.2fr 3fr;
+    gap: 12px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    align-items: center;
+  }
+  .sector-count { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 18px; font-weight: 800; color: var(--gold); text-align: center; }
+  .sector-name { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: var(--navy); font-size: 12px; }
+
+  /* Outcomes */
+  .outcome-row {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 12px 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr 2fr;
+    gap: 12px;
+    font-size: 12.5px;
+    align-items: start;
+  }
+  .outcome-row:first-of-type { border-top: 1px solid var(--border); }
+  .outcome-co { font-weight: 700; color: var(--navy); font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .outcome-metric { font-weight: 800; color: var(--gold); font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+  /* Methodology */
+  .method-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .method-box { background: #fff; border-top: 3px solid var(--gold); padding: 12px; border: 1px solid var(--border); border-top: 3px solid var(--gold); }
+  .method-stage { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; color: var(--gold); font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; }
+  .method-title { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; font-weight: 700; color: var(--navy); margin: 4px 0 6px; }
+  .method-desc { font-size: 12px; color: var(--body); line-height: 1.4; }
+
+  /* Founder quote block (the personal touch) */
+  .founder-voices { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+  .voice {
+    background: #fff;
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+  }
+  .voice-quote { font-style: italic; color: var(--body); font-size: 13.5px; line-height: 1.5; }
+  .voice-attr {
+    display: block;
+    margin-top: 8px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    color: var(--gold);
+  }
+  .voice-attr b { color: var(--navy); }
+
+  /* NPS bars */
+  .nps-row { display: grid; grid-template-columns: 1.3fr 4fr; gap: 8px; align-items: center; padding: 5px 0; font-size: 12px; }
+  .nps-label { font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--navy); font-weight: 600; }
+  .nps-bar-wrap { background: #e2e8f0; height: 16px; position: relative; border-radius: 2px; overflow: hidden; }
+  .nps-bar { height: 100%; background: var(--gold); transition: width 1s ease-out; }
+  .nps-bar.me { background: var(--navy); }
+  .nps-value { position: absolute; right: 8px; top: 1px; font-size: 11px; font-weight: 700; color: var(--body); font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+  /* Press wall */
+  .press-wall { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+  .press-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    font-size: 12px;
+    display: flex; flex-direction: column;
+  }
+  .press-source { font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--gold); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .press-title { color: var(--navy); font-weight: 600; }
+  .press-item a { color: var(--navy); text-decoration: none; }
+  .press-item a:hover { text-decoration: underline; }
+
+  /* Personal "Why JPMorgan" block */
+  .why-jpm {
+    background: var(--cream);
+    border-left: 4px solid var(--navy);
+    padding: 22px 28px;
+    margin: 32px 0 0;
+  }
+  .why-jpm h3 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .why-jpm p { font-size: 14px; line-height: 1.7; color: var(--body); }
+  .why-jpm p + p { margin-top: 10px; }
+
+  /* Resource links section */
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .link-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--body);
+    transition: border-color 0.2s;
+  }
+  .link-card:hover { border-color: var(--gold); }
+  .link-card-label {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px;
+    color: var(--gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .link-card-title { color: var(--navy); font-weight: 700; font-size: 14px; margin-top: 3px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .link-card-desc { color: var(--mid-gray); font-size: 12px; margin-top: 3px; }
+
+  /* Footer */
+  footer {
+    background: var(--navy);
+    color: #fff;
+    padding: 32px 0;
+    margin-top: 36px;
+  }
+  footer .container { text-align: center; }
+  footer h4 { font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--gold); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+  footer p { font-size: 13px; color: #e2e8f0; line-height: 1.7; }
+  footer a { color: #fff; text-decoration: underline; }
+  footer .sig {
+    margin-top: 20px;
+    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+    font-size: 26px;
+    color: var(--gold);
+  }
+  .footer-meta { margin-top: 18px; font-size: 11px; color: #cbd5e0; }
+
+  /* Mobile */
+  @media (max-width: 720px) {
+    .header-grid, .kpi-row, .gbeta-row, .method-row, .founder-voices, .press-wall, .links-grid, .outcome-row {
+      grid-template-columns: 1fr;
+    }
+    .name { font-size: 28px; }
+    .header-right { text-align: left; margin-top: 14px; }
+  }
+  .org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px 10px;margin:10px 0 4px;}
+  @media(max-width:600px){.org-grid{grid-template-columns:1fr;}}
+  .org-chip{padding:9px 14px;border-radius:5px;color:#fff;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:700;line-height:1.25;}
+  .org-chip-adv{background:#11315E;}
+  .org-chip-jud{background:#2E5A9E;}
+  .org-chip-men{background:#b8654b;}
+  .org-legend{font-size:10px;font-weight:600;color:var(--mid-gray);margin-left:10px;}
+  .org-legend>span{margin-left:10px;text-transform:none;}
+  .org-legend .lgd-dot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:3px;vertical-align:middle;}
+  .yt-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 24px;}
+  @media(max-width:600px){.yt-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<a href="infographic.pdf" download class="dl-infographic" title="Download my one-page Venture Portfolio infographic (PDF)">⬇ Download infographic (PDF)</a>
+<style>
+.dl-infographic{position:fixed;top:16px;right:16px;z-index:9999;background:#11315E;color:#fff;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.02em;padding:10px 16px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(10,37,64,.28);transition:transform .12s ease,box-shadow .12s ease;}
+.dl-infographic:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(10,37,64,.38);}
+@media print{.dl-infographic{display:none !important;}}
+@media (max-width:600px){.dl-infographic{font-size:11px;padding:8px 12px;top:10px;right:10px;}}
+</style>
+
+
+<!-- Personal handwritten-style opening note -->
+<div class="personal-note">
+  <p>
+    Hi, I'm <b>Davide</b>. This is my portfolio of work in the venture space, three years of directing pre-Seed and Seed accelerator cohorts. Built for founders, investors, and partners I cross paths with in the Innovation Economy. Most of the numbers below trace back to named outcomes and the third-party press they generated. Let's talk.
+    <span class="sig">Davide</span>
+  </p>
+</div>
+
+<header>
+  <div class="container">
+    <div class="header-grid">
+      <div>
+        <div class="name">DAVIDE DANTONIO</div>
+        <div class="tagline">Innovation Economy · Director of Accelerator Programs · gener8tor · Indianapolis, IN</div>
+      </div>
+      <div class="header-right">
+        <div class="pill">5+ Years Related Experience · Pre-Seed and Seed Founder Coach</div>
+        <div class="header-contact">
+          Work Authorization: United States / Europe / United Kingdom · Open to relocation<br>
+          <a href="mailto:davide.trailblazing@gmail.com">davide.trailblazing@gmail.com</a> · 317-499-6920<br>
+          <a href="https://www.linkedin.com/in/davide-dantonio">linkedin.com/in/davide-dantonio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="overview-band">
+  <div class="container">
+    <div>Innovation-Economy operator sourcing, vetting, coaching, and structuring capital for the best and most diverse pre-Seed and Seed founders, sole director of 10 accelerator cohorts across the US and Italy.</div>
+    <div>Plugged into a working network of 300+ mentors and 250+ investors that turns coachable founders into named, publicly documented outcomes.</div>
+  </div>
+</section>
+
+<section class="section-banner-row s1">
+  <div class="container">
+    <div class="label">▌ Section 1 · The Startup Portfolio I Directly Coached</div>
+    <div class="headline">Coached 52 founders across 10 cohorts · raised $7.84M total capital ($5.43M dilutive equity + $2.42M non-dilutive grants &amp; state incentives) · 60+ curated investor introductions per founder · 220 US jobs created.</div>
+  </div>
+</section>
+
+<section class="zone-sand">
+  <div class="container">
+    <div class="kpi-row s1">
+      <div class="kpi-card"><div class="kpi-num">$7.84M</div><div class="kpi-lbl">Capital Raised</div></div>
+      <div class="kpi-card"><div class="kpi-num">52</div><div class="kpi-lbl">Founders Coached</div></div>
+      <div class="kpi-card"><div class="kpi-num">10</div><div class="kpi-lbl">Cohorts Directed</div></div>
+      <div class="kpi-card"><div class="kpi-num">220</div><div class="kpi-lbl">US Jobs Created</div></div>
+      <div class="kpi-card"><div class="kpi-num">86</div><div class="kpi-lbl">Avg Founder NPS</div></div>
+    </div>
+
+    <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--navy);text-transform:uppercase;margin:18px 0 8px;">▸ Source of the $7.84M</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="background:#fff;border-left:3px solid var(--navy);padding:14px 18px;">
+        <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:18px;font-weight:800;color:var(--navy);">$5.43M Dilutive Equity Raised</div>
+        <div style="font-size:13px;color:var(--mid-gray);margin-top:6px;line-height:1.45;">Institutional investors, milestones-driven capital plans, 60+ curated investor introductions per founder.</div>
+      </div>
+      <div style="background:#fff;border-left:3px solid var(--navy);padding:14px 18px;">
+        <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:18px;font-weight:800;color:var(--navy);">$2.42M Non-Dilutive Capital</div>
+        <div style="font-size:13px;color:var(--mid-gray);margin-top:6px;line-height:1.45;">Federal grants (US National Science Foundation), state incentive packages (Indiana economic development), authored commercialization strategies.</div>
+      </div>
+    </div>
+
+    <div class="zone-label">The Startup Portfolio</div>
+    <div class="section-title">Industry Breadth · 50 Companies, 9 Sectors (★ Featured Outcome Below)</div>
+    <div class="sector-row"><div class="sector-count">12</div><div class="sector-name">Artificial Intelligence &amp; Enterprise Software</div><div>Desync.ai · Dapto · HUMN Capital · Second Opinion · <b>PaveX</b> ★ · Pumkin AI · Authentic Ink · Motoring Labs · Human Singularity · DiversiFind · ITER IDEA · Allira Systems</div></div>
+    <div class="sector-row"><div class="sector-count">7</div><div class="sector-name">FinTech, InsurTech &amp; Blockchain</div><div><b>Guama</b> ★ · VitalSwap · ONOW Ascent · PoliStock · <b>DigsFact</b> · Prospect XR · Timbucktoo</div></div>
+    <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">HealthTech &amp; Wellness</div><div>Home Health Pro · <b>Therapprove</b> ★ · RiteCarbs</div></div>
+    <div class="sector-row"><div class="sector-count">8</div><div class="sector-name">Climate, AgTech &amp; Sustainability</div><div><b>Aropha</b> ★ · AgroNet ZERO · ArborMapper · BioFique · NourishFlow Dynamics · Terroir from Space · JUA Technologies · <b>rScan</b> ★</div></div>
+    <div class="sector-row"><div class="sector-count">4</div><div class="sector-name">Energy &amp; CleanTech</div><div>Voltest · <b>Novac</b> ★ · Animo Technologies · Kronfeld Motor</div></div>
+    <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">Industrial 4.0, Robotics &amp; Advanced Manufacturing</div><div>GEKOT Robotics · WPR Services · Zernike Precision Optics · Fitasy · Electric Vehicle Gear</div></div>
+    <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">SpaceTech &amp; Aerospace</div><div>Involve Space · REA Space · O-Boot · X-ENDER Space · Intuos</div></div>
+    <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">Cybersecurity &amp; Defense</div><div><b>Covert Defenses</b> ★ · Wolfberry · <b>XPHERA</b> ★</div></div>
+    <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">Gaming, Sports &amp; Immersive Media</div><div><b>Feenix Sport</b> ★ · <b>Vertikal X</b> ★ · Dellstar VR</div></div>
+
+    <div class="section-title" style="margin-top:24px;">Some of the great achievements from founders I helped scale</div>
+    <div class="outcome-row"><div class="outcome-co">Vertikal X, Feenix Group, ITER Idea</div><div>International · SportTech, Media, SaaS</div><div class="outcome-metric">US relocation + state backing + VC raises</div><div>Vertikal X relocated its US headquarters from Austin to Indianapolis via my intros (Mayor Hogsett + Indiana economic-development endorsement); Feenix Group relocated to Indiana, made its first US hires, and raised from US investors with my support; ITER Idea (Italy) commercializing in the US market</div></div>
+    <div class="outcome-row"><div class="outcome-co">rScan</div><div>Commerce, Supply Chain</div><div class="outcome-metric">Startup of the Year, TechPoint 2025 Mira</div><div>$1.2M Indiana state tax credits, 152 Indiana jobs committed by 2028; headquarters expansion 15K → 53K sq ft; founder named to TechPoint Tech 25</div></div>
+    <div class="outcome-row"><div class="outcome-co">Guama (Colombia)</div><div>FinTech / Credit Access</div><div class="outcome-metric">$1.5M seed + 6,000+ customers</div><div>Salkantay, Hustle Fund, Story Ventures, Techstars; 75K+ credit apps (60% no prior credit history) vs Bancolombia/BBVA; Forbes Colombia 100 Startups</div></div>
+    <div class="outcome-row"><div class="outcome-co">Aropha (Cleveland)</div><div>AgBio AI / Biodegradation</div><div class="outcome-metric">$1M institutional seed</div><div>Comeback Capital, Lightbank, Right Side Capital; founder to Forbes Cleveland 30 Under 30; launched Biodegradation Studio AI (May 2025)</div></div>
+    <div class="outcome-row"><div class="outcome-co">Covert Defense (Purdue)</div><div>Cybersecurity / Energy</div><div class="outcome-metric">$1M Department of Homeland Security contract + $1M+ NSF</div><div>Authored commercialization strategy; Department of Energy Phase II federal innovation grant; multi-state expansion (Indiana, Kentucky, Tennessee); 2→5 full-time hires in 3 months</div></div>
+    <div class="outcome-row"><div class="outcome-co">XPhera</div><div>GovTech / Geo-positioning</div><div class="outcome-metric">$500K client pipeline + $100K+ airport contract</div><div>Built a $500K client pipeline by connecting the CEO with a VP-of-Sales hire and installing sales frameworks (MEDDPIC, SPIN, client ROI calculators); renewed a $100K+ contract with the Indianapolis Airport</div></div>
+    <div class="outcome-row"><div class="outcome-co">Motoring Labs, Timbucktoo, Voltest</div><div>Logistics CV, Blockchain, Battery</div><div class="outcome-metric">Into nationally-ranked accelerators post-gBETA</div><div>After gBETA, accepted into top accelerators: Timbucktoo into Andreessen Horowitz (a16z) TxO; Voltest into Techstars; Motoring Labs into the gener8tor investment accelerator</div></div>
+    <div class="outcome-row"><div class="outcome-co">Novac (Italy)</div><div>SpaceTech / Supercapacitors</div><div class="outcome-metric">€3.5M seed (~$4.37M)</div><div>CDP Venture Capital, Eureka! Venture, Galaxia; all 4 co-founders to Forbes Italia Under 30 (2024); Dallara IndyCar partnership; European Space Agency incubator in Turin</div></div>
+    <div class="section-title">My Founders Scaling Steps, by Stage</div>
+    <p style="font-family:Georgia,serif;font-size:12.5px;line-height:1.55;color:#3a3a3a;font-style:italic;margin:4px 0 12px;">The coaching itself is a step-by-step program I built around the customer. Founders move from problem-solution fit through customer discovery (“don’t sell, just ask”), to product-market fit via business-model design, OKRs, and cash-flow management, to a repeatable go-to-market built on pipeline systems and demand-supply case studies, and finally to investor-ready fundraising with milestone planning, comparables, and return-on-investment storytelling, delivered as weekly, personalized strategy sessions. It’s the same end-to-end view of a business a banker needs to judge what’s fundable and where a company will struggle.</p>
+    <div class="method-row">
+      <div class="method-box"><div class="method-stage">Stage 01 · Customer Persona</div><div class="method-title">Problem-Solution Fit</div><div class="method-desc">Customer-discovery interviews, Mom Test framing, Pain Funnel, early-adopter ID, riskiest-assumption testing, problem-solution canvas.</div></div>
+      <div class="method-box"><div class="method-stage">Stage 02 · Customer Buying Decision</div><div class="method-title">Product-Market Fit</div><div class="method-desc">Learn-Build-Measure loops, minimum-viable-product iteration, willingness-to-pay tests, retention/expansion signals, quarterly objectives tied to a single North-Star metric.</div></div>
+      <div class="method-box"><div class="method-stage">Stage 03 · Customer Journey</div><div class="method-title">Go-to-Market Scaling</div><div class="method-desc">Ideal-customer-profile and persona definition, pipeline construction, structured sales-qualification methods (MEDDPIC, SPIN), return-on-investment calculators, demand staging, customer-journey mapping.</div></div>
+      <div class="method-box"><div class="method-stage">Stage 04 · Customer Economics</div><div class="method-title">Fundraising</div><div class="method-desc">Comparables, milestones-to-funds plans, dilutive vs. non-dilutive (federal/state incentive/strategic), data room &amp; investor storytelling.</div></div>
+    </div>
+
+    <div class="section-title" style="margin-top:24px;">Founders Sales Foundations · Weekly Sales Challenge</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px;">
+      <div style="background:#fff;border-left:3px solid var(--navy);padding:10px 14px;">
+        <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:0.4px;">ICP &amp; Persona</div>
+        <div style="font-size:12px;color:#1a1a1a;line-height:1.5;margin-top:4px;">Ideal-Customer-Profile worksheets, day-in-the-life personas, buying-committee mapping.</div>
+      </div>
+      <div style="background:#fff;border-left:3px solid var(--navy);padding:10px 14px;">
+        <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:0.4px;">Customer Discovery</div>
+        <div style="font-size:12px;color:#1a1a1a;line-height:1.5;margin-top:4px;">Mom Test interview script, Pain Funnel, jobs-to-be-done framing, surfaces real pain, not vanity validation.</div>
+      </div>
+      <div style="background:#fff;border-left:3px solid var(--navy);padding:10px 14px;">
+        <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:0.4px;">Sales Discovery</div>
+        <div style="font-size:12px;color:#1a1a1a;line-height:1.5;margin-top:4px;">MEDDPIC + SPIN qualification, ROI calculators, objection-handling library, used in the gener8tor 7-week sales challenge.</div>
+      </div>
+      <div style="background:#fff;border-left:3px solid var(--navy);padding:10px 14px;">
+        <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:0.4px;">Customer Journey</div>
+        <div style="font-size:12px;color:#1a1a1a;line-height:1.5;margin-top:4px;">End-to-end journey map (awareness → expansion), conversion-rate review, churn-cause taxonomy.</div>
+      </div>
+      <div style="background:#fff;border-left:3px solid var(--navy);padding:10px 14px;">
+        <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:0.4px;">OKRs &amp; North Star</div>
+        <div style="font-size:12px;color:#1a1a1a;line-height:1.5;margin-top:4px;">Quarterly OKRs tied to one North-Star metric, leading vs. lagging indicators, weekly review cadence.</div>
+      </div>
+      <div style="background:#fff;border-left:3px solid var(--navy);padding:10px 14px;">
+        <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:0.4px;">Investor Storytelling</div>
+        <div style="font-size:12px;color:#1a1a1a;line-height:1.5;margin-top:4px;">Narrative arc (problem → wedge → why-now → traction → ask), data-room build, 60+ curated investor intros per founder.</div>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:24px;">Founder Voices (real names, real outcomes)</div>
+    <div class="founder-voices">
+      <div class="voice">
+        <div class="voice-quote">"Davide's mentorship and strategic guidance have been instrumental in our company's significant achievements."</div>
+        <span class="voice-attr"><b>Rod Baradaran</b>, Founder/CEO · rScan · NW Indiana Business Magazine, 2025</span>
+      </div>
+      <div class="voice">
+        <div class="voice-quote">Therapprove and Feenix Group founders authored signed LinkedIn Recommendation Letters crediting my advisory on their post-program fundraising and US-market positioning.</div>
+        <span class="voice-attr"><b>Tiffney Vivo</b> (Therapprove) and <b>Trev Keane</b> (Feenix Group), <a href="https://www.linkedin.com/in/davide-dantonio/details/recommendations/">see all recommendations</a></span>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:24px;">Where my cohorts land on the NPS benchmark</div>
+    <div class="nps-row"><div class="nps-label">My Programs</div><div class="nps-bar-wrap"><div class="nps-bar me" style="width:86%"></div><span class="nps-value">86</span></div></div>
+    <div class="nps-row"><div class="nps-label">Y Combinator</div><div class="nps-bar-wrap"><div class="nps-bar" style="width:60%"></div><span class="nps-value">60</span></div></div>
+    <div class="nps-row"><div class="nps-label">Techstars</div><div class="nps-bar-wrap"><div class="nps-bar" style="width:40%"></div><span class="nps-value">40</span></div></div>
+    <div class="nps-row"><div class="nps-label">Industry Average</div><div class="nps-bar-wrap"><div class="nps-bar" style="width:38%"></div><span class="nps-value">38</span></div></div>
+  </div>
+</section>
+
+<section class="section-banner-row s2">
+  <div class="container">
+    <div class="label">▌ Section 2 · My Network in the Venture Ecosystem</div>
+    <div class="headline">Built a network of 300+ mentors and 250+ investors from past programs · judged 8 startup competitions · selected to deliver workshops &amp; mentoring at 20+ universities and ecosystem-support organizations.</div>
+  </div>
+</section>
+
+<section class="zone-blush">
+  <div class="container">
+    <div class="kpi-row s2">
+      <div class="kpi-card"><div class="kpi-num">300+</div><div class="kpi-lbl">Mentors in My Network</div></div>
+      <div class="kpi-card"><div class="kpi-num">250+</div><div class="kpi-lbl">Investors in My Network</div></div>
+      <div class="kpi-card"><div class="kpi-num">8</div><div class="kpi-lbl">Startup Competitions Judged</div></div>
+      <div class="kpi-card"><div class="kpi-num">20+</div><div class="kpi-lbl">Universities &amp; Ecosystem-Support Orgs</div></div>
+    </div>
+    <div class="section-title" style="margin-top:28px;">Advisor · Judge · Mentor · 27 Organizations + 4 Startups Advised Beyond gener8tor<span class="org-legend"><span><span class="lgd-dot" style="background:#11315E;"></span>Advisor</span><span><span class="lgd-dot" style="background:#2E5A9E;"></span>Judge</span><span><span class="lgd-dot" style="background:#b8654b;"></span>Mentor</span></span></div>
+    <div class="org-grid">
+      <div class="org-chip org-chip-adv">Born Global</div>
+      <div class="org-chip org-chip-adv">Indiana Hardtech</div>
+      <div class="org-chip org-chip-adv">Rally Conf 2025</div>
+      <div class="org-chip org-chip-adv">Rally Conf 2024</div>
+      <div class="org-chip org-chip-adv">Venture Club of IN</div>
+      <div class="org-chip org-chip-adv">Global Entrepreneur-in-Residence Network</div>
+      <div class="org-chip org-chip-adv">McNair Institute · USC</div>
+      <div class="org-chip org-chip-jud">McCloskey · ND</div>
+      <div class="org-chip org-chip-jud">McGinnis · CMU</div>
+      <div class="org-chip org-chip-jud">SaaStock Austin 2025</div>
+      <div class="org-chip org-chip-jud">Moonshot · Purdue</div>
+      <div class="org-chip org-chip-jud">New Venture Challenge</div>
+      <div class="org-chip org-chip-jud">MIT Enterprise Forum</div>
+      <div class="org-chip org-chip-jud">Go Global World Sharks</div>
+      <div class="org-chip org-chip-jud">Indiana DECA</div>
+      <div class="org-chip org-chip-jud">Crossroads · The Mill</div>
+      <div class="org-chip org-chip-jud">Pitch Mayhem</div>
+      <div class="org-chip org-chip-jud">Entrepreneur-in-Residence Vetting Committee</div>
+      <div class="org-chip org-chip-men">Purdue Innovates</div>
+      <div class="org-chip org-chip-men">NSF I-Corps</div>
+      <div class="org-chip org-chip-men">VillageCapital</div>
+      <div class="org-chip org-chip-men">Techstars · Pittsburgh</div>
+      <div class="org-chip org-chip-men">Notre Dame · Idea Center</div>
+      <div class="org-chip org-chip-men">STARTedUP Foundation</div>
+      <div class="org-chip org-chip-men">Zionsville HS</div>
+      <div class="org-chip org-chip-men">Indiana University</div>
+      <div class="org-chip org-chip-men">Purdue Pitch · Global Accelerator Network</div>
+    </div>
+    <div class="section-title" style="margin-top:28px;">Giving Back &amp; Advisory Roles</div>
+    <ul style="margin:8px 0 18px;padding-left:18px;font-size:13px;line-height:1.5;color:var(--body);">
+      <li style="margin-bottom:6px;"><b style="color:var(--navy);">Gave back to the venture ecosystem</b> by judging 8 startup competitions, presenting 15+ founder workshops, and mentoring across 15+ organizations: Entrepreneurial Support Organizations (Village Capital), university venture arms (Purdue Research Foundation), federal programs (National Science Foundation I-Corps, Akron and Purdue), and state initiatives (STARTedUP Foundation).</li>
+      <li style="margin-bottom:4px;"><b style="color:var(--navy);">Vice-President of Platform, Born Global</b> (2025): led the Founders' Roundtable and Venture Lab advisory.</li>
+      <li style="margin-bottom:4px;"><b style="color:var(--navy);">Founder, Young Outcasts Podcast</b> (2024): interviewed 10+ guests across 20+ hours on resilience and reinvention.</li>
+      <li style="margin-bottom:4px;"><b style="color:var(--navy);">Operations Coordinator, BX Group</b> growth-hacking agency (2022 to 2023): built a cross-sell strategy preempting 5,000 alerts.</li>
+      <li style="margin-bottom:4px;"><b style="color:var(--navy);">Advisory Council, McNair Institute</b>, University of South Carolina (2022 to 2023): mentored 100+ student founders.</li>
+      <li style="margin-bottom:4px;"><b style="color:var(--navy);">Founder, EarOnAir</b> wellbeing platform (2022): led a peer team to a minimum-viable product.</li>
+      <li style="margin-bottom:4px;"><b style="color:var(--navy);">Founder, LushTech</b> micro-mobility startup (2020): secured a $25K seed via incubation programs.</li>
+      <li style="margin-bottom:4px;"><b style="color:var(--navy);">Growth Analyst, Build It Up</b> student consulting (2020): shipped a CO&#8322;-offset plugin used by 800+ users.</li>
+      <li style="margin-bottom:4px;"><b style="color:var(--navy);">Earlier:</b> Teaching Associate, UIBE Business School (2019); Project Coordinator, Euronatale trade-show operations (2017 to 2018).</li>
+    </ul>
+    <div class="zone-label">Press, Awards & Public Validation</div>
+    <div class="section-title">Where my founders showed up</div>
+    <div class="press-wall">
+      <div class="press-item">
+        <div class="press-source">TechPoint</div>
+        <div class="press-title">Two Founders' Journeys in gBETA Indiana Industry 4.0</div>
+        <a href="https://techpoint.org/two-founders-journeys-in-gbeta-indiana-industry-4-0/" target="_blank" rel="noopener">techpoint.org →</a>
+      </div>
+      <div class="press-item">
+        <div class="press-source">NW Indiana Business</div>
+        <div class="press-title">rScan founder Rod Baradaran on growth from $720K to $1.8M revenue</div>
+        <span style="color:var(--mid-gray);font-size:11px;margin-top:4px;">2025 magazine feature</span>
+      </div>
+      <div class="press-item">
+        <div class="press-source">Indianapolis Business Journal</div>
+        <div class="press-title">My award from IBJ</div>
+        <a href="https://drive.google.com/file/d/1LPcgePbbC_p0rZSPuQmDOeWnOU8UZ4B2/view" target="_blank" rel="noopener">View certificate →</a>
+      </div>
+      <div class="press-item">
+        <div class="press-source">TechPoint Mira Awards</div>
+        <div class="press-title">rScan, Startup of the Year (statewide)</div>
+        <span style="color:var(--mid-gray);font-size:11px;margin-top:4px;">Ceremony Feb 27, 2025, Carmel IN</span>
+      </div>
+      <div class="press-item">
+        <div class="press-source">Forbes Colombia</div>
+        <div class="press-title">Guama named to 100 Startups to Watch 2025</div>
+      </div>
+      <div class="press-item">
+        <div class="press-source">Forbes Cleveland 30 Under 30</div>
+        <div class="press-title">Aropha founder Kuan Huang on inaugural list (2023)</div>
+      </div>
+      <div class="press-item">
+        <div class="press-source">Forbes Italia Under 30</div>
+        <div class="press-title">All 4 Novac co-founders on 2024 list (Manufacturing & Industry)</div>
+      </div>
+      <div class="press-item">
+        <div class="press-source">Crain's Cleveland Business</div>
+        <div class="press-title">Aropha $1M seed coverage (with PR Newswire, Cleveland Inno)</div>
+      </div>
+      <div class="press-item">
+        <div class="press-source">Inside Indiana Business</div>
+        <div class="press-title">rScan HQ expansion via Sikich (Jenny Massey quoted)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="zone-blush">
+  <div class="container">
+    <div class="section-title" style="margin-top:28px;">Resources & Live Previews</div>
+
+    <!-- YouTube live embeds (2 videos) -->
+    <div class="yt-grid">
+      <div>
+        <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">▶ My Startup Workshops · YouTube playlist</div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:1px solid var(--border);background:#000;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/videoseries?list=PLUzPXV2xvS7GuLPyDD2-HlZ0-NhbgMjiW" title="My startup workshops playlist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div style="font-size:12px;color:var(--mid-gray);margin-top:6px;font-family:'Helvetica Neue',Arial,sans-serif;">Customer Discovery, Playbook for International Founders, Market Sizing, How to Pitch, and more.</div>
+      </div>
+      <div>
+        <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">▶ AgriNovus Indiana Podcast · gBETA AgBioScience</div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:1px solid var(--border);background:#000;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/OHGXFfGwXOk?start=293" title="Davide Dantonio on gBETA AgBioScience" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div style="font-size:12px;color:var(--mid-gray);margin-top:6px;font-family:'Helvetica Neue',Arial,sans-serif;">Davide on connecting university research to startup development.</div>
+      </div>
+    </div>
+    <!-- TechPoint article preview (stylized brand card, hotlink blocked) -->
+    <a href="https://techpoint.org/two-founders-journeys-in-gbeta-indiana-industry-4-0/" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--border);margin-bottom:18px;background:#fff;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="display:grid;grid-template-columns:0.85fr 1.4fr;gap:0;">
+        <div style="background:#0f6e5d;display:flex;align-items:center;justify-content:center;padding:24px;min-height:140px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border:18px solid rgba(255,255,255,0.08);border-radius:50%;"></div>
+          <div style="position:absolute;bottom:-22px;left:-22px;width:90px;height:90px;border:14px solid rgba(255,255,255,0.06);border-radius:50%;"></div>
+          <div style="text-align:center;color:#fff;position:relative;z-index:1;">
+            <div style="font-family:Georgia,serif;font-weight:700;font-size:34px;line-height:1;letter-spacing:-1px;">TechPoint</div>
+            <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;margin-top:8px;text-transform:uppercase;opacity:0.85;">Innovation<br>Article</div>
+          </div>
+        </div>
+        <div style="padding:16px 20px;">
+          <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;color:var(--gold);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;">TechPoint · Innovation · Apr 2025</div>
+          <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;color:var(--navy);font-size:15px;margin-top:6px;line-height:1.3;">Two Founders' Journeys in gBETA Indiana Industry 4.0</div>
+          <div style="font-size:12.5px;color:var(--mid-gray);margin-top:6px;line-height:1.45;">Rod Baradaran (rScan) and Scott Willison (Motoring Labs) write about the demand–supply–funding framework I taught them during the program.</div>
+          <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:var(--gold);margin-top:8px;font-weight:600;">techpoint.org →</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- LinkedIn recommendations stylized card -->
+    <a href="https://www.linkedin.com/in/davide-dantonio/details/recommendations/" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--border);margin-bottom:18px;background:#fff;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="display:grid;grid-template-columns:0.85fr 1.4fr;gap:0;">
+        <div style="background:#0a66c2;display:flex;align-items:center;justify-content:center;padding:24px;">
+          <div style="text-align:center;color:#fff;">
+            <div style="font-family:Arial,sans-serif;font-weight:900;font-size:54px;line-height:1;letter-spacing:-2px;">in</div>
+            <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;margin-top:6px;text-transform:uppercase;">Recommendations</div>
+          </div>
+        </div>
+        <div style="padding:16px 20px;">
+          <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;color:var(--gold);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;">LinkedIn · Signed Endorsements</div>
+          <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;color:var(--navy);font-size:15px;margin-top:6px;line-height:1.3;">25+ founder recommendations</div>
+          <div style="font-size:12.5px;color:var(--mid-gray);margin-top:6px;line-height:1.45;">Direct quotes from founders I've coached, including Tiffney Vivo (Therapprove), Trev Keane (Feenix Group), and Rod Baradaran (rScan).</div>
+          <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:var(--gold);margin-top:8px;font-weight:600;">linkedin.com/in/davide-dantonio →</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Business Journal Award (Google Drive PDF preview) -->
+    <a href="https://drive.google.com/file/d/1LPcgePbbC_p0rZSPuQmDOeWnOU8UZ4B2/view" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--border);margin-bottom:18px;background:#fff;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="display:grid;grid-template-columns:0.85fr 1.4fr;gap:0;">
+        <div style="background:var(--navy);display:flex;align-items:center;justify-content:center;padding:24px;">
+          <div style="text-align:center;color:var(--gold);">
+            <div style="font-family:Georgia,serif;font-weight:700;font-size:36px;line-height:1;">IBJ</div>
+            <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.5px;margin-top:6px;text-transform:uppercase;color:#fff;">Indianapolis<br>Business Journal</div>
+          </div>
+        </div>
+        <div style="padding:16px 20px;">
+          <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;color:var(--gold);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;">Award Certificate · PDF</div>
+          <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;color:var(--navy);font-size:15px;margin-top:6px;line-height:1.3;">My IBJ recognition</div>
+          <div style="font-size:12.5px;color:var(--mid-gray);margin-top:6px;line-height:1.45;">Indianapolis Business Journal acknowledged my work directing the Indiana accelerator cohorts.</div>
+          <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:var(--gold);margin-top:8px;font-weight:600;">View certificate →</div>
+        </div>
+      </div>
+    </a>
+
+    <div class="section-title" style="margin-top:28px;">More Resources</div>
+    <div class="links-grid">
+      <a class="link-card" href="https://www.linkedin.com/in/davide-dantonio" target="_blank" rel="noopener">
+        <span class="link-card-label">LinkedIn Profile</span>
+        <span class="link-card-title">linkedin.com/in/davide-dantonio</span>
+        <span class="link-card-desc">Full professional history and network</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <h4>Get in Touch</h4>
+    <p>
+      <a href="mailto:davide.trailblazing@gmail.com">davide.trailblazing@gmail.com</a> &nbsp;·&nbsp;
+      317-499-6920 &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/davide-dantonio">LinkedIn</a>
+    </p>
+    <p style="margin-top:8px;">Indianapolis, IN · Open to relocating for the right Innovation Economy banking role</p>
+    <div class="sig">Davide</div>
+    <div class="footer-meta">
+      Work Authorization: United States · Europe · United Kingdom &nbsp;|&nbsp; This page is hand-curated; numbers cross-checked against named investors and third-party press coverage.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
