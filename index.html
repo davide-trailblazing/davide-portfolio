@@ -221,6 +221,12 @@
   }
   .sector-count { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 18px; font-weight: 800; color: var(--gold); text-align: center; }
   .sector-name { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: var(--navy); font-size: 12px; }
+  .sd { color: #707a89; font-weight: 400; }
+  .coach-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 8px 0 6px; }
+  .coach-step { background: #f4f7fb; border: 1px solid var(--border); border-top: 3px solid var(--navy); padding: 8px 10px; }
+  .coach-step .cs-h { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: var(--navy); font-size: 12px; }
+  .coach-step .cs-d { font-size: 10.5px; color: #5a6472; margin-top: 3px; line-height: 1.35; }
+  .coach-n { display: inline-block; background: var(--navy); color: #fff; width: 15px; height: 15px; border-radius: 50%; text-align: center; font-size: 9px; line-height: 15px; font-weight: 700; margin-right: 4px; vertical-align: middle; }
 
   /* Outcomes */
   .outcome-row {
@@ -352,7 +358,7 @@
 
   /* Mobile */
   @media (max-width: 720px) {
-    .header-grid, .kpi-row, .gbeta-row, .method-row, .founder-voices, .press-wall, .links-grid, .outcome-row {
+    .header-grid, .kpi-row, .gbeta-row, .method-row, .coach-strip, .founder-voices, .press-wall, .links-grid, .outcome-row {
       grid-template-columns: 1fr;
     }
     .name { font-size: 28px; }
@@ -411,7 +417,7 @@
 <section class="overview-band">
   <div class="container">
     <div>Innovation-Economy operator sourcing, vetting, coaching, and structuring capital for the best and most diverse pre-Seed and Seed founders, sole director of 10 accelerator cohorts across the US and Italy.</div>
-    <div>Plugged into a working network of 300+ mentors and 250+ investors that turns coachable founders into named, publicly documented outcomes.</div>
+    <div>Plugged into a working network of 250+ mentors and 200+ investors that turns coachable founders into named, real-world outcomes.</div>
   </div>
 </section>
 
@@ -445,16 +451,23 @@
     </div>
 
     <div class="zone-label">The Startup Portfolio</div>
-    <div class="section-title">Industry Breadth · 50 Companies, 9 Sectors (★ Featured Outcome Below)</div>
-    <div class="sector-row"><div class="sector-count">12</div><div class="sector-name">Artificial Intelligence &amp; Enterprise Software</div><div>Desync.ai · Dapto · HUMN Capital · Second Opinion · <b>PaveX</b> ★ · Pumkin AI · Authentic Ink · Motoring Labs · Human Singularity · DiversiFind · ITER IDEA · Allira Systems</div></div>
-    <div class="sector-row"><div class="sector-count">7</div><div class="sector-name">FinTech, InsurTech &amp; Blockchain</div><div><b>Guama</b> ★ · VitalSwap · ONOW Ascent · PoliStock · <b>DigsFact</b> · Prospect XR · Timbucktoo</div></div>
-    <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">HealthTech &amp; Wellness</div><div>Home Health Pro · <b>Therapprove</b> ★ · RiteCarbs</div></div>
-    <div class="sector-row"><div class="sector-count">8</div><div class="sector-name">Climate, AgTech &amp; Sustainability</div><div><b>Aropha</b> ★ · AgroNet ZERO · ArborMapper · BioFique · NourishFlow Dynamics · Terroir from Space · JUA Technologies · <b>rScan</b> ★</div></div>
-    <div class="sector-row"><div class="sector-count">4</div><div class="sector-name">Energy &amp; CleanTech</div><div>Voltest · <b>Novac</b> ★ · Animo Technologies · Kronfeld Motor</div></div>
-    <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">Industrial 4.0, Robotics &amp; Advanced Manufacturing</div><div>GEKOT Robotics · WPR Services · Zernike Precision Optics · Fitasy · Electric Vehicle Gear</div></div>
-    <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">SpaceTech &amp; Aerospace</div><div>Involve Space · REA Space · O-Boot · X-ENDER Space · Intuos</div></div>
-    <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">Cybersecurity &amp; Defense</div><div><b>Covert Defenses</b> ★ · Wolfberry · <b>XPHERA</b> ★</div></div>
-    <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">Gaming, Sports &amp; Immersive Media</div><div><b>Feenix Sport</b> ★ · <b>Vertikal X</b> ★ · Dellstar VR</div></div>
+    <p style="font-size:13.5px;line-height:1.6;color:#3a3a3a;margin:4px 0 8px;">Every company below is one I <b>directly coached</b> through gener8tor's intensive <b>8-week</b> accelerator. I provided tailored strategic advice and executional guidance to 50+ portfolio startups in both individual strategy sessions and cohort-based trainings: customer discovery for problem-solution fit, sales discovery and repeatable go-to-market for product-market fit, and fundraising to scale a proven business model.</p>
+    <div class="coach-strip">
+      <div class="coach-step"><div class="cs-h"><span class="coach-n">1</span>Problem-Solution Fit</div><div class="cs-d">Customer discovery, “don’t sell, just ask.”</div></div>
+      <div class="coach-step"><div class="cs-h"><span class="coach-n">2</span>Product-Market Fit</div><div class="cs-d">Business model, OKRs, cash-flow management.</div></div>
+      <div class="coach-step"><div class="cs-h"><span class="coach-n">3</span>Go-to-Market</div><div class="cs-d">Pipeline systems, repeatable demand-supply.</div></div>
+      <div class="coach-step"><div class="cs-h"><span class="coach-n">4</span>Fundraising</div><div class="cs-d">Milestones, comparables, ROI storytelling.</div></div>
+    </div>
+    <div class="section-title" style="margin-top:18px;">Industry Breadth · 52 Companies, 9 Sectors (★ Featured Outcome Below)</div>
+    <div class="sector-row"><div class="sector-count">12</div><div class="sector-name">Artificial Intelligence &amp; Enterprise Software</div><div><b>Desync.ai</b> <span class="sd">on-demand AI for SMBs</span> · <b>Dapto</b> <span class="sd">makes data AI-ready</span> · <b>HUMN Capital</b> <span class="sd">AI manager-coaching</span> · <b>Second Opinion</b> <span class="sd">AI legal review</span> · <b>PaveX</b> ★ <span class="sd">AI road assessment</span> · <b>Pumkin AI</b> <span class="sd">AI for manufacturing</span> · <b>Authentic Ink</b> <span class="sd">AI personalized customer outreach</span> · <b>Motoring Labs</b> <span class="sd">vision fleet monitoring</span> · <b>Human Singularity</b> <span class="sd">workforce skills</span> · <b>DiversiFind</b> <span class="sd">supplier-diversity software</span> · <b>ITER IDEA</b> <span class="sd">cloud/AI software house</span> · <b>Allira Systems</b> <span class="sd">SMB ops-intelligence</span></div></div>
+    <div class="sector-row"><div class="sector-count">7</div><div class="sector-name">FinTech, InsurTech &amp; Blockchain</div><div><b>Guama</b> ★ <span class="sd">LatAm credit card</span> · <b>VitalSwap</b> <span class="sd">US–Africa payments</span> · <b>ONOW Ascent</b> <span class="sd">AI cash-flow &amp; credit for small businesses</span> · <b>PoliStock</b> <span class="sd">market intel &amp; trading</span> · <b>DigsFact</b> <span class="sd">AI insurance claims</span> · <b>Prospect XR</b> <span class="sd">Web3 community/DAO</span> · <b>Timbucktoo</b> <span class="sd">blockchain authentication</span></div></div>
+    <div class="sector-row"><div class="sector-count">4</div><div class="sector-name">HealthTech &amp; Wellness</div><div><b>Home Health Pro</b> <span class="sd">home-care staffing</span> · <b>Therapprove</b> ★ <span class="sd">pediatric-therapy referrals</span> · <b>RiteCarbs</b> <span class="sd">precision prebiotic fibers</span> · <b>OVUE</b> <span class="sd">maritime crew-safety software</span></div></div>
+    <div class="sector-row"><div class="sector-count">8</div><div class="sector-name">Climate, AgTech &amp; Sustainability</div><div><b>Aropha</b> ★ <span class="sd">AI biodegradability testing</span> · <b>AgroNet ZERO</b> <span class="sd">biochar for soil</span> · <b>ArborMapper</b> <span class="sd">LiDAR forest analytics</span> · <b>BioFique</b> <span class="sd">livestock-feed saponin</span> · <b>NourishFlow Dynamics</b> <span class="sd">cuts food-bank waste</span> · <b>Terroir from Space</b> <span class="sd">satellite vineyard analytics</span> · <b>JUA Technologies</b> <span class="sd">solar crop-drying</span> · <b>rScan</b> ★ <span class="sd">resale / circular economy</span></div></div>
+    <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">Energy &amp; CleanTech</div><div><b>Voltest</b> <span class="sd">EV battery diagnostics</span> · <b>Novac</b> ★ <span class="sd">solid-state supercapacitors</span> · <b>Animo Technologies</b> <span class="sd">nuclear micro-batteries</span> · <b>Diamond Power</b> <span class="sd">multi-fuel generators</span> · <b>Kronfeld Motor</b> <span class="sd">energy-regenerating EV</span></div></div>
+    <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">Industrial 4.0, Robotics &amp; Advanced Manufacturing</div><div><b>GEKOT Robotics</b> <span class="sd">active safety, light EVs</span> · <b>WPR Services</b> <span class="sd">factory-safety AI</span> · <b>Zernike Precision Optics</b> <span class="sd">defense/semi lenses</span> · <b>Fitasy</b> <span class="sd">3D-printed footwear</span> · <b>Electric Vehicle Gear</b> <span class="sd">3D-printed EV accessories</span></div></div>
+    <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">SpaceTech &amp; Aerospace</div><div><b>Involve Space</b> <span class="sd">stratospheric GeoAI</span> · <b>REA Space</b> <span class="sd">bionic spacesuit</span> · <b>O-Boot</b> <span class="sd">aerospace tech</span> · <b>X-ENDER Space</b> <span class="sd">secure orbital data</span> · <b>Intuos</b> <span class="sd">aviation flight-ops IoT</span></div></div>
+    <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">Cybersecurity &amp; Defense</div><div><b>Covert Defenses</b> ★ <span class="sd">nuclear/critical-infra cyber (DHS)</span> · <b>Wolfberry</b> <span class="sd">IoT cybersecurity</span> · <b>XPHERA</b> ★ <span class="sd">GPS-denied positioning</span></div></div>
+    <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">Gaming, Sports &amp; Immersive Media</div><div><b>Feenix Sport</b> ★ <span class="sd">gaming &amp; esports</span> · <b>Vertikal X</b> ★ <span class="sd">endurance-sports creator platform</span> · <b>Dellstar VR</b> <span class="sd">VR workforce training</span></div></div>
 
     <div class="section-title" style="margin-top:24px;">Some of the great achievements from founders I helped scale</div>
     <div class="outcome-row"><div class="outcome-co">Vertikal X, Feenix Group, ITER Idea</div><div>International · SportTech, Media, SaaS</div><div class="outcome-metric">US relocation + state backing + VC raises</div><div>Vertikal X relocated its US headquarters from Austin to Indianapolis via my intros (Mayor Hogsett + Indiana economic-development endorsement); Feenix Group relocated to Indiana, made its first US hires, and raised from US investors with my support; ITER Idea (Italy) commercializing in the US market</div></div>
@@ -525,15 +538,15 @@
 <section class="section-banner-row s2">
   <div class="container">
     <div class="label">▌ Section 2 · My Network in the Venture Ecosystem</div>
-    <div class="headline">Built a network of 300+ mentors and 250+ investors from past programs · judged 8 startup competitions · selected to deliver workshops &amp; mentoring at 20+ universities and ecosystem-support organizations.</div>
+    <div class="headline">Built a network of 250+ mentors and 200+ investors from past programs · judged 8 startup competitions · selected to deliver workshops &amp; mentoring at 20+ universities and ecosystem-support organizations.</div>
   </div>
 </section>
 
 <section class="zone-blush">
   <div class="container">
     <div class="kpi-row s2">
-      <div class="kpi-card"><div class="kpi-num">300+</div><div class="kpi-lbl">Mentors in My Network</div></div>
-      <div class="kpi-card"><div class="kpi-num">250+</div><div class="kpi-lbl">Investors in My Network</div></div>
+      <div class="kpi-card"><div class="kpi-num">250+</div><div class="kpi-lbl">Mentors in My Network</div></div>
+      <div class="kpi-card"><div class="kpi-num">200+</div><div class="kpi-lbl">Investors in My Network</div></div>
       <div class="kpi-card"><div class="kpi-num">8</div><div class="kpi-lbl">Startup Competitions Judged</div></div>
       <div class="kpi-card"><div class="kpi-num">20+</div><div class="kpi-lbl">Universities &amp; Ecosystem-Support Orgs</div></div>
     </div>
@@ -567,7 +580,7 @@
       <div class="org-chip org-chip-men">Indiana University</div>
       <div class="org-chip org-chip-men">Purdue Pitch · Global Accelerator Network</div>
     </div>
-    <div class="section-title" style="margin-top:28px;">Giving Back &amp; Advisory Roles</div>
+    <div class="section-title" style="margin-top:28px;">Advisory &amp; Community</div>
     <ul style="margin:8px 0 18px;padding-left:18px;font-size:13px;line-height:1.5;color:var(--body);">
       <li style="margin-bottom:6px;"><b style="color:var(--navy);">Gave back to the venture ecosystem</b> by judging 8 startup competitions, presenting 15+ founder workshops, and mentoring across 15+ organizations: Entrepreneurial Support Organizations (Village Capital), university venture arms (Purdue Research Foundation), federal programs (National Science Foundation I-Corps, Akron and Purdue), and state initiatives (STARTedUP Foundation).</li>
       <li style="margin-bottom:4px;"><b style="color:var(--navy);">Vice-President of Platform, Born Global</b> (2025): led the Founders' Roundtable and Venture Lab advisory.</li>
