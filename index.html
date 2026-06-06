@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Davide Dantonio · Innovation Economy Operator · Portfolio</title>
-<meta name="description" content="Davide Dantonio, gener8tor Director of Accelerator Programs. Portfolio for Innovation Economy roles.">
+<meta name="description" content="Davide Dantonio, gener8tor Director of Accelerator Programs. Portfolio of venture outcomes across 52 companies and 10 accelerator cohorts.">
 <meta name="robots" content="noindex, nofollow">
 <style>
   :root {
@@ -119,7 +119,9 @@
   }
   .tab-btn {
     flex: 1;
-    appearance: none;
+    display: block;
+    text-align: center;
+    text-decoration: none;
     background: transparent;
     border: none;
     border-bottom: 4px solid transparent;
@@ -132,12 +134,7 @@
     cursor: pointer;
     transition: color 0.15s, border-color 0.15s;
   }
-  .tab-btn:hover { color: #fff; }
-  .tab-btn[aria-selected="true"] {
-    color: #fff;
-    border-bottom-color: #fff;
-    background: rgba(255,255,255,0.07);
-  }
+  .tab-btn:hover { color: #fff; border-bottom-color: #fff; }
   .tab-btn .tab-sub {
     display: block;
     font-weight: 400;
@@ -145,15 +142,12 @@
     color: #9fb2cf;
     margin-top: 2px;
   }
-  .tab-btn[aria-selected="true"] .tab-sub { color: #d7e1f1; }
   .tab-note {
     text-align: center;
     font-size: 11px;
     color: #9fb2cf;
     padding: 0 0 10px;
   }
-  /* Hide tab bar entirely when JS is off: the recruiter view simply shows */
-  .no-js .tabbar-wrap { display: none; }
 
   /* Audience intro strip */
   .audience-intro {
@@ -167,6 +161,7 @@
     font-weight: 500;
     line-height: 1.6;
   }
+  .audience-intro p + p { margin-top: 10px; }
   .audience-intro p::before { content: "▸ "; color: var(--blue); font-weight: 700; }
 
   /* Section blocks */
@@ -352,12 +347,8 @@
   footer a { color: #fff; text-decoration: underline; }
   .footer-meta { margin-top: 18px; font-size: 11px; color: #9fb2cf; }
 
-  /* ===== Audience switching logic (CSS side) ===== */
-  /* Default (no JS): recruiter elements visible, founder/investor-only elements hidden */
-  .aud-line { display: none; }
-  .aud-line.for-recruiters { display: block; }
-  /* When JS active, body gets data-audience; the script also toggles .aud-line display */
-  /* Section ordering uses flex order set by JS via data attributes */
+  /* ===== One continuous page: every intro/footer line is always visible ===== */
+  .aud-line { display: block; }
 
   /* Mobile */
   @media (max-width: 720px) {
@@ -368,7 +359,7 @@
     .header-right { text-align: left; margin-top: 12px; }
     .tabbar { flex-direction: column; }
     .tab-btn { border-bottom: none; border-left: 4px solid transparent; text-align: left; padding: 12px 16px; }
-    .tab-btn[aria-selected="true"] { border-left-color: #fff; border-bottom: none; }
+    .tab-btn:hover { border-left-color: #fff; border-bottom: none; }
     .org-grid { grid-template-columns: 1fr; }
     .version-badge { top: 8px; right: 8px; font-size: 10px; }
     .dl-infographic { top: 36px; right: 8px; font-size: 11px; padding: 7px 11px; }
@@ -387,12 +378,11 @@
     footer { background: #fff !important; color: var(--navy) !important; border-top: 3px solid var(--navy); }
     footer p, footer h4, footer a, .footer-meta { color: var(--navy) !important; }
     .yt-frame { display: none; }
-    /* Print shows every section in current order, including hidden ones stays as-is */
+    /* Print shows every section in document order */
   }
 </style>
 </head>
-<body class="no-js">
-<script>document.body.classList.remove('no-js');</script>
+<body>
 <a href="infographic.pdf" download class="dl-infographic" title="Download my one-page Venture Portfolio infographic (PDF)">⬇ Infographic (PDF)</a>
 
 <header>
@@ -403,9 +393,8 @@
         <div class="tagline">Innovation Economy · Director of Accelerator Programs · gener8tor · Indianapolis, IN</div>
       </div>
       <div class="header-right">
-        <div class="pill">5+ Years Related Experience · Pre-Seed and Seed Founder Coach</div>
+        <div class="pill">5+ Years in Venture Acceleration · Pre-Seed and Seed Founder Coach</div>
         <div class="header-contact">
-          Work Authorization: United States / Europe / United Kingdom · Open to relocation<br>
           <a href="mailto:davide.trailblazing@gmail.com">davide.trailblazing@gmail.com</a> · 317-499-6920<br>
           <a href="https://www.linkedin.com/in/davide-dantonio">linkedin.com/in/davide-dantonio</a>
         </div>
@@ -413,24 +402,36 @@
     </div>
   </div>
 
-  <!-- Tab switcher: one site, three front doors -->
+  <!-- Section navigation: pure anchors, one continuous page -->
   <div class="tabbar-wrap">
     <div class="container">
-      <div class="tabbar" role="tablist" aria-label="Choose your view">
-        <button class="tab-btn" id="tab-recruiters" role="tab" aria-selected="true" aria-controls="main-stack" onclick="setAudience('recruiters')">
-          Recruiters &amp; Hiring Managers
-          <span class="tab-sub">Track record, method, network</span>
-        </button>
-        <button class="tab-btn" id="tab-founders" role="tab" aria-selected="false" aria-controls="main-stack" onclick="setAudience('founders')">
-          Founders
-          <span class="tab-sub">How the coaching works</span>
-        </button>
-        <button class="tab-btn" id="tab-investors" role="tab" aria-selected="false" aria-controls="main-stack" onclick="setAudience('investors')">
-          Investors &amp; Partners
-          <span class="tab-sub">Portfolio, capital, co-investors</span>
-        </button>
-      </div>
-      <div class="tab-note">Same facts, three reading orders. Pick the view that fits you.</div>
+      <nav class="tabbar" aria-label="Jump to a section">
+        <a class="tab-btn" href="#blk-kpi">
+          Numbers
+          <span class="tab-sub">Headline portfolio results</span>
+        </a>
+        <a class="tab-btn" href="#blk-sectors">
+          Industry Breadth
+          <span class="tab-sub">52 companies, 9 sectors</span>
+        </a>
+        <a class="tab-btn" href="#blk-outcomes">
+          Outcomes
+          <span class="tab-sub">Named founder achievements</span>
+        </a>
+        <a class="tab-btn" href="#blk-coaching">
+          Coaching Method
+          <span class="tab-sub">How the program works</span>
+        </a>
+        <a class="tab-btn" href="#blk-network">
+          Network
+          <span class="tab-sub">Mentors, investors, orgs</span>
+        </a>
+        <a class="tab-btn" href="#blk-press">
+          Press
+          <span class="tab-sub">Awards and validation</span>
+        </a>
+      </nav>
+      <div class="tab-note">One continuous page. These links scroll to each section.</div>
     </div>
   </div>
 </header>
@@ -442,20 +443,20 @@
   </p>
 </div>
 
-<!-- Audience intro line (changes per tab) -->
+<!-- Intro lines: all visible on the one continuous page -->
 <div class="audience-intro">
   <div class="container">
-    <p class="aud-line for-recruiters">Innovation-Economy operator sourcing, vetting, coaching, and structuring capital for the best and most diverse pre-Seed and Seed founders, sole director of 10 accelerator cohorts across the US and Italy. Plugged into a working network of 331 mentors and 265 investors that turns coachable founders into named, real-world outcomes.</p>
-    <p class="aud-line for-founders">Every company below is one I directly coached through gener8tor's intensive 8-week accelerator. I provided tailored strategic advice and executional guidance to 52 portfolio startups in both individual strategy sessions and cohort-based trainings: customer discovery for problem-solution fit, sales discovery and repeatable go-to-market for product-market fit, and fundraising to scale a proven business model.</p>
-    <p class="aud-line for-investors">Sole director of 10 accelerator cohorts across the US and Italy: 600+ startups sourced to select and coach 52 founders, $7.84M total capital raised ($5.43M dilutive equity + $2.42M non-dilutive grants and state incentives), 60+ curated investor introductions per founder, 220 US jobs created.</p>
+    <p class="aud-line">Innovation-Economy operator sourcing, vetting, coaching, and structuring capital for the best and most diverse pre-Seed and Seed founders, sole director of 10 accelerator cohorts across the US and Italy. Plugged into a working network of 331 mentors and 265 investors that turns coachable founders into named, real-world outcomes.</p>
+    <p class="aud-line">Every company below is one I directly coached through gener8tor's intensive 8-week accelerator. I provided tailored strategic advice and executional guidance to 52 portfolio startups in both individual strategy sessions and cohort-based trainings: customer discovery for problem-solution fit, sales discovery and repeatable go-to-market for product-market fit, and fundraising to scale a proven business model.</p>
+    <p class="aud-line">Sole director of 10 accelerator cohorts across the US and Italy: 600+ startups sourced to select and coach 52 founders, $7.84M total capital raised ($5.43M dilutive equity + $2.42M non-dilutive grants and state incentives), 60+ curated investor introductions per founder, 220 US jobs created.</p>
   </div>
 </div>
 
-<!-- ===== Reorderable section stack. Each block has data-order-* per audience. ===== -->
-<main id="main-stack" class="stack" role="tabpanel">
+<!-- ===== Section stack: one continuous page, all sections always visible ===== -->
+<main id="main-stack" class="stack">
 
   <!-- BLOCK: KPI strip -->
-  <section class="block" id="blk-kpi" data-order-recruiters="1" data-order-founders="7" data-order-investors="3">
+  <section class="block" id="blk-kpi">
     <div class="container">
       <div class="section-title">The Startup Portfolio I Directly Coached · Headline Numbers</div>
       <div class="kpi-row">
@@ -469,8 +470,24 @@
     </div>
   </section>
 
+  <!-- BLOCK: Sector / company chip wall -->
+  <section class="block" id="blk-sectors">
+    <div class="container">
+      <div class="section-title">Industry Breadth · 52 Companies, 9 Sectors (★ Featured Outcome)</div>
+      <div class="sector-row"><div class="sector-count">12</div><div class="sector-name">Artificial Intelligence &amp; Enterprise Software</div><div><b>Desync.ai</b> <span class="sd">on-demand AI for SMBs</span> · <b>Dapto</b> <span class="sd">makes data AI-ready</span> · <b>HUMN Capital</b> <span class="sd">AI manager-coaching</span> · <b>Second Opinion</b> <span class="sd">AI legal review</span> · <b>PaveX</b> ★ <span class="sd">AI road assessment</span> · <b>Pumkin AI</b> <span class="sd">AI for manufacturing</span> · <b>Authentic Ink</b> <span class="sd">AI personalized customer outreach</span> · <b>Motoring Labs</b> <span class="sd">vision fleet monitoring</span> · <b>Human Singularity</b> <span class="sd">workforce skills</span> · <b>DiversiFind</b> <span class="sd">supplier-diversity software</span> · <b>ITER IDEA</b> <span class="sd">cloud/AI software house</span> · <b>Allira Systems</b> <span class="sd">SMB ops-intelligence</span></div></div>
+      <div class="sector-row"><div class="sector-count">7</div><div class="sector-name">FinTech, InsurTech &amp; Blockchain</div><div><b>Guama</b> ★ <span class="sd">LatAm credit card</span> · <b>VitalSwap</b> <span class="sd">US–Africa payments</span> · <b>ONOW Ascent</b> <span class="sd">AI cash-flow &amp; credit for small businesses</span> · <b>PoliStock</b> <span class="sd">market intel &amp; trading</span> · <b>DigsFact</b> <span class="sd">AI insurance claims</span> · <b>Prospect XR</b> <span class="sd">Web3 community/DAO</span> · <b>Timbucktoo</b> <span class="sd">blockchain authentication</span></div></div>
+      <div class="sector-row"><div class="sector-count">4</div><div class="sector-name">HealthTech &amp; Wellness</div><div><b>Home Health Pro</b> <span class="sd">home-care staffing</span> · <b>Therapprove</b> ★ <span class="sd">pediatric-therapy referrals</span> · <b>RiteCarbs</b> <span class="sd">precision prebiotic fibers</span> · <b>OVUE</b> <span class="sd">maritime crew-safety software</span></div></div>
+      <div class="sector-row"><div class="sector-count">8</div><div class="sector-name">AgTech &amp; Food Security</div><div><b>Aropha</b> ★ <span class="sd">AI biodegradability testing</span> · <b>AgroNet ZERO</b> <span class="sd">biochar for soil</span> · <b>ArborMapper</b> <span class="sd">LiDAR forest analytics</span> · <b>BioFique</b> <span class="sd">livestock-feed saponin</span> · <b>NourishFlow Dynamics</b> <span class="sd">cuts food-bank waste</span> · <b>Terroir from Space</b> <span class="sd">satellite vineyard analytics</span> · <b>JUA Technologies</b> <span class="sd">solar crop-drying</span> · <b>rScan</b> ★ <span class="sd">resale / circular economy</span></div></div>
+      <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">Energy &amp; Grid Resilience</div><div><b>Voltest</b> <span class="sd">EV battery diagnostics</span> · <b>Novac</b> ★ <span class="sd">solid-state supercapacitors</span> · <b>Animo Technologies</b> <span class="sd">nuclear micro-batteries</span> · <b>Diamond Power</b> <span class="sd">multi-fuel generators</span> · <b>Kronfeld Motor</b> <span class="sd">energy-regenerating EV</span></div></div>
+      <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">Industrial 4.0, Robotics &amp; Advanced Manufacturing</div><div><b>GEKOT Robotics</b> <span class="sd">active safety, light EVs</span> · <b>WPR Services</b> <span class="sd">factory-safety AI</span> · <b>Zernike Precision Optics</b> <span class="sd">defense/semi lenses</span> · <b>Fitasy</b> <span class="sd">3D-printed footwear</span> · <b>Electric Vehicle Gear</b> <span class="sd">3D-printed EV accessories</span></div></div>
+      <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">SpaceTech &amp; Aerospace</div><div><b>Involve Space</b> <span class="sd">stratospheric GeoAI</span> · <b>REA Space</b> <span class="sd">bionic spacesuit</span> · <b>O-Boot</b> <span class="sd">aerospace tech</span> · <b>X-ENDER Space</b> <span class="sd">secure orbital data</span> · <b>Intuos</b> <span class="sd">aviation flight-ops IoT</span></div></div>
+      <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">Cybersecurity &amp; Defense</div><div><b>Covert Defenses</b> ★ <span class="sd">nuclear/critical-infra cyber (DHS)</span> · <b>Wolfberry</b> <span class="sd">IoT cybersecurity</span> · <b>XPHERA</b> ★ <span class="sd">GPS-denied positioning</span></div></div>
+      <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">Gaming, Sports &amp; Immersive Media</div><div><b>Feenix Sport</b> ★ <span class="sd">gaming &amp; esports</span> · <b>Vertikal X</b> ★ <span class="sd">endurance-sports creator platform</span> · <b>Dellstar VR</b> <span class="sd">VR workforce training</span></div></div>
+    </div>
+  </section>
+
   <!-- BLOCK: Capital split -->
-  <section class="block" id="blk-capital" data-order-recruiters="2" data-order-founders="8" data-order-investors="2">
+  <section class="block" id="blk-capital">
     <div class="container">
       <div class="section-title">Source of the $7.84M</div>
       <div class="capital-split">
@@ -487,7 +504,7 @@
   </section>
 
   <!-- BLOCK: Flagship outcomes -->
-  <section class="block" id="blk-outcomes" data-order-recruiters="3" data-order-founders="9" data-order-investors="4">
+  <section class="block" id="blk-outcomes">
     <div class="container">
       <div class="section-title">Some of the great achievements from founders I helped scale</div>
       <div class="outcome-row"><div class="outcome-co">Vertikal X, Feenix Group, ITER Idea</div><div>International · SportTech, Media, SaaS</div><div class="outcome-metric">US relocation + state backing + VC raises</div><div>Vertikal X relocated its US headquarters from Austin to Indianapolis via my intros (Mayor Hogsett + Indiana economic-development endorsement); Feenix Group relocated to Indiana, made its first US hires, and raised from US investors with my support; ITER Idea (Italy) commercializing in the US market</div></div>
@@ -502,7 +519,7 @@
   </section>
 
   <!-- BLOCK: Coaching program (4 stages quick strip + 4-stage method detail) -->
-  <section class="block" id="blk-coaching" data-order-recruiters="4" data-order-founders="1" data-order-investors="8">
+  <section class="block" id="blk-coaching">
     <div class="container">
       <div class="section-title">My Founders Scaling Steps, by Stage</div>
       <p style="font-size:12.5px;line-height:1.55;color:#3a3a3a;margin:4px 0 12px;">The coaching itself is a step-by-step program I built around the customer. Founders move from problem-solution fit through customer discovery ("don't sell, just ask"), to product-market fit via business-model design, OKRs, and cash-flow management, to a repeatable go-to-market built on pipeline systems and demand-supply case studies, and finally to investor-ready fundraising with milestone planning, comparables, and return-on-investment storytelling, delivered as weekly, personalized strategy sessions.</p>
@@ -522,8 +539,20 @@
     </div>
   </section>
 
+  <!-- BLOCK: How the 8-week program runs (3-phase timeline) -->
+  <section class="block" id="blk-program">
+    <div class="container">
+      <div class="section-title">How my 8-week program runs</div>
+      <div class="method-row program-run-row">
+        <div class="method-box"><div class="method-stage">Week 0 · in person</div><div class="method-title">2-day kickoff</div><div class="method-desc">Cohort time syncs, goal-setting, and OKR-based strategy planning.</div></div>
+        <div class="method-box"><div class="method-stage">Weeks 1-6 · virtual</div><div class="method-title">Core programming</div><div class="method-desc">Weekly cohort standup, funding-focused Lunch &amp; Learn, expert speed-networking, and a 45-minute 1:1 strategy session. Popup workshops picked by cohort needs.</div></div>
+        <div class="method-box"><div class="method-stage">Weeks 7-8 · finale</div><div class="method-title">Investor meetings</div><div class="method-desc">Final 1:1 pitch meetings with 25+ investors and ecosystem partners, in person and virtual.</div></div>
+      </div>
+    </div>
+  </section>
+
   <!-- BLOCK: Program cornerstones for founders (3 cornerstone cards + deliverable chips) -->
-  <section class="block" id="blk-cornerstones" data-order-recruiters="6" data-order-founders="3" data-order-investors="10">
+  <section class="block" id="blk-cornerstones">
     <div class="container">
       <div class="section-title">Program Cornerstones for Founders</div>
       <p style="font-size:12.5px;line-height:1.55;color:#3a3a3a;margin:4px 0 12px;">Every founder I coach works toward three cornerstones. Each one produces concrete, tangible deliverables they keep and can share across the venture ecosystem.</p>
@@ -564,20 +593,8 @@
     </div>
   </section>
 
-  <!-- BLOCK: How the 8-week program runs (3-phase timeline) -->
-  <section class="block" id="blk-program" data-order-recruiters="5" data-order-founders="2" data-order-investors="6">
-    <div class="container">
-      <div class="section-title">How my 8-week program runs</div>
-      <div class="method-row program-run-row">
-        <div class="method-box"><div class="method-stage">Week 0 · in person</div><div class="method-title">2-day kickoff</div><div class="method-desc">Cohort time syncs, goal-setting, and OKR-based strategy planning.</div></div>
-        <div class="method-box"><div class="method-stage">Weeks 1-6 · virtual</div><div class="method-title">Core programming</div><div class="method-desc">Weekly cohort standup, funding-focused Lunch &amp; Learn, expert speed-networking, and a 45-minute 1:1 strategy session. Popup workshops picked by cohort needs.</div></div>
-        <div class="method-box"><div class="method-stage">Weeks 7-8 · finale</div><div class="method-title">Investor meetings</div><div class="method-desc">Final 1:1 pitch meetings with 25+ investors and ecosystem partners, in person and virtual.</div></div>
-      </div>
-    </div>
-  </section>
-
   <!-- BLOCK: Sales foundations · weekly sales challenge -->
-  <section class="block" id="blk-sales" data-order-recruiters="7" data-order-founders="4" data-order-investors="9">
+  <section class="block" id="blk-sales">
     <div class="container">
       <div class="section-title">Founders Sales Foundations · Weekly Sales Challenge</div>
       <div class="sales-grid">
@@ -592,7 +609,7 @@
   </section>
 
   <!-- BLOCK: Founder voices -->
-  <section class="block" id="blk-voices" data-order-recruiters="8" data-order-founders="5" data-order-investors="11">
+  <section class="block" id="blk-voices">
     <div class="container">
       <div class="section-title">Founder Voices (real names, real outcomes)</div>
       <div class="founder-voices">
@@ -609,7 +626,7 @@
   </section>
 
   <!-- BLOCK: NPS benchmark -->
-  <section class="block" id="blk-nps" data-order-recruiters="9" data-order-founders="6" data-order-investors="12">
+  <section class="block" id="blk-nps">
     <div class="container">
       <div class="section-title">Where my cohorts land on the NPS benchmark</div>
       <div class="nps-row"><div class="nps-label">My Programs</div><div class="nps-bar-wrap"><div class="nps-bar me" style="width:86%"></div><span class="nps-value">86</span></div></div>
@@ -619,24 +636,8 @@
     </div>
   </section>
 
-  <!-- BLOCK: Sector / company chip wall -->
-  <section class="block" id="blk-sectors" data-order-recruiters="10" data-order-founders="10" data-order-investors="1">
-    <div class="container">
-      <div class="section-title">Industry Breadth · 52 Companies, 9 Sectors (★ Featured Outcome)</div>
-      <div class="sector-row"><div class="sector-count">12</div><div class="sector-name">Artificial Intelligence &amp; Enterprise Software</div><div><b>Desync.ai</b> <span class="sd">on-demand AI for SMBs</span> · <b>Dapto</b> <span class="sd">makes data AI-ready</span> · <b>HUMN Capital</b> <span class="sd">AI manager-coaching</span> · <b>Second Opinion</b> <span class="sd">AI legal review</span> · <b>PaveX</b> ★ <span class="sd">AI road assessment</span> · <b>Pumkin AI</b> <span class="sd">AI for manufacturing</span> · <b>Authentic Ink</b> <span class="sd">AI personalized customer outreach</span> · <b>Motoring Labs</b> <span class="sd">vision fleet monitoring</span> · <b>Human Singularity</b> <span class="sd">workforce skills</span> · <b>DiversiFind</b> <span class="sd">supplier-diversity software</span> · <b>ITER IDEA</b> <span class="sd">cloud/AI software house</span> · <b>Allira Systems</b> <span class="sd">SMB ops-intelligence</span></div></div>
-      <div class="sector-row"><div class="sector-count">7</div><div class="sector-name">FinTech, InsurTech &amp; Blockchain</div><div><b>Guama</b> ★ <span class="sd">LatAm credit card</span> · <b>VitalSwap</b> <span class="sd">US–Africa payments</span> · <b>ONOW Ascent</b> <span class="sd">AI cash-flow &amp; credit for small businesses</span> · <b>PoliStock</b> <span class="sd">market intel &amp; trading</span> · <b>DigsFact</b> <span class="sd">AI insurance claims</span> · <b>Prospect XR</b> <span class="sd">Web3 community/DAO</span> · <b>Timbucktoo</b> <span class="sd">blockchain authentication</span></div></div>
-      <div class="sector-row"><div class="sector-count">4</div><div class="sector-name">HealthTech &amp; Wellness</div><div><b>Home Health Pro</b> <span class="sd">home-care staffing</span> · <b>Therapprove</b> ★ <span class="sd">pediatric-therapy referrals</span> · <b>RiteCarbs</b> <span class="sd">precision prebiotic fibers</span> · <b>OVUE</b> <span class="sd">maritime crew-safety software</span></div></div>
-      <div class="sector-row"><div class="sector-count">8</div><div class="sector-name">Climate, AgTech &amp; Sustainability</div><div><b>Aropha</b> ★ <span class="sd">AI biodegradability testing</span> · <b>AgroNet ZERO</b> <span class="sd">biochar for soil</span> · <b>ArborMapper</b> <span class="sd">LiDAR forest analytics</span> · <b>BioFique</b> <span class="sd">livestock-feed saponin</span> · <b>NourishFlow Dynamics</b> <span class="sd">cuts food-bank waste</span> · <b>Terroir from Space</b> <span class="sd">satellite vineyard analytics</span> · <b>JUA Technologies</b> <span class="sd">solar crop-drying</span> · <b>rScan</b> ★ <span class="sd">resale / circular economy</span></div></div>
-      <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">Energy &amp; CleanTech</div><div><b>Voltest</b> <span class="sd">EV battery diagnostics</span> · <b>Novac</b> ★ <span class="sd">solid-state supercapacitors</span> · <b>Animo Technologies</b> <span class="sd">nuclear micro-batteries</span> · <b>Diamond Power</b> <span class="sd">multi-fuel generators</span> · <b>Kronfeld Motor</b> <span class="sd">energy-regenerating EV</span></div></div>
-      <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">Industrial 4.0, Robotics &amp; Advanced Manufacturing</div><div><b>GEKOT Robotics</b> <span class="sd">active safety, light EVs</span> · <b>WPR Services</b> <span class="sd">factory-safety AI</span> · <b>Zernike Precision Optics</b> <span class="sd">defense/semi lenses</span> · <b>Fitasy</b> <span class="sd">3D-printed footwear</span> · <b>Electric Vehicle Gear</b> <span class="sd">3D-printed EV accessories</span></div></div>
-      <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">SpaceTech &amp; Aerospace</div><div><b>Involve Space</b> <span class="sd">stratospheric GeoAI</span> · <b>REA Space</b> <span class="sd">bionic spacesuit</span> · <b>O-Boot</b> <span class="sd">aerospace tech</span> · <b>X-ENDER Space</b> <span class="sd">secure orbital data</span> · <b>Intuos</b> <span class="sd">aviation flight-ops IoT</span></div></div>
-      <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">Cybersecurity &amp; Defense</div><div><b>Covert Defenses</b> ★ <span class="sd">nuclear/critical-infra cyber (DHS)</span> · <b>Wolfberry</b> <span class="sd">IoT cybersecurity</span> · <b>XPHERA</b> ★ <span class="sd">GPS-denied positioning</span></div></div>
-      <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">Gaming, Sports &amp; Immersive Media</div><div><b>Feenix Sport</b> ★ <span class="sd">gaming &amp; esports</span> · <b>Vertikal X</b> ★ <span class="sd">endurance-sports creator platform</span> · <b>Dellstar VR</b> <span class="sd">VR workforce training</span></div></div>
-    </div>
-  </section>
-
   <!-- BLOCK: Network stats + org chips -->
-  <section class="block" id="blk-network" data-order-recruiters="11" data-order-founders="11" data-order-investors="5">
+  <section class="block" id="blk-network">
     <div class="container">
       <div class="section-title">My Network in the Venture Ecosystem</div>
       <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);">
@@ -691,7 +692,7 @@
   </section>
 
   <!-- BLOCK: Press wall -->
-  <section class="block" id="blk-press" data-order-recruiters="12" data-order-founders="12" data-order-investors="7">
+  <section class="block" id="blk-press">
     <div class="container">
       <div class="section-title">Press, Awards &amp; Public Validation · Where my founders showed up</div>
       <div class="press-wall">
@@ -740,7 +741,7 @@
   </section>
 
   <!-- BLOCK: Resources, videos, get in touch -->
-  <section class="block" id="blk-resources" data-order-recruiters="13" data-order-founders="13" data-order-investors="13">
+  <section class="block" id="blk-resources">
     <div class="container">
       <div class="section-title">Resources &amp; Live Previews</div>
 
@@ -844,63 +845,13 @@
       317-499-6920 &nbsp;·&nbsp;
       <a href="https://www.linkedin.com/in/davide-dantonio">LinkedIn</a>
     </p>
-    <p style="margin-top:8px;" class="aud-line for-recruiters">Indianapolis, IN · Open to relocating for the right Innovation Economy role</p>
-    <p style="margin-top:8px;" class="aud-line for-founders">Indianapolis, IN · Always happy to talk to ambitious pre-Seed and Seed founders</p>
-    <p style="margin-top:8px;" class="aud-line for-investors">Indianapolis, IN · Open to swaps, co-investment conversations, and ecosystem partnerships</p>
+    <p style="margin-top:8px;" class="aud-line">Indianapolis, IN · Always happy to talk to ambitious pre-Seed and Seed founders</p>
+    <p style="margin-top:8px;" class="aud-line">Indianapolis, IN · Open to swaps, co-investment conversations, and ecosystem partnerships</p>
     <div class="footer-meta">
-      Work Authorization: United States · Europe · United Kingdom &nbsp;|&nbsp; This page is hand-curated; numbers cross-checked against named investors and third-party press coverage.
+      This page is hand-curated; numbers cross-checked against named investors and third-party press coverage.
     </div>
   </div>
 </footer>
-
-<script>
-(function () {
-  'use strict';
-
-  var AUDIENCES = ['recruiters', 'founders', 'investors'];
-
-  function setAudience(aud) {
-    if (AUDIENCES.indexOf(aud) === -1) { aud = 'recruiters'; }
-
-    // 1. Reorder section blocks with flex order
-    var blocks = document.querySelectorAll('#main-stack .block');
-    for (var i = 0; i < blocks.length; i++) {
-      var ord = blocks[i].getAttribute('data-order-' + aud);
-      blocks[i].style.order = ord ? ord : 99;
-    }
-
-    // 2. Swap audience-specific lines (intro + footer)
-    var lines = document.querySelectorAll('.aud-line');
-    for (var j = 0; j < lines.length; j++) {
-      lines[j].style.display = lines[j].classList.contains('for-' + aud) ? 'block' : 'none';
-    }
-
-    // 3. Update tab states
-    var tabs = { recruiters: 'tab-recruiters', founders: 'tab-founders', investors: 'tab-investors' };
-    for (var key in tabs) {
-      var btn = document.getElementById(tabs[key]);
-      if (btn) { btn.setAttribute('aria-selected', key === aud ? 'true' : 'false'); }
-    }
-
-    // 4. Remember choice in the URL hash (no fetch, no storage)
-    try { history.replaceState(null, '', '#' + aud); } catch (e) {}
-
-    // 5. Scroll to top of content so the new lead section is visible
-    var intro = document.querySelector('.audience-intro');
-    if (intro && intro.scrollIntoView && document.body.dataset.ready === '1') {
-      intro.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-
-  // Expose for the onclick handlers
-  window.setAudience = setAudience;
-
-  // Initial state: honor a #hash deep link, otherwise recruiters
-  var fromHash = (location.hash || '').replace('#', '');
-  setAudience(AUDIENCES.indexOf(fromHash) !== -1 ? fromHash : 'recruiters');
-  document.body.dataset.ready = '1';
-})();
-</script>
 
 </body>
 </html>
