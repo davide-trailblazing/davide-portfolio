@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Davide Dantonio · Innovation Economy Operator · Portfolio</title>
+<title>Davide Dantonio · Director of Accelerator Programs · Portfolio</title>
 <meta name="description" content="Davide Dantonio, gener8tor Director of Accelerator Programs. Portfolio of venture outcomes across 52 companies and 10 accelerator cohorts.">
 <meta name="robots" content="noindex, nofollow">
 <style>
@@ -380,20 +380,55 @@
     .yt-frame { display: none; }
     /* Print shows every section in document order */
   }
+
+  /* Connect dropdown (replaces infographic pill) */
+  .connect-wrap { position: fixed; top: 12px; right: 12px; z-index: 9999; }
+  .connect-btn { background:#C9A24B; color:#11315E; font-size:12.5px; font-weight:800; letter-spacing:.02em; padding:9px 16px; border:0; border-radius:999px; box-shadow:0 4px 14px rgba(0,0,0,0.30); cursor:pointer; }
+  .connect-btn:hover { background:#d8b25e; box-shadow:0 6px 18px rgba(0,0,0,0.40); }
+  .connect-panel { display:none; position:absolute; top:44px; right:0; width:300px; background:#fff; border:1px solid var(--border); border-radius:10px; box-shadow:0 10px 34px rgba(10,37,64,0.22); padding:14px; text-align:left; }
+  .connect-panel.open { display:block; }
+  .connect-panel h5 { margin:0 0 3px; font-size:13px; color:var(--navy); }
+  .connect-panel .cp-sub { font-size:11px; color:var(--mid-gray); margin-bottom:10px; line-height:1.45; }
+  .connect-panel input, .connect-panel select, .connect-panel textarea { width:100%; padding:8px 9px; margin-bottom:8px; border:1px solid var(--border); border-radius:5px; font-size:12.5px; font-family:inherit; color:var(--body); background:#fff; }
+  .connect-panel textarea { resize:vertical; min-height:48px; }
+  .connect-panel .cp-send { background:var(--navy); color:#fff; font-weight:700; border:0; border-radius:5px; padding:8px 18px; font-size:12.5px; cursor:pointer; width:100%; }
+  .connect-panel .cp-send:hover { background:#0b2444; }
+  .connect-panel .cp-note { font-size:10.5px; color:var(--light-gray); margin-top:7px; text-align:center; }
+  @media print { .connect-wrap { display:none !important; } }
 </style>
 </head>
 <body>
-<a href="infographic.pdf" download class="dl-infographic" title="Download my one-page Venture Portfolio infographic (PDF)">⬇ Infographic (PDF)</a>
+<div class="connect-wrap">
+  <button class="connect-btn" id="connectBtn" aria-haspopup="true" aria-expanded="false" onclick="toggleConnect(event)">✉ Get in touch</button>
+  <div class="connect-panel" id="connectPanel" role="dialog" aria-label="Get in touch">
+    <h5>Let’s connect</h5>
+    <div class="cp-sub">Fill what you like, then send. Blanks you can complete in your email app.</div>
+    <form onsubmit="return composeConnect(event)">
+      <input id="cName" type="text" placeholder="Your full name" autocomplete="name">
+      <input id="cLinkedIn" type="url" placeholder="Your LinkedIn URL">
+      <select id="cRole">
+        <option value="" disabled selected>I am a…</option>
+        <option>Founder</option>
+        <option>Investor</option>
+        <option>Industry expert</option>
+        <option>Other</option>
+      </select>
+      <textarea id="cWhy" placeholder="Why you’d like to connect"></textarea>
+      <button class="cp-send" type="submit">✉ Compose email</button>
+      <div class="cp-note">Opens a pre-filled email to Davide.</div>
+    </form>
+  </div>
+</div>
 
 <header>
   <div class="container">
     <div class="header-grid">
       <div>
         <div class="name">DAVIDE DANTONIO</div>
-        <div class="tagline">Innovation Economy · Director of Accelerator Programs · gener8tor · Indianapolis, IN</div>
+        <div class="tagline">Director of Accelerator Programs · Innovation Scouter, Startup Advisor and Founder Connector · gener8tor · Indianapolis, IN</div>
       </div>
       <div class="header-right">
-        <div class="pill">5+ Years in Venture Acceleration · Pre-Seed and Seed Founder Coach</div>
+        <div class="pill">Venture Acceleration · Pre-Seed and Seed Founder Coach</div>
         <div class="header-contact">
           <a href="mailto:davide.trailblazing@gmail.com">davide.trailblazing@gmail.com</a> · 317-499-6920<br>
           <a href="https://www.linkedin.com/in/davide-dantonio">linkedin.com/in/davide-dantonio</a>
@@ -439,14 +474,14 @@
 <!-- Personal note -->
 <div class="personal-note">
   <p>
-    Hi, I'm <b>Davide</b>. This is my portfolio of work in the venture space, three years of directing pre-Seed and Seed accelerator cohorts. Built for founders, investors, and partners I cross paths with in the Innovation Economy. Most of the numbers below trace back to named outcomes and the third-party press they generated. Let's talk.
+    Hi, I'm <b>Davide</b>. This is my portfolio of work in the venture space, directing pre-Seed and Seed accelerator cohorts. Built for founders, investors, and partners I cross paths with in the venture ecosystem. Most of the numbers below trace back to named outcomes and the third-party press they generated. Let's talk.
   </p>
 </div>
 
 <!-- Intro lines: all visible on the one continuous page -->
 <div class="audience-intro">
   <div class="container">
-    <p class="aud-line">Innovation-Economy operator sourcing, vetting, coaching, and structuring capital for the best and most diverse pre-Seed and Seed founders, sole director of 10 accelerator cohorts across the US and Italy. Plugged into a working network of 331 mentors and 265 investors that turns coachable founders into named, real-world outcomes.</p>
+    <p class="aud-line">Innovation scouter and venture operator sourcing, vetting, coaching, and structuring capital for the best and most diverse pre-Seed and Seed founders, sole director of 10 accelerator cohorts across the US and Italy. Plugged into a working network of 331 mentors and 265 investors that turns coachable founders into named, real-world outcomes.</p>
     <p class="aud-line">Every company below is one I directly coached through gener8tor's intensive 8-week accelerator. I provided tailored strategic advice and executional guidance to 52 portfolio startups in both individual strategy sessions and cohort-based trainings: customer discovery for problem-solution fit, sales discovery and repeatable go-to-market for product-market fit, and fundraising to scale a proven business model.</p>
     <p class="aud-line">Sole director of 10 accelerator cohorts across the US and Italy: 600+ startups sourced to select and coach 52 founders, $7.84M total capital raised ($5.43M dilutive equity + $2.42M non-dilutive grants and state incentives), 60+ curated investor introductions per founder, 220 US jobs created.</p>
   </div>
@@ -522,7 +557,7 @@
   <section class="block" id="blk-coaching">
     <div class="container">
       <div class="section-title">My Founders Scaling Steps, by Stage</div>
-      <p style="font-size:12.5px;line-height:1.55;color:#3a3a3a;margin:4px 0 12px;">The coaching itself is a step-by-step program I built around the customer. Founders move from problem-solution fit through customer discovery ("don't sell, just ask"), to product-market fit via business-model design, OKRs, and cash-flow management, to a repeatable go-to-market built on pipeline systems and demand-supply case studies, and finally to investor-ready fundraising with milestone planning, comparables, and return-on-investment storytelling, delivered as weekly, personalized strategy sessions.</p>
+      <p style="font-size:12.5px;line-height:1.55;color:#3a3a3a;margin:4px 0 12px;">My program turns American technologies into real, funded businesses in about two months, even when they come from regions, such as the Midwest, and from sources of innovation, such as university faculty, that national venture capital has long overlooked. The method moves each founder through four stages built around the customer: customer discovery for problem-solution fit (Customer Persona); sales discovery for the buying decision (Customer Buying Decision); a repeatable path to market for product-market fit (Customer Journey); and fundraising to scale a proven business model (Customer Economics and Return on Investment for Venture Capitalists). At every step I connect founders, through a warm first introduction, to the industry leaders, venture experts, institutional partners, customers, and investors they need to grow.</p>
       <div class="coach-strip">
         <div class="coach-step"><div class="cs-h"><span class="coach-n">1</span>Problem-Solution Fit</div><div class="cs-d">Customer discovery, "don't sell, just ask."</div></div>
         <div class="coach-step"><div class="cs-h"><span class="coach-n">2</span>Product-Market Fit</div><div class="cs-d">Business model, OKRs, cash-flow management.</div></div>
@@ -870,12 +905,19 @@
       <a href="https://www.linkedin.com/in/davide-dantonio">LinkedIn</a>
     </p>
     <p style="margin-top:8px;" class="aud-line">Indianapolis, IN · Always happy to talk to ambitious pre-Seed and Seed founders</p>
-    <p style="margin-top:8px;" class="aud-line">Indianapolis, IN · Open to swaps, co-investment conversations, and ecosystem partnerships</p>
     <div class="footer-meta">
       This page is hand-curated; numbers cross-checked against named investors and third-party press coverage.
     </div>
   </div>
 </footer>
 
+
+<script>
+function toggleConnect(e){if(e)e.stopPropagation();var p=document.getElementById("connectPanel"),b=document.getElementById("connectBtn");var o=p.classList.toggle("open");b.setAttribute("aria-expanded",o);}
+function _v(id){var el=document.getElementById(id);var v=(el&&el.value||"").trim();return v?v:"[ ]";}
+function composeConnect(e){if(e)e.preventDefault();var name=_v("cName"),li=_v("cLinkedIn"),role=(document.getElementById("cRole").value||"[ ]"),why=_v("cWhy");var subject="I have checked out your website";var body="My full name is "+name+"\nMy LinkedIn is "+li+"\nI am a "+role+" and I am reaching out to you because: "+why;window.location.href="mailto:davide@gener8tor.com,davide.trailblazing@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);return false;}
+document.addEventListener("click",function(e){var w=document.querySelector(".connect-wrap");if(w&&!w.contains(e.target)){document.getElementById("connectPanel").classList.remove("open");document.getElementById("connectBtn").setAttribute("aria-expanded","false");}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){document.getElementById("connectPanel").classList.remove("open");}});
+</script>
 </body>
 </html>
