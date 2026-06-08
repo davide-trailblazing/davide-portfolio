@@ -481,42 +481,32 @@
 </header>
 
 <style>
-.cohort-hero{background:#11315E;padding:22px 0}
-.cohort-hero .ch-inner{display:grid;grid-template-columns:1fr 1.02fr;gap:22px;align-items:center}
-.cohort-hero img{width:100%;max-height:430px;object-fit:contain;border-radius:10px;display:block;background:#0d2649}
-.cohort-hero .ch-kicker{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#C9A24B;font-weight:700}
-.cohort-hero .ch-title{font-size:25px;font-weight:700;color:#fff;line-height:1.2;margin:6px 0 10px}
-.cohort-hero .ch-sub{font-size:13px;color:#cdd8ea;line-height:1.55}
-.cohort-hero .ch-stats{font-size:12.5px;color:#e7eef7;line-height:1.55;margin-top:10px}
+.dd-intro{padding:18px 0 4px}
+.dd-intro .dd-kicker{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#2E5A9E;font-weight:700}
+.dd-intro .dd-title{font-size:26px;font-weight:700;color:#11315E;line-height:1.18;margin:6px 0 12px}
+.dd-intro .dd-p{font-size:13.5px;line-height:1.6;color:#3a3a3a;margin:0 0 10px;max-width:1010px}
 .header-right .dd-sidenote{font-size:11.5px;line-height:1.5;color:#aebfd6;font-style:italic;margin-top:10px;max-width:360px;text-align:right;margin-left:auto}
-.cohort-band{padding:16px 0 4px}
-.cohort-band .cb-kicker{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#2E5A9E;font-weight:700;margin-bottom:10px}
-.cohort-band .cb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.cohort-band .cb-grid img{width:100%;height:162px;object-fit:cover;object-position:center;border-radius:10px;display:block}
-.cohort-band img,.cohort-hero img{cursor:zoom-in}
+.cohort-band{padding:6px 0 8px}
+.cohort-band .cb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cohort-band .cb-grid img{width:100%;height:205px;object-fit:cover;object-position:center;border-radius:10px;display:block;cursor:zoom-in}
 #cohort-lb{display:none;position:fixed;inset:0;z-index:99999;background:rgba(8,15,30,.93);align-items:center;justify-content:center;cursor:zoom-out;padding:20px}
 #cohort-lb img{max-width:94vw;max-height:92vh;border-radius:8px}
-@media(max-width:760px){.cohort-hero .ch-inner{grid-template-columns:1fr}.cohort-band .cb-grid{grid-template-columns:repeat(2,1fr)}.header-right .dd-sidenote{text-align:left;margin-left:0}}
+@media(max-width:760px){.cohort-band .cb-grid{grid-template-columns:repeat(2,1fr)}.cohort-band .cb-grid img{height:170px}.header-right .dd-sidenote{text-align:left;margin-left:0}}
 </style>
-<div class="cohort-hero">
+<div class="dd-intro">
   <div class="container">
-    <div class="ch-inner">
-      <div>
-        <div class="ch-kicker">Founders I've coached</div>
-        <div class="ch-title">52 founders. 10 cohorts. One ecosystem.</div>
-        <div class="ch-sub">Sole director of 10 gener8tor pre-Seed and Seed accelerator cohorts across the US and Italy. I source, vet, coach, and structure capital for the best and most diverse founders, from customer discovery to fundraising, in an intensive 8-week program.</div>
-        <div class="ch-stats">600+ startups sourced to coach 52 founders to $7.84M raised ($5.43M equity + $2.42M non-dilutive), 60+ investor introductions each, and 220 US jobs created, backed by a working network of 331 mentors and 265 investors.</div>
-      </div>
-      <div><img src="cohort-2.jpg" alt="A full gBETA Indiana cohort gathered on the staircase" loading="lazy"></div>
-    </div>
+    <div class="dd-kicker">Founders I've coached</div>
+    <div class="dd-title">52 founders. 10 cohorts. One ecosystem.</div>
+    <p class="dd-p">Sole director of 10 gener8tor pre-Seed and Seed accelerator cohorts across the US and Italy. I source, vet, coach, and structure capital for the best and most diverse founders, from customer discovery to fundraising, in an intensive 8-week program.</p>
+    <p class="dd-p">600+ startups sourced to coach 52 founders to $7.84M raised ($5.43M equity + $2.42M non-dilutive), 60+ investor introductions each, and 220 US jobs created, backed by a working network of 331 mentors and 265 investors.</p>
   </div>
 </div>
 
-<!-- BLOCK: Cohort photo band -->
+<!-- BLOCK: Cohort photo band (all 8) -->
 <div class="cohort-band">
   <div class="container">
-    <div class="cb-kicker">Founders I've coached</div>
     <div class="cb-grid">
+        <img src="cohort-2.jpg" alt="A full gBETA Indiana cohort on the staircase" loading="lazy">
         <img src="cohort-7.jpg" alt="Founders at a gBETA Indiana cohort kickoff" loading="lazy">
         <img src="cohort-4.jpg" alt="Cohort featured in Entrepreneurship Indiana" loading="lazy">
         <img src="cohort-5.jpg" alt="Hard Tech recognition at Indiana for the Bold" loading="lazy">
@@ -529,7 +519,7 @@
 </div>
 <div id="cohort-lb"><img id="cohort-lb-img" src="" alt=""></div>
 <script>
-(function(){var lb=document.getElementById('cohort-lb'),li=document.getElementById('cohort-lb-img');if(!lb)return;lb.addEventListener('click',function(){lb.style.display='none';});document.querySelectorAll('.cohort-band img,.cohort-hero img').forEach(function(im){im.addEventListener('click',function(){li.src=im.src;li.alt=im.alt||'';lb.style.display='flex';});});})();
+(function(){var lb=document.getElementById('cohort-lb'),li=document.getElementById('cohort-lb-img');if(!lb)return;lb.addEventListener('click',function(){lb.style.display='none';});document.querySelectorAll('.cohort-band img').forEach(function(im){im.addEventListener('click',function(){li.src=im.src;li.alt=im.alt||'';lb.style.display='flex';});});})();
 </script>
 
 <!-- ===== Section stack: one continuous page, all sections always visible ===== -->
