@@ -490,6 +490,9 @@
 .cohort-band .cb-kicker{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#2E5A9E;font-weight:700;margin-bottom:10px}
 .cohort-band .cb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .cohort-band .cb-grid img{width:100%;height:162px;object-fit:cover;object-position:center;border-radius:10px;display:block}
+.cohort-band img,.cohort-hero img{cursor:zoom-in}
+#cohort-lb{display:none;position:fixed;inset:0;z-index:99999;background:rgba(8,15,30,.93);align-items:center;justify-content:center;cursor:zoom-out;padding:20px}
+#cohort-lb img{max-width:94vw;max-height:92vh;border-radius:8px}
 @media(max-width:760px){.cohort-hero .ch-inner{grid-template-columns:1fr}.cohort-band .cb-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 <div class="cohort-hero">
@@ -527,6 +530,10 @@
     </div>
   </div>
 </div>
+<div id="cohort-lb"><img id="cohort-lb-img" src="" alt=""></div>
+<script>
+(function(){var lb=document.getElementById('cohort-lb'),li=document.getElementById('cohort-lb-img');if(!lb)return;lb.addEventListener('click',function(){lb.style.display='none';});document.querySelectorAll('.cohort-band img,.cohort-hero img').forEach(function(im){im.style.cursor='zoom-in';im.addEventListener('click',function(){li.src=im.src;li.alt=im.alt||'';lb.style.display='flex';});});})();
+</script>
 
 <!-- Intro lines: all visible on the one continuous page -->
 <div class="audience-intro">
