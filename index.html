@@ -486,13 +486,11 @@
 .cohort-hero .ch-kicker{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#C9A24B;font-weight:700}
 .cohort-hero .ch-title{font-size:25px;font-weight:700;color:#fff;line-height:1.2;margin-top:6px}
 .cohort-hero .ch-sub{font-size:13px;color:#cdd8ea;line-height:1.55;margin-top:10px}
-#blk-founders .founder-rows{display:flex;flex-direction:column;gap:16px;margin-top:10px}
-#blk-founders .frow{display:grid;grid-template-columns:1.05fr 1fr;gap:20px;align-items:center}
-#blk-founders .frow.rev .fimg{order:2}
-#blk-founders .fimg img{width:100%;height:235px;object-fit:cover;object-position:center;border-radius:10px;display:block}
-#blk-founders .fr-h{font-size:15px;font-weight:700;color:#11315E}
-#blk-founders .fr-p{font-size:13px;line-height:1.55;color:#3a3a3a;margin-top:4px}
-@media(max-width:640px){.cohort-hero .ch-inner{grid-template-columns:1fr}#blk-founders .frow{grid-template-columns:1fr}#blk-founders .frow.rev .fimg{order:0}}
+.cohort-band{padding:16px 0 4px}
+.cohort-band .cb-kicker{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#2E5A9E;font-weight:700;margin-bottom:10px}
+.cohort-band .cb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cohort-band .cb-grid img{width:100%;height:162px;object-fit:cover;object-position:center;border-radius:10px;display:block}
+@media(max-width:760px){.cohort-hero .ch-inner{grid-template-columns:1fr}.cohort-band .cb-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 <div class="cohort-hero">
   <div class="container">
@@ -512,6 +510,22 @@
   <p>
     Hi, I'm <b>Davide</b>. This is my portfolio of work in the venture space, directing pre-Seed and Seed accelerator cohorts. Built for founders, investors, and partners I cross paths with in the venture ecosystem. Most of the numbers below trace back to named outcomes and the third-party press they generated. Let's talk.
   </p>
+</div>
+
+<!-- BLOCK: Cohort photo band -->
+<div class="cohort-band">
+  <div class="container">
+    <div class="cb-kicker">Founders I've coached</div>
+    <div class="cb-grid">
+        <img src="cohort-7.jpg" alt="Founders at a gBETA Indiana cohort kickoff" loading="lazy">
+        <img src="cohort-4.jpg" alt="Cohort featured in Entrepreneurship Indiana" loading="lazy">
+        <img src="cohort-5.jpg" alt="Hard Tech recognition at Indiana for the Bold" loading="lazy">
+        <img src="cohort-8.jpg" alt="Founders with Indiana mentors and partners" loading="lazy">
+        <img src="cohort-3.jpg" alt="A founder pitching in a working session" loading="lazy">
+        <img src="cohort-6.jpg" alt="A gBETA cohort on the steps" loading="lazy">
+        <img src="cohort-1.jpg" alt="gBETA Indiana, grow your startup with us" loading="lazy">
+    </div>
+  </div>
 </div>
 
 <!-- Intro lines: all visible on the one continuous page -->
@@ -538,43 +552,6 @@
         <div class="kpi-card"><div class="kpi-num">86</div><div class="kpi-lbl">Avg Founder NPS</div></div>
       </div>
       <div class="kpi-foot"><b>600+ startups sourced</b> to select the 52 founders coached across the 10 cohorts.</div>
-    </div>
-  </section>
-
-  <!-- BLOCK: Founders I've coached (photo story) -->
-  <section class="block" id="blk-founders">
-    <div class="container">
-      <div class="section-title">Founders I've Coached · From Kickoff to Demo Day</div>
-      <div class="founder-rows">
-        <div class="frow">
-          <div class="fimg"><img src="cohort-7.jpg" alt="Founders holding gener8tor gBETA shirts at kickoff" loading="lazy"></div>
-          <div class="ftext"><div class="fr-h">Day one</div><div class="fr-p">A new gBETA Indiana cohort kicks off.</div></div>
-        </div>
-        <div class="frow rev">
-          <div class="fimg"><img src="cohort-3.jpg" alt="A founder presenting in a working session" loading="lazy"></div>
-          <div class="ftext"><div class="fr-h">In the room</div><div class="fr-p">A founder pitches to mentors and investors.</div></div>
-        </div>
-        <div class="frow">
-          <div class="fimg"><img src="cohort-4.jpg" alt="Cohort featured in Entrepreneurship Indiana" loading="lazy"></div>
-          <div class="ftext"><div class="fr-h">Demo day</div><div class="fr-p">The cohort, featured in Entrepreneurship Indiana.</div></div>
-        </div>
-        <div class="frow rev">
-          <div class="fimg"><img src="cohort-5.jpg" alt="Hard Tech recognition at Indiana for the Bold" loading="lazy"></div>
-          <div class="ftext"><div class="fr-h">Recognition</div><div class="fr-p">Hard Tech honors at Indiana for the Bold.</div></div>
-        </div>
-        <div class="frow">
-          <div class="fimg"><img src="cohort-6.jpg" alt="A gBETA cohort on the steps" loading="lazy"></div>
-          <div class="ftext"><div class="fr-h">The team</div><div class="fr-p">A gBETA cohort, ready to scale.</div></div>
-        </div>
-        <div class="frow rev">
-          <div class="fimg"><img src="cohort-8.jpg" alt="Founders with Indiana mentors and partners" loading="lazy"></div>
-          <div class="ftext"><div class="fr-h">The ecosystem</div><div class="fr-p">Founders alongside Indiana mentors and partners.</div></div>
-        </div>
-        <div class="frow">
-          <div class="fimg"><img src="cohort-1.jpg" alt="gBETA Indiana — grow your startup with us" loading="lazy"></div>
-          <div class="ftext"><div class="fr-h">Grow with us</div><div class="fr-p">Grow your startup with us in Indianapolis.</div></div>
-        </div>
-      </div>
     </div>
   </section>
 
