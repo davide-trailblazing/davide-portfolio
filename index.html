@@ -456,7 +456,7 @@
         </a>
         <a class="tab-btn" href="#blk-sectors">
           Industry Breadth
-          <span class="tab-sub">52 companies, 10 sectors</span>
+          <span class="tab-sub">52 companies, 11 sectors</span>
         </a>
         <a class="tab-btn" href="#blk-outcomes">
           Outcomes
@@ -496,6 +496,36 @@
 .cohort-band .cb-grid img{width:100%;height:230px;object-fit:cover;object-position:center;border-radius:10px;display:block;cursor:zoom-in}
 #cohort-lb{display:none;position:fixed;inset:0;z-index:99999;background:rgba(8,15,30,.93);align-items:center;justify-content:center;cursor:zoom-out;padding:20px}
 #cohort-lb img{max-width:94vw;max-height:92vh;border-radius:8px}
+#blk-kpi .k2scope{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:8px 0 14px}
+#blk-kpi .k2box{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:13px 8px;text-align:center}
+#blk-kpi .k2box .n{font-size:21px;font-weight:800;color:#11315E;line-height:1}
+#blk-kpi .k2box .l{font-size:11px;font-weight:600;color:#5f6b7a;text-transform:uppercase;letter-spacing:.03em;margin-top:5px;line-height:1.3}
+#blk-kpi .k2cap-row{display:grid;grid-template-columns:1.5fr .72fr 1.5fr;gap:10px}
+#blk-kpi .k2cap{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px}
+#blk-kpi .k2cap-top{display:flex;align-items:baseline;gap:8px;border-bottom:1px solid #eef1f5;padding-bottom:8px;margin-bottom:10px}
+#blk-kpi .k2cap-top .n{font-size:23px;font-weight:800;color:#11315E}
+#blk-kpi .k2cap-top .l{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#5f6b7a}
+#blk-kpi .k2src{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#2E5A9E;margin-bottom:6px}
+#blk-kpi .k2sub{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#blk-kpi .k2card{background:#f7f9fc;border:1px solid #eef1f5;border-radius:10px;padding:9px 10px}
+#blk-kpi .k2card .cn{font-size:14px;font-weight:800;color:#11315E}
+#blk-kpi .k2card .ct{font-size:11px;font-weight:600;color:#33414f;margin:1px 0 4px}
+#blk-kpi .k2card .cd{font-size:10.5px;line-height:1.45;color:#5f6b7a}
+#blk-kpi .k2jobs{background:#11315E;border-radius:12px;padding:14px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+#blk-kpi .k2jobs .n{font-size:27px;font-weight:800;color:#fff;line-height:1}
+#blk-kpi .k2jobs .l{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#C9A24B;margin-top:6px}
+#blk-kpi .k2nps{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:13px}
+#blk-kpi .k2nps-top{display:flex;align-items:baseline;gap:7px}
+#blk-kpi .k2nps-top .n{font-size:23px;font-weight:800;color:#11315E;line-height:1}
+#blk-kpi .k2nps-top .l{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#5f6b7a}
+#blk-kpi .k2note{font-size:10px;color:#8a93a0;margin:2px 0 9px;line-height:1.4}
+#blk-kpi .k2brow{display:grid;grid-template-columns:74px 1fr 22px;align-items:center;gap:7px;margin-bottom:6px}
+#blk-kpi .k2bl{font-size:10px;color:#33414f;font-weight:600}
+#blk-kpi .k2bt{height:10px;background:#eef1f5;border-radius:5px;overflow:hidden}
+#blk-kpi .k2bf{display:block;height:100%;border-radius:5px;background:#2E5A9E}
+#blk-kpi .k2bf.me{background:#C9A24B}
+#blk-kpi .k2bv{font-size:10px;font-weight:800;color:#11315E;text-align:right}
+@media(max-width:760px){#blk-kpi .k2scope{grid-template-columns:repeat(2,1fr)}#blk-kpi .k2cap-row{grid-template-columns:1fr}}
 @media(max-width:760px){.cohort-band .cb-grid{grid-template-columns:repeat(2,1fr)}.cohort-band .cb-grid img{height:188px}.header-right .dd-sidenote{text-align:left;margin-left:0}.tab-btn{text-align:left;padding:11px 14px}}
 </style>
 <div class="dd-intro">
@@ -531,24 +561,43 @@
 <main id="main-stack" class="stack">
 
   <!-- BLOCK: KPI strip -->
-  <section class="block" id="blk-kpi">
+    <section class="block" id="blk-kpi">
     <div class="container">
       <div class="section-title">The Startup Portfolio I Directly Coached · Headline Numbers</div>
-      <div class="kpi-row">
-        <div class="kpi-card"><div class="kpi-num">$7.84M</div><div class="kpi-lbl">Capital Raised</div></div>
-        <div class="kpi-card"><div class="kpi-num">52</div><div class="kpi-lbl">Founders Coached</div></div>
-        <div class="kpi-card"><div class="kpi-num">10</div><div class="kpi-lbl">Cohorts Directed</div></div>
-        <div class="kpi-card"><div class="kpi-num">220</div><div class="kpi-lbl">US Jobs Created</div></div>
-        <div class="kpi-card"><div class="kpi-num">86</div><div class="kpi-lbl">Avg Founder NPS</div></div>
+      <div class="k2scope">
+        <div class="k2box"><div class="n">600+</div><div class="l">Startups sourced</div></div>
+        <div class="k2box"><div class="n">52</div><div class="l">Founders coached</div></div>
+        <div class="k2box"><div class="n">9</div><div class="l">US-based cohorts directed</div></div>
+        <div class="k2box"><div class="n">1</div><div class="l">International program</div></div>
+        <div class="k2box"><div class="n">11</div><div class="l">Sectors impacted</div></div>
       </div>
-      <div class="kpi-foot"><b>600+ startups sourced</b> to select the 52 founders coached across the 10 cohorts.</div>
+      <div class="k2cap-row">
+        <div class="k2cap">
+          <div class="k2cap-top"><span class="n">$7.84M</span><span class="l">Capital raised</span></div>
+          <div class="k2src">Source of the $7.84M</div>
+          <div class="k2sub">
+            <div class="k2card"><div class="cn">$5.43M</div><div class="ct">Dilutive equity</div><div class="cd">Institutional investors, milestones-driven capital plans, 60+ curated investor introductions per founder.</div></div>
+            <div class="k2card"><div class="cn">$2.42M</div><div class="ct">Non-dilutive</div><div class="cd">Federal grants (US National Science Foundation), state incentive packages (Indiana economic development), authored commercialization strategies.</div></div>
+          </div>
+        </div>
+        <div class="k2jobs"><div class="n">220</div><div class="l">US jobs created</div></div>
+        <div class="k2nps">
+          <div class="k2nps-top"><span class="n">86</span><span class="l">Avg NPS across my cohorts</span></div>
+          <div class="k2note">Net Promoter Score, how strongly founders would recommend the program</div>
+          <div class="k2brow"><span class="k2bl">My cohorts</span><span class="k2bt"><span class="k2bf me" style="width:100%"></span></span><span class="k2bv">86</span></div>
+          <div class="k2brow"><span class="k2bl">Y Combinator</span><span class="k2bt"><span class="k2bf" style="width:70%"></span></span><span class="k2bv">60</span></div>
+          <div class="k2brow"><span class="k2bl">Techstars</span><span class="k2bt"><span class="k2bf" style="width:47%"></span></span><span class="k2bv">40</span></div>
+          <div class="k2brow"><span class="k2bl">Industry avg</span><span class="k2bt"><span class="k2bf" style="width:44%"></span></span><span class="k2bv">38</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- BLOCK: Sector / company chip wall -->
   <section class="block" id="blk-sectors">
     <div class="container">
-      <div class="section-title">Industry Breadth · 52 Companies, 10 Sectors (★ Featured Outcome)</div>
+      <div class="section-title">Industry Breadth · 52 Companies, 11 Sectors (★ Featured Outcome)</div>
+      <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">Workforce Development</div><div class="sector-cell"><div class="sector-impact">Building the American workforce: AI that coaches managers, skills-upskilling platforms, and immersive VR job training.</div><div class="chips"><span class="chip"><b>HUMN Capital</b> <span class="sd">AI manager-coaching</span></span><span class="chip"><b>Human Singularity</b> <span class="sd">workforce skills</span></span><span class="chip"><b>Dellstar VR</b> <span class="sd">VR workforce training</span></span></div></div></div>
       <div class="sector-row"><div class="sector-count">4</div><div class="sector-name">Dual-Use Tech (military and industrial purposes)</div><div class="sector-cell"><div class="sector-impact">Technology that defends American critical infrastructure and military systems while serving commercial and industrial markets.</div><div class="chips"><span class="chip"><b>Covert Defenses</b> <span class="star">★</span> <span class="sd">nuclear/critical-infra cyber (DHS)</span></span><span class="chip"><b>Wolfberry</b> <span class="sd">IoT cybersecurity</span></span><span class="chip"><b>XPHERA</b> <span class="star">★</span> <span class="sd">GPS-denied positioning</span></span><span class="chip"><b>Zernike Precision Optics</b> <span class="sd">defense/semi lenses</span></span></div></div></div>
       <div class="sector-row"><div class="sector-count">4</div><div class="sector-name">Supply Chain, Logistics &amp; Transportation</div><div class="sector-cell"><div class="sector-impact">Keeping American freight, roads, ports, and product returns moving safely and onshore.</div><div class="chips"><span class="chip"><b>Motoring Labs</b> <span class="sd">automated truck inspection</span></span><span class="chip"><b>PaveX</b> <span class="star">★</span> <span class="sd">AI road inspection</span></span><span class="chip"><b>OVUE</b> <span class="sd">maritime crew-safety</span></span><span class="chip"><b>rScan</b> <span class="star">★</span> <span class="sd">reverse logistics infrastructure for consumer goods</span></span></div></div></div>
       <div class="sector-row"><div class="sector-count">4</div><div class="sector-name">Energy &amp; Grid Resilience</div><div class="sector-cell"><div class="sector-impact">Strengthening domestic energy storage, nuclear power, and a dependable American grid.</div><div class="chips"><span class="chip"><b>Voltest</b> <span class="sd">EV battery diagnostics</span></span><span class="chip"><b>Novac</b> <span class="star">★</span> <span class="sd">solid-state supercapacitors</span></span><span class="chip"><b>Animo Technologies</b> <span class="sd">nuclear micro-batteries</span></span><span class="chip"><b>Diamond Power</b> <span class="sd">multi-fuel generators</span></span></div></div></div>
