@@ -1,0 +1,9 @@
+.git
+.git/**
+.gitignore
+.wrangler
+.wrangler/**
+wrangler.toml
+.assetsignore
+netlify.toml
+DEPLOY-README.md

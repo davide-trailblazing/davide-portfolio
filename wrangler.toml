@@ -1,0 +1,7 @@
+name = "davide-portfolio"
+compatibility_date = "2025-05-01"
+
+# Static-assets Worker for Davide's public portfolio. PUBLIC + INDEXABLE
+# (no noindex meta, no X-Robots-Tag, no robots.txt Disallow) so Google can list it.
+[assets]
+directory = "."
