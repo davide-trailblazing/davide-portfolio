@@ -2,4 +2,4 @@
 
 **🌐 Live website (Cloudflare Worker):** https://davide-portfolio.davide-trailblazing.workers.dev/
 
-Auto-deploys to Cloudflare on every push to `main` (see .github/workflows/deploy.yml).
+Deployed to Cloudflare with `npx wrangler deploy` (static-assets Worker; see `wrangler.toml`).
