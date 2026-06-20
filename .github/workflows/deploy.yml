@@ -1,0 +1,21 @@
+name: Deploy to Cloudflare Workers
+
+# Publishes the static-assets Worker (gbeta-mentor-benches) whenever main
+# changes, so the live site reflects updates like the Current Investors tab.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy with Wrangler
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
