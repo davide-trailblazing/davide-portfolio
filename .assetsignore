@@ -5,5 +5,4 @@
 .wrangler/**
 wrangler.toml
 .assetsignore
-netlify.toml
 DEPLOY-README.md
