@@ -1,7 +1,12 @@
 name = "davide-portfolio"
 compatibility_date = "2025-05-01"
+main = "worker.js"
 
-# Static-assets Worker for Davide's public portfolio. PUBLIC + INDEXABLE
-# (no noindex meta, no X-Robots-Tag, no robots.txt Disallow) so Google can list it.
+# Static-assets Worker for Davide's public portfolio. PUBLIC + INDEXABLE.
+# Now also serves an /api/ai route backed by Cloudflare Workers AI (no external key).
 [assets]
 directory = "."
+binding = "ASSETS"
+
+[ai]
+binding = "AI"

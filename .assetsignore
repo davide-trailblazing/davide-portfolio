@@ -6,3 +6,6 @@
 wrangler.toml
 .assetsignore
 DEPLOY-README.md
+worker.js
+build.py
+node_modules
