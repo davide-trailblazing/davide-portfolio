@@ -231,6 +231,10 @@
   .method-stage { font-size: 10px; color: var(--blue); font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; }
   .method-title { font-size: 13px; font-weight: 700; color: var(--navy); margin: 4px 0 6px; }
   .method-desc { font-size: 12px; color: var(--body); line-height: 1.45; }
+  .method-lead { font-size: 12px; font-weight: 700; color: var(--navy); margin: 0 0 7px; }
+  .method-list { margin: 6px 0 0; padding-left: 15px; }
+  .method-list li { font-size: 11.5px; color: var(--body); line-height: 1.5; margin: 2px 0; }
+  .method-list li.hi { font-weight: 700; }
 
   /* Sales foundations grid */
   .sales-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 6px; }
@@ -671,18 +675,57 @@
     <div class="container">
       <div class="section-title">My coaching method, across the venture lifecycle</div>
       <p style="font-size:12.5px;line-height:1.55;color:#3a3a3a;margin:4px 0 12px;">The method delivers strategic support to each founder by building the venture's growth roadmap across the investment lifecycle and planning milestone-based fundraising rounds that prove the return on investment that venture capitalists look for, and it guides each startup through the critical maturity phases: customer discovery to achieve problem-solution fit (Customer Persona), sales discovery to map the buying decision (Customer Buying Decision), repeatable go-to-market actions to validate product-market fit (Customer Journey), and scaling a proven business model and its underlying infrastructure (Customer Economics). At every step I connect founders, through a warm first introduction, to the industry leaders, venture experts, institutional partners, customers, and investors they need to grow.</p>
-      <div class="coach-strip">
-        <div class="coach-step"><div class="cs-h"><span class="coach-n">1</span>Problem-Solution Fit</div><div class="cs-d">Customer discovery, "don't sell, just ask."</div></div>
-        <div class="coach-step"><div class="cs-h"><span class="coach-n">2</span>Product-Market Fit</div><div class="cs-d">Business model, OKRs, cash-flow management.</div></div>
-        <div class="coach-step"><div class="cs-h"><span class="coach-n">3</span>Go-to-Market</div><div class="cs-d">Pipeline systems, repeatable demand-supply.</div></div>
-        <div class="coach-step"><div class="cs-h"><span class="coach-n">4</span>Fundraising</div><div class="cs-d">Milestones, comparables, ROI storytelling.</div></div>
-      </div>
-      <div class="sub-title">What each stage covers</div>
       <div class="method-row">
-        <div class="method-box"><div class="method-stage"><span class="coach-n">1</span> Customer Persona</div><div class="method-title">Problem-Solution Fit</div><div class="method-desc">Customer-discovery interviews, Mom Test framing, Pain Funnel, early-adopter ID, riskiest-assumption testing, problem-solution canvas.</div></div>
-        <div class="method-box"><div class="method-stage"><span class="coach-n">2</span> Customer Buying Decision</div><div class="method-title">Product-Market Fit</div><div class="method-desc">Learn-Build-Measure loops, minimum-viable-product iteration, willingness-to-pay tests, retention/expansion signals, quarterly objectives tied to a single North-Star metric.</div></div>
-        <div class="method-box"><div class="method-stage"><span class="coach-n">3</span> Customer Journey</div><div class="method-title">Go-to-Market Scaling</div><div class="method-desc">Ideal-customer-profile and persona definition, pipeline construction, structured sales-qualification methods (MEDDPIC, SPIN), return-on-investment calculators, demand staging, customer-journey mapping.</div></div>
-        <div class="method-box"><div class="method-stage"><span class="coach-n">4</span> Customer Economics</div><div class="method-title">Fundraising</div><div class="method-desc">Comparables, milestones-to-funds plans, dilutive vs. non-dilutive (federal/state incentive/strategic), data room &amp; investor storytelling.</div></div>
+        <div class="method-box" style="border-top:3px solid #2E5A9E">
+          <div class="method-stage" style="color:#2E5A9E"><span class="coach-n" style="background:#2E5A9E">1</span> Customer Persona</div>
+          <div class="method-title">Problem-Solution Fit</div>
+          <div class="method-lead">Customer discovery, "don't sell, just ask."</div>
+          <ul class="method-list">
+            <li class="hi" style="color:#2E5A9E">Riskiest-assumption testing</li>
+            <li>Customer-discovery interviews</li>
+            <li>Mom Test framing</li>
+            <li>Pain Funnel</li>
+            <li>Early-adopter ID</li>
+            <li>Problem-solution canvas</li>
+          </ul>
+        </div>
+        <div class="method-box" style="border-top:3px solid #2F8F5B">
+          <div class="method-stage" style="color:#2F8F5B"><span class="coach-n" style="background:#2F8F5B">2</span> Customer Buying Decision</div>
+          <div class="method-title">Product-Market Fit</div>
+          <div class="method-lead">Business model, OKRs, cash-flow management.</div>
+          <ul class="method-list">
+            <li class="hi" style="color:#2F8F5B">Willingness-to-pay tests</li>
+            <li>Retention/expansion signals</li>
+            <li>Quarterly objectives tied to a single North-Star metric</li>
+            <li>Learn-Build-Measure loops</li>
+            <li>Minimum-viable-product iteration</li>
+          </ul>
+        </div>
+        <div class="method-box" style="border-top:3px solid #C77F2E">
+          <div class="method-stage" style="color:#C77F2E"><span class="coach-n" style="background:#C77F2E">3</span> Customer Journey</div>
+          <div class="method-title">Go-to-Market Scaling</div>
+          <div class="method-lead">Pipeline systems, repeatable demand-supply.</div>
+          <ul class="method-list">
+            <li class="hi" style="color:#C77F2E">Pipeline construction</li>
+            <li>Structured sales-qualification methods (MEDDPIC, SPIN)</li>
+            <li>Return-on-investment calculators</li>
+            <li>Ideal-customer-profile and persona definition</li>
+            <li>Demand staging</li>
+            <li>Customer-journey mapping</li>
+          </ul>
+        </div>
+        <div class="method-box" style="border-top:3px solid #6B4EA3">
+          <div class="method-stage" style="color:#6B4EA3"><span class="coach-n" style="background:#6B4EA3">4</span> Customer Economics</div>
+          <div class="method-title">Fundraising</div>
+          <div class="method-lead">Milestones, comparables, ROI storytelling.</div>
+          <ul class="method-list">
+            <li class="hi" style="color:#6B4EA3">Milestones-to-funds plans</li>
+            <li>Dilutive vs. non-dilutive (federal/state incentive/strategic)</li>
+            <li>Investor storytelling</li>
+            <li>Comparables</li>
+            <li>Data room</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
