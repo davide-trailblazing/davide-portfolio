@@ -2,6 +2,33 @@ const FACTS = "Davide Dantonio \u00b7 Director of Accelerator Programs \u00b7 Po
 const MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 const SYS = "You are the assistant on Davide Dantonio's professional portfolio page. Answer ONLY using the facts below, which are taken from this page. If the answer is not in the facts, say: \"That's not covered on this page.\" Never invent numbers, names, dates, or claims. Be concise: 2 to 4 sentences, plain and factual.\n\nFACTS:\n" + FACTS;
 
+// Tries the free Gemini API first (better quality than Workers AI, and a
+// separate daily free quota). Throws if GEMINI_API_KEY is not set or the call
+// fails, so the caller falls back to the Workers AI path below.
+async function callGemini(env, system, user, maxTokens) {
+  const key = env.GEMINI_API_KEY;
+  if (!key) throw new Error("gemini-no-key");
+  const model = env.GEMINI_MODEL || "gemini-2.5-flash";
+  const res = await fetch(
+    "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent?key=" + key,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: system }] },
+        contents: [{ role: "user", parts: [{ text: user }] }],
+        generationConfig: { temperature: 0.2, maxOutputTokens: maxTokens || 400 }
+      })
+    }
+  );
+  if (!res.ok) throw new Error("gemini-http-" + res.status);
+  const data = await res.json();
+  const parts = data && data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts;
+  const text = Array.isArray(parts) ? parts.map(p => (p && p.text) || "").join("") : "";
+  if (!text.trim()) throw new Error("gemini-empty");
+  return text.trim();
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -10,6 +37,14 @@ export default {
         const body = await request.json();
         const question = (body && body.question ? String(body.question) : '').slice(0, 600);
         if (!question.trim()) return Response.json({ error: "Ask a question." }, { status: 400 });
+
+        try {
+          const answer = await callGemini(env, SYS, question, 400);
+          return Response.json({ answer });
+        } catch (e) {
+          // Gemini not configured or unavailable, fall back to Workers AI.
+        }
+
         const out = await env.AI.run(MODEL, {
           messages: [
             { role: "system", content: SYS },
