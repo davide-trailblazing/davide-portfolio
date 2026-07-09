@@ -3,12 +3,7 @@ compatibility_date = "2025-05-01"
 main = "worker.js"
 
 # Static-assets Worker for Davide's public portfolio. PUBLIC + INDEXABLE.
-# Serves an /api/ai route, tries the free Gemini API first (GEMINI_API_KEY secret,
-# set with `npx wrangler secret put GEMINI_API_KEY --name davide-portfolio`),
-# falls back to Cloudflare Workers AI if that secret isn't set.
+# No AI chat feature on this one by Davide's choice (removed 2026-07-08).
 [assets]
 directory = "."
 binding = "ASSETS"
-
-[ai]
-binding = "AI"
