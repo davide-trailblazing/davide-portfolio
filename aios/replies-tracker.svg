@@ -1,0 +1,19 @@
+<svg viewBox="0 0 1200 730" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+  <rect width="1200" height="730" rx="18" fill="#141B3C"/>
+  <rect x="330" y="230" width="540" height="270" rx="18" fill="#FFFFFF"/>
+  <text x="366" y="284" fill="#1E2761" font-size="27" font-weight="700">gBETA Industry 4.0 — Swarm Tracker</text>
+  <text x="366" y="314" fill="#6B6A64" font-size="16">Final meetups stakeholder + slot tracker.</text>
+  <text x="366" y="336" fill="#6B6A64" font-size="16">Sign in to continue.</text>
+
+  <text x="366" y="376" fill="#2C2C2A" font-size="15" font-weight="700">Password</text>
+  <rect x="366" y="388" width="470" height="46" rx="8" fill="#FFFFFF" stroke="#D8D6CE"/>
+  <rect x="770" y="398" width="52" height="26" rx="6" fill="#F0EFE9"/>
+  <text x="782" y="416" fill="#2C2C2A" font-size="13" font-weight="700">Show</text>
+
+  <rect x="366" y="450" width="470" height="48" rx="8" fill="#1E2761"/>
+  <text x="560" y="480" fill="#FFFFFF" font-size="17" font-weight="700" text-anchor="middle">Sign in</text>
+
+  <text x="600" y="570" fill="#8A93C4" font-size="16" text-anchor="middle">Gated behind the shared gener8tor password.</text>
+  <text x="600" y="596" fill="#8A93C4" font-size="16" text-anchor="middle">Tracks slot and station load, the "too busy" rule,</text>
+  <text x="600" y="622" fill="#8A93C4" font-size="16" text-anchor="middle">and open investor reply decisions with Gmail draft links.</text>
+</svg>

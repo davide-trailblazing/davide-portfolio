@@ -1,0 +1,82 @@
+<svg viewBox="0 0 1200 730" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+  <defs>
+    <path id="hp" d="M12 21 C12 21 4 13.5 4 8.5 C4 5.9 6 4 8.3 4 C9.8 4 11.1 4.8 12 6 C12.9 4.8 14.2 4 15.7 4 C18 4 20 5.9 20 8.5 C20 13.5 12 21 12 21 Z"/>
+    <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#C89B3C"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="730" rx="18" fill="#F8F7F4"/>
+  <text x="52" y="52" fill="#C89B3C" font-size="23" font-weight="700" letter-spacing="1.5">ISOLATED DATABASES — NEVER DOUBLE-ASK</text>
+  <text x="52" y="104" fill="#1E2761" font-size="38" font-weight="700">One base per job. Two tabs each.</text>
+
+  <!-- window -->
+  <rect x="50" y="150" width="1100" height="430" rx="16" fill="#FFFFFF" stroke="#E2E0D8" stroke-width="2"/>
+  <path d="M50 166 a16 16 0 0 1 16 -16 h1068 a16 16 0 0 1 16 16 v36 h-1100 z" fill="#1E2761"/>
+  <text x="82" y="190" fill="#FFFFFF" font-size="21" font-weight="700">🗄 Investor / Showcase base — isolated</text>
+
+  <!-- Tab 1 -->
+  <rect x="80" y="224" width="510" height="44" rx="10" fill="#1E2761"/>
+  <text x="104" y="252" fill="#FFFFFF" font-size="19" font-weight="700">Tab 1 · Reach-out list (all past events)</text>
+
+  <!-- Tab 1 rows -->
+  <g font-size="20">
+    <!-- row1 hearted/dropped -->
+    <rect x="80" y="284" width="510" height="48" rx="9" fill="#FBF3F4" stroke="#F0D2D6"/>
+    <text x="106" y="314" fill="#9AA0B5" font-weight="600" text-decoration="line-through">A venture fund</text>
+    <line x1="106" y1="309" x2="300" y2="309" stroke="#B9A0A4" stroke-width="2"/>
+    <use href="#hp" x="0" y="0" transform="translate(500,296) scale(1.0)" fill="#D64550"/>
+    <text x="330" y="313" fill="#B06A72" font-size="14" font-weight="600">dropped</text>
+    <!-- row2 to contact -->
+    <rect x="80" y="342" width="510" height="48" rx="9" fill="#F7F7F4" stroke="#E2E0D8"/>
+    <text x="106" y="372" fill="#2C2C2A" font-weight="600">A regional bank</text>
+    <circle cx="512" cy="366" r="6" fill="#C89B3C"/>
+    <text x="330" y="371" fill="#8A8A84" font-size="14" font-weight="600">still to reach out</text>
+    <!-- row3 hearted/dropped -->
+    <rect x="80" y="400" width="510" height="48" rx="9" fill="#FBF3F4" stroke="#F0D2D6"/>
+    <text x="106" y="430" fill="#9AA0B5" font-weight="600" text-decoration="line-through">A state agency</text>
+    <line x1="106" y1="425" x2="176" y2="425" stroke="#B9A0A4" stroke-width="2"/>
+    <use href="#hp" x="0" y="0" transform="translate(500,412) scale(1.0)" fill="#D64550"/>
+    <text x="330" y="429" fill="#B06A72" font-size="14" font-weight="600">dropped</text>
+    <!-- row4 to contact -->
+    <rect x="80" y="458" width="510" height="48" rx="9" fill="#F7F7F4" stroke="#E2E0D8"/>
+    <text x="106" y="488" fill="#2C2C2A" font-weight="600">Another fund</text>
+    <circle cx="512" cy="482" r="6" fill="#C89B3C"/>
+    <text x="330" y="487" fill="#8A8A84" font-size="14" font-weight="600">still to reach out</text>
+  </g>
+
+  <!-- Tab 2 -->
+  <rect x="656" y="224" width="454" height="44" rx="10" fill="#FAF3E4" stroke="#E7D5A8"/>
+  <text x="680" y="252" fill="#8A6B1E" font-size="19" font-weight="700">Tab 2 · Live registrants</text>
+  <g font-size="20">
+    <rect x="656" y="284" width="454" height="48" rx="9" fill="#EAF6EE" stroke="#BFE3CB"/>
+    <text x="712" y="314" fill="#1E2761" font-weight="600">A venture fund</text>
+    <path d="M676 308 l7 7 l13 -15" fill="none" stroke="#2E6B45" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="905" y="313" fill="#2E6B45" font-size="14" font-weight="700">just registered</text>
+    <rect x="656" y="342" width="454" height="48" rx="9" fill="#EAF6EE" stroke="#BFE3CB"/>
+    <text x="712" y="372" fill="#1E2761" font-weight="600">A state agency</text>
+    <path d="M676 366 l7 7 l13 -15" fill="none" stroke="#2E6B45" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="905" y="371" fill="#2E6B45" font-size="14" font-weight="700">just registered</text>
+  </g>
+
+  <!-- routine arrows: registrant -> hearted -> dropped from reach-out -->
+  <path d="M654 308 H600" fill="none" stroke="#C89B3C" stroke-width="2.6" marker-end="url(#arw)"/>
+  <path d="M654 366 C624 366 612 424 596 424" fill="none" stroke="#C89B3C" stroke-width="2.6" marker-end="url(#arw)"/>
+  <text x="623" y="470" fill="#8A6B1E" font-size="15" font-weight="700" text-anchor="middle">registers</text>
+  <text x="623" y="490" fill="#8A6B1E" font-size="15" font-weight="700" text-anchor="middle">→ auto</text>
+  <use href="#hp" x="0" y="0" transform="translate(654,476) scale(0.8)" fill="#D64550"/>
+  <text x="623" y="524" fill="#8A6B1E" font-size="15" font-weight="700" text-anchor="middle">→ dropped</text>
+
+  <!-- benefit banner -->
+  <rect x="50" y="600" width="1100" height="56" rx="12" fill="#EAF6EE"/>
+  <path d="M78 626 l9 9 l17 -19" fill="none" stroke="#2E6B45" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="120" y="635" fill="#1F5A38" font-size="21" font-weight="700">Outreach only reaches people who have NOT signed up yet — never double-asked.</text>
+
+  <!-- isolated bases chips -->
+  <text x="52" y="700" fill="#6B6A64" font-size="15" font-weight="700">3 isolated bases:</text>
+  <g font-size="14" font-weight="600" fill="#3A4A9E">
+    <rect x="196" y="683" width="238" height="28" rx="7" fill="#E8EAF6"/><text x="212" y="702">Showcase attendees</text>
+    <rect x="446" y="683" width="245" height="28" rx="7" fill="#E8EAF6"/><text x="462" y="702">Showcase reach-out</text>
+    <rect x="703" y="683" width="228" height="28" rx="7" fill="#E8EAF6"/><text x="719" y="702">Investor reach-out</text>
+  </g>
+</svg>

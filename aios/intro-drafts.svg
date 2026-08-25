@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1200 730" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+  <rect width="1200" height="730" rx="18" fill="#F8F7F4"/>
+  <text x="52" y="52" fill="#C89B3C" font-size="23" font-weight="700" letter-spacing="1.5">WARM INTRODUCTIONS — WRITTEN AND WAITING</text>
+  <text x="52" y="104" fill="#1E2761" font-size="38" font-weight="700">The introduction is already drafted.</text>
+
+  <rect x="50" y="150" width="1100" height="386" rx="16" fill="#FFFFFF" stroke="#DDD9CF" stroke-width="2"/>
+  <rect x="50" y="150" width="1100" height="58" rx="16" fill="#EFEDE7"/>
+  <rect x="50" y="190" width="1100" height="18" fill="#EFEDE7"/>
+  <circle cx="86" cy="179" r="9" fill="#C9C4B8"/><circle cx="116" cy="179" r="9" fill="#C9C4B8"/><circle cx="146" cy="179" r="9" fill="#C9C4B8"/>
+  <text x="186" y="187" fill="#6B6A64" font-size="18" font-weight="700">Draft · not sent</text>
+
+  <text x="86" y="256" fill="#6B6A64" font-size="17">To</text>
+  <text x="150" y="256" fill="#1E2761" font-size="19" font-weight="700">A mentor on the bench</text>
+  <line x1="86" y1="276" x2="1114" y2="276" stroke="#EFEDE7" stroke-width="2"/>
+  <text x="86" y="312" fill="#6B6A64" font-size="17">Subject</text>
+  <text x="180" y="312" fill="#1E2761" font-size="19" font-weight="700">Introducing one of my founders</text>
+  <line x1="86" y1="332" x2="1114" y2="332" stroke="#EFEDE7" stroke-width="2"/>
+
+  <g fill="#E4E1D8">
+    <rect x="86" y="364" width="900" height="17" rx="8"/>
+    <rect x="86" y="396" width="1028" height="17" rx="8"/>
+    <rect x="86" y="428" width="820" height="17" rx="8"/>
+  </g>
+  <rect x="86" y="466" width="360" height="17" rx="8" fill="#F0E3C4"/>
+  <text x="466" y="481" fill="#9A7526" font-size="17" font-weight="700">what the founder needs, in their words</text>
+
+  <rect x="820" y="556" width="164" height="60" rx="12" fill="#FFFFFF" stroke="#B0AAA0" stroke-width="3"/>
+  <text x="858" y="594" fill="#6B6A64" font-size="21" font-weight="700">Edit</text>
+  <rect x="1000" y="556" width="150" height="60" rx="12" fill="#2E7D5B"/>
+  <text x="1032" y="594" fill="#FFFFFF" font-size="21" font-weight="700">Send</text>
+  <text x="50" y="594" fill="#1E2761" font-size="23" font-weight="700">Matched to the founder and the person.</text>
+
+  <rect x="50" y="648" width="1100" height="60" rx="12" fill="#1E2761"/>
+  <text x="80" y="686" fill="#FFFFFF" font-size="21" font-weight="700">It drafts only. I read every one and I press send myself.</text>
+</svg>

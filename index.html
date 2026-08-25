@@ -374,6 +374,75 @@
 
   .secid { display:inline-block; background:#F59E0B; color:#111; font:700 10px/1 Arial,sans-serif; padding:3px 7px; border-radius:9px; margin-right:7px; vertical-align:middle; letter-spacing:.04em; }
 
+
+  /* ---- The AI Operating System ---- */
+  .aios-intro { font-size:12.5px; line-height:1.55; color:#3a3a3a; margin:4px 0 14px; }
+  .aios-lenses { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px; }
+  .aios-lens {
+    font-family:inherit; font-size:12.5px; font-weight:700; cursor:pointer;
+    background:#fff; color:var(--navy); border:1.5px solid var(--border);
+    border-radius:999px; padding:8px 15px; line-height:1.2; transition:none;
+  }
+  .aios-lens:hover { border-color:var(--navy); }
+  .aios-lens[aria-selected="true"] { background:var(--navy); border-color:var(--navy); color:#fff; }
+  .aios-lens .aios-n { font-weight:800; opacity:.75; margin-left:5px; }
+  .aios-lenshint { font-size:12px; color:var(--light-gray); margin:0 0 14px; min-height:1.3em; }
+  .aios-spot { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:18px; }
+  .aios-card {
+    border:1px solid var(--border); border-radius:8px; background:#fff;
+    padding:12px; display:flex; flex-direction:column; min-width:0;
+  }
+  .aios-shotwrap { border:1.5px solid #000; border-radius:4px; overflow:hidden; margin-bottom:10px; background:#f4f7fb; }
+  .aios-shotwrap img { display:block; width:100%; height:132px; object-fit:cover; object-position:top center; }
+  .aios-tag {
+    display:inline-block; align-self:flex-start; font-size:9.5px; font-weight:800; letter-spacing:.06em;
+    text-transform:uppercase; padding:3px 8px; border-radius:999px; margin-bottom:7px;
+  }
+  .aios-tag.founders { background:#E7F0FB; color:#1F4C8C; }
+  .aios-tag.back     { background:#F1EEE4; color:#7A5C12; }
+  .aios-tag.front    { background:#E7F3EC; color:#1B6B47; }
+  .aios-card-t { font-size:13.5px; font-weight:800; color:var(--navy); line-height:1.3; margin-bottom:6px; }
+  .aios-card-d { font-size:12px; line-height:1.5; color:#3a3a3a; flex:1; }
+  .aios-card-l { font-size:11.5px; margin-top:9px; word-break:break-word; }
+  .aios-card-l a { color:var(--blue); font-weight:700; text-decoration:none; }
+  .aios-card-l a:hover { text-decoration:underline; }
+  .aios-card-l .aios-nolink { color:var(--light-gray); font-weight:700; }
+  .aios-restlabel {
+    font-size:11px; font-weight:800; letter-spacing:.9px; text-transform:uppercase;
+    color:var(--light-gray); margin:0 0 7px; padding-top:12px; border-top:1px solid var(--border);
+  }
+  .aios-rest { display:flex; flex-direction:column; }
+  .aios-row {
+    display:flex; align-items:baseline; gap:10px; padding:8px 2px;
+    border-bottom:1px solid #edf1f7; font-size:12.5px; min-width:0;
+  }
+  .aios-row:last-child { border-bottom:none; }
+  .aios-row-e { flex:none; font-size:13px; }
+  .aios-row-t { flex:1; min-width:0; color:var(--navy); font-weight:700; }
+  .aios-row-t span { display:block; font-weight:400; color:#4a5568; font-size:11.5px; line-height:1.45; margin-top:2px; }
+  .aios-row-a { flex:none; font-size:11.5px; font-weight:700; color:var(--blue); text-decoration:none; white-space:nowrap; }
+  .aios-row-a:hover { text-decoration:underline; }
+  .aios-row-a.off { color:var(--light-gray); }
+  .aios-lock {
+    display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+    border:1.5px dashed #7A5C12; background:#FBF3DC; border-radius:8px;
+    padding:13px 15px; margin-top:16px;
+  }
+  .aios-lock-b { flex:1; min-width:230px; }
+  .aios-lock-t { font-size:13px; font-weight:800; color:#5E4708; margin-bottom:4px; }
+  .aios-lock-d { font-size:12px; line-height:1.5; color:#6E5A26; }
+  .aios-lock-a {
+    flex:none; font-size:12px; font-weight:800; text-decoration:none;
+    background:#7A5C12; color:#fff; padding:9px 15px; border-radius:6px; white-space:nowrap;
+  }
+  .aios-lock-a:hover { background:#5E4708; }
+  @media (max-width:760px) {
+    .aios-spot { grid-template-columns:1fr; }
+    .aios-shotwrap img { height:150px; }
+    .aios-row { flex-wrap:wrap; }
+  }
+  @media print { .aios-lenses { display:none; } }
+
   /* Print */
   @media print {
     .version-badge, .dl-infographic, .tabbar-wrap { display: none !important; }
@@ -472,6 +541,10 @@
         <a class="tab-btn" href="#blk-coaching">
           Coaching Method
           <span class="tab-sub">How the program works</span>
+        </a>
+        <a class="tab-btn" href="#blk-aios">
+          AI Operating System
+          <span class="tab-sub">15 tools I built and run</span>
         </a>
         <a class="tab-btn" href="#blk-network">
           Network
@@ -698,6 +771,42 @@
         </div>
       </div>
     </div>
+  </section>
+
+
+  <!-- BLOCK: The AI Operating System (15 tools, 4 lenses) -->
+  <section class="block" id="blk-aios">
+    <div class="container">
+      <div class="section-title">The AI Operating System &middot; 15 tools I built to run the programmes</div>
+      <p class="aios-intro">The outcomes above came out of a system, not out of luck. These are the fifteen things I built and run: what a founder opens themselves, the machinery only I touch, and what a mentor, an investor or the sponsor sees. Most of them are live and you can open them right now.</p>
+      <div class="aios-lenses" role="tablist" aria-label="Choose a lens"><button type="button" class="aios-lens" role="tab" aria-selected="true" data-lens="all" data-hint="Everything I built to run a programme">All<span class="aios-n">15</span></button><button type="button" class="aios-lens" role="tab" aria-selected="false" data-lens="founders" data-hint="What a founder opens themselves">For founders<span class="aios-n">6</span></button><button type="button" class="aios-lens" role="tab" aria-selected="false" data-lens="back" data-hint="The machinery only I run">Programme back end<span class="aios-n">5</span></button><button type="button" class="aios-lens" role="tab" aria-selected="false" data-lens="front" data-hint="What mentors, investors and the sponsor see">Programme front end<span class="aios-n">4</span></button></div>
+      <p class="aios-lenshint">Everything I built to run a programme</p>
+      <div class="aios-panel" data-panel="all"><div class="aios-spot"><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/mentor-bench.png" alt="A bench of 1,661 mentors and investors that updates itself" loading="lazy"></div><span class="aios-tag front">Programme front end</span><div class="aios-card-t">🤝 A bench of 1,661 mentors and investors that updates itself</div><div class="aios-card-d">1,042 mentors and 619 investors, refreshed from my calendar within the hour, with an AI that answers who a founder should meet.</div><div class="aios-card-l"><a href="https://mentor-investors-1st-degree.davide-trailblazing.workers.dev" target="_blank" rel="noopener">mentor-investors-1st-degree.davide-trailblazing.workers.dev &rarr;</a></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/founder-led.png" alt="A founder&#x27;s whole growth plan in one place" loading="lazy"></div><span class="aios-tag founders">For founders</span><div class="aios-card-t">🌱 A founder&#x27;s whole growth plan in one place</div><div class="aios-card-d">Goals, sales plan and live deals on one link, with an AI that writes the first version of their goals so a 1:1 never starts from a blank page.</div><div class="aios-card-l"><a href="https://founder-led-tractions.davide-trailblazing.workers.dev" target="_blank" rel="noopener">founder-led-tractions.davide-trailblazing.workers.dev &rarr;</a></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/cohort-report.png" alt="A cohort progress report for the sponsor, week by week" loading="lazy"></div><span class="aios-tag front">Programme front end</span><div class="aios-card-t">🗓️ A cohort progress report for the sponsor, week by week</div><div class="aios-card-d">The IEDC can open the programme any week and see where each founder stands, without asking me for an update.</div><div class="aios-card-l"><a href="https://gbeta-i4-cohort-report.davide-trailblazing.workers.dev" target="_blank" rel="noopener">gbeta-i4-cohort-report.davide-trailblazing.workers.dev &rarr;</a></div></div></div><div class="aios-restlabel">The other 12, one line each</div><div class="aios-rest"><div class="aios-row"><span class="aios-row-e">⏱️</span><span class="aios-row-t">One calm timer that runs the whole swarm night<span>Rotation, room and clock for every founder and mentor pair, on one screen the whole room follows.</span></span><a class="aios-row-a" href="https://mentor-swarm-scheduler.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🎯</span><span class="aios-row-t">Live OKRs, shared so mentors can prepare<span>Every founder keeps theirs current, so a mentor reads the whole picture in 60 seconds before a session starts.</span></span><a class="aios-row-a" href="https://docs.google.com/spreadsheets/d/1a0Dx3sNWGI0h_DBLlJPqoUC6PWsODUsUVyBs6vLa3EE/edit" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🧭</span><span class="aios-row-t">The blindspots and prioritisation map<span>One map, 25 minutes, run by every founder. It names the blindspot, ranks the actions by impact, and puts the first three moves on paper.</span></span><a class="aios-row-a" href="https://drive.google.com/file/d/1PG-KlEn_dZ0VZwbr8tP5Z--VWwgO2JP1/view" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">💰</span><span class="aios-row-t">Every fundraising template, one click, no login<span>The data room, the deck outline, the investor update, the pipeline. A founder takes what they need and starts the same day.</span></span><a class="aios-row-a" href="https://fundraising-for-founders.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🧩</span><span class="aios-row-t">An LLM.md a founder plugs into their own AI<span>One prompt guide, pasted into any AI, so the coaching keeps running after week seven with no tool to learn and nothing to set up.</span></span><a class="aios-row-a" href="https://docs.google.com/document/d/1c5szd3-7V_D5Pa7dLqX5P_TmfUyzg-4wMM2C3P8qfKI/edit" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">✅</span><span class="aios-row-t">The checklist that chases founders, so I do not have to<span>Every deadline visible, both in-person dates in the same view, and nobody has to be reminded twice.</span></span><a class="aios-row-a" href="https://program-deliverables.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🗺️</span><span class="aios-row-t">The whole kickoff on one page founders actually finish<span>What happens, when, and what they owe, in one place instead of a stack of separate documents.</span></span><a class="aios-row-a" href="https://program-overview.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🗂️</span><span class="aios-row-t">Databases that never re-ask someone who already signed up<span>One base per job, showcase attendees, showcase outreach, investor outreach. A routine hearts every new registrant and drops them off the chase list.</span></span><span class="aios-row-a off">Internal, no public link</span></div><div class="aios-row"><span class="aios-row-e">📬</span><span class="aios-row-t">The investor inbox, triaged before I open it<span>Every reply sorted each morning into who said yes, who wants a date, and who went quiet. It sorts, it never sends.</span></span><span class="aios-row-a off">Internal, sorts only</span></div><div class="aios-row"><span class="aios-row-e">✉️</span><span class="aios-row-t">Ready-to-forward introductions, drafted and waiting<span>The warm introduction already written and matched to the founder and the person. It drafts only, I read every one and press send myself.</span></span><span class="aios-row-a off">Internal, drafts only</span></div><div class="aios-row"><span class="aios-row-e">📌</span><span class="aios-row-t">Where every founder-picked investor stands, at a glance<span>Each investor a founder chose, and whether they replied, booked, or went quiet, in one view instead of five inboxes.</span></span><a class="aios-row-a" href="https://investor-wishlist-picks-tracker.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🧮</span><span class="aios-row-t">Slot capacity and replies, kept from overbooking a swarm<span>Every slot, who is in it, and how close it is to full, so no session ends up with more investors in the room than founders.</span></span><a class="aios-row-a" href="https://replies-tracker-2-allocate-slots.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div></div></div><div class="aios-panel" data-panel="founders" hidden><div class="aios-spot"><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/blindspots.png" alt="The blindspots and prioritisation map" loading="lazy"></div><span class="aios-tag founders">For founders</span><div class="aios-card-t">🧭 The blindspots and prioritisation map</div><div class="aios-card-d">One map, 25 minutes, run by every founder. It names the blindspot, ranks the actions by impact, and puts the first three moves on paper.</div><div class="aios-card-l"><a href="https://drive.google.com/file/d/1PG-KlEn_dZ0VZwbr8tP5Z--VWwgO2JP1/view" target="_blank" rel="noopener">PDF on Google Drive &rarr;</a></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/fundraising.png" alt="Every fundraising template, one click, no login" loading="lazy"></div><span class="aios-tag founders">For founders</span><div class="aios-card-t">💰 Every fundraising template, one click, no login</div><div class="aios-card-d">The data room, the deck outline, the investor update, the pipeline. A founder takes what they need and starts the same day.</div><div class="aios-card-l"><a href="https://fundraising-for-founders.davide-trailblazing.workers.dev" target="_blank" rel="noopener">fundraising-for-founders.davide-trailblazing.workers.dev &rarr;</a></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/llm-md.png" alt="An LLM.md a founder plugs into their own AI" loading="lazy"></div><span class="aios-tag founders">For founders</span><div class="aios-card-t">🧩 An LLM.md a founder plugs into their own AI</div><div class="aios-card-d">One prompt guide, pasted into any AI, so the coaching keeps running after week seven with no tool to learn and nothing to set up.</div><div class="aios-card-l"><a href="https://docs.google.com/document/d/1c5szd3-7V_D5Pa7dLqX5P_TmfUyzg-4wMM2C3P8qfKI/edit" target="_blank" rel="noopener">Google Doc &rarr;</a></div></div></div><div class="aios-restlabel">The other 3, one line each</div><div class="aios-rest"><div class="aios-row"><span class="aios-row-e">🌱</span><span class="aios-row-t">A founder&#x27;s whole growth plan in one place<span>Goals, sales plan and live deals on one link, with an AI that writes the first version of their goals so a 1:1 never starts from a blank page.</span></span><a class="aios-row-a" href="https://founder-led-tractions.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">✅</span><span class="aios-row-t">The checklist that chases founders, so I do not have to<span>Every deadline visible, both in-person dates in the same view, and nobody has to be reminded twice.</span></span><a class="aios-row-a" href="https://program-deliverables.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🗺️</span><span class="aios-row-t">The whole kickoff on one page founders actually finish<span>What happens, when, and what they owe, in one place instead of a stack of separate documents.</span></span><a class="aios-row-a" href="https://program-overview.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div></div></div><div class="aios-panel" data-panel="back" hidden><div class="aios-spot"><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/databases.svg" alt="Databases that never re-ask someone who already signed up" loading="lazy"></div><span class="aios-tag back">Programme back end</span><div class="aios-card-t">🗂️ Databases that never re-ask someone who already signed up</div><div class="aios-card-d">One base per job, showcase attendees, showcase outreach, investor outreach. A routine hearts every new registrant and drops them off the chase list.</div><div class="aios-card-l"><span class="aios-nolink">Internal, no public link</span></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/inbox-triage.svg" alt="The investor inbox, triaged before I open it" loading="lazy"></div><span class="aios-tag back">Programme back end</span><div class="aios-card-t">📬 The investor inbox, triaged before I open it</div><div class="aios-card-d">Every reply sorted each morning into who said yes, who wants a date, and who went quiet. It sorts, it never sends.</div><div class="aios-card-l"><span class="aios-nolink">Internal, sorts only</span></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/intro-drafts.svg" alt="Ready-to-forward introductions, drafted and waiting" loading="lazy"></div><span class="aios-tag back">Programme back end</span><div class="aios-card-t">✉️ Ready-to-forward introductions, drafted and waiting</div><div class="aios-card-d">The warm introduction already written and matched to the founder and the person. It drafts only, I read every one and press send myself.</div><div class="aios-card-l"><span class="aios-nolink">Internal, drafts only</span></div></div></div><div class="aios-restlabel">The other 2, one line each</div><div class="aios-rest"><div class="aios-row"><span class="aios-row-e">📌</span><span class="aios-row-t">Where every founder-picked investor stands, at a glance<span>Each investor a founder chose, and whether they replied, booked, or went quiet, in one view instead of five inboxes.</span></span><a class="aios-row-a" href="https://investor-wishlist-picks-tracker.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🧮</span><span class="aios-row-t">Slot capacity and replies, kept from overbooking a swarm<span>Every slot, who is in it, and how close it is to full, so no session ends up with more investors in the room than founders.</span></span><a class="aios-row-a" href="https://replies-tracker-2-allocate-slots.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div></div></div><div class="aios-panel" data-panel="front" hidden><div class="aios-spot"><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/swarm.png" alt="One calm timer that runs the whole swarm night" loading="lazy"></div><span class="aios-tag front">Programme front end</span><div class="aios-card-t">⏱️ One calm timer that runs the whole swarm night</div><div class="aios-card-d">Rotation, room and clock for every founder and mentor pair, on one screen the whole room follows.</div><div class="aios-card-l"><a href="https://mentor-swarm-scheduler.davide-trailblazing.workers.dev" target="_blank" rel="noopener">mentor-swarm-scheduler.davide-trailblazing.workers.dev &rarr;</a></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/okrs.png" alt="Live OKRs, shared so mentors can prepare" loading="lazy"></div><span class="aios-tag front">Programme front end</span><div class="aios-card-t">🎯 Live OKRs, shared so mentors can prepare</div><div class="aios-card-d">Every founder keeps theirs current, so a mentor reads the whole picture in 60 seconds before a session starts.</div><div class="aios-card-l"><a href="https://docs.google.com/spreadsheets/d/1a0Dx3sNWGI0h_DBLlJPqoUC6PWsODUsUVyBs6vLa3EE/edit" target="_blank" rel="noopener">Google Sheet and Slides &rarr;</a></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/mentor-bench.png" alt="A bench of 1,661 mentors and investors that updates itself" loading="lazy"></div><span class="aios-tag front">Programme front end</span><div class="aios-card-t">🤝 A bench of 1,661 mentors and investors that updates itself</div><div class="aios-card-d">1,042 mentors and 619 investors, refreshed from my calendar within the hour, with an AI that answers who a founder should meet.</div><div class="aios-card-l"><a href="https://mentor-investors-1st-degree.davide-trailblazing.workers.dev" target="_blank" rel="noopener">mentor-investors-1st-degree.davide-trailblazing.workers.dev &rarr;</a></div></div></div><div class="aios-restlabel">The other 1, one line each</div><div class="aios-rest"><div class="aios-row"><span class="aios-row-e">🗓️</span><span class="aios-row-t">A cohort progress report for the sponsor, week by week<span>The IEDC can open the programme any week and see where each founder stands, without asking me for an update.</span></span><a class="aios-row-a" href="https://gbeta-i4-cohort-report.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div></div></div>
+      <div class="aios-lock"><div class="aios-lock-b"><div class="aios-lock-t">&#128274; Alumni watchlist &middot; password</div><div class="aios-lock-d">Five companies from past cohorts I still keep track of, with their revenue, their fundraising, and what each one needs next. Private, because the numbers are theirs and not mine to publish.</div></div><a class="aios-lock-a" href="https://startup-watchlist.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open the watchlist &rarr;</a></div>
+    </div>
+  <script>
+(function(){
+  var root = document.getElementById('blk-aios');
+  if (!root) return;
+  var btns = root.querySelectorAll('.aios-lens');
+  var panels = root.querySelectorAll('.aios-panel');
+  var hint = root.querySelector('.aios-lenshint');
+  function pick(key){
+    for (var i=0;i<btns.length;i++){
+      var on = btns[i].getAttribute('data-lens') === key;
+      btns[i].setAttribute('aria-selected', on ? 'true' : 'false');
+      if (on && hint) hint.textContent = btns[i].getAttribute('data-hint');
+    }
+    for (var j=0;j<panels.length;j++){
+      panels[j].hidden = panels[j].getAttribute('data-panel') !== key;
+    }
+  }
+  for (var b=0;b<btns.length;b++){
+    btns[b].addEventListener('click', function(){ pick(this.getAttribute('data-lens')); });
+  }
+  pick('all');
+})();
+</script>
   </section>
 
   <!-- BLOCK: How the 7-week program runs (3-phase timeline) -->

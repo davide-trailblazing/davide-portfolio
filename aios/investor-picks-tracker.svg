@@ -1,0 +1,41 @@
+<svg viewBox="0 0 1200 730" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+  <rect width="1200" height="730" rx="18" fill="#F8F7F4"/>
+  <rect x="0" y="0" width="1200" height="56" rx="18" fill="#8A4A16"/>
+  <rect x="0" y="38" width="1200" height="18" fill="#8A4A16"/>
+  <text x="52" y="35" fill="#FFFFFF" font-size="17" font-weight="700" letter-spacing="1">INVESTOR PICKS TRACKER — GBETA INDUSTRY 4.0</text>
+
+  <text x="52" y="118" fill="#C89B3C" font-size="15" font-weight="700" letter-spacing="1.5">COMMUNICATION-STAGE SOURCE OF TRUTH</text>
+  <text x="52" y="168" fill="#1E2761" font-size="40" font-weight="700">39 investor outreach tracker</text>
+  <text x="52" y="202" fill="#6B6A64" font-size="18">One row per investor. Gmail shows stage, Calendar shows sign-ups.</text>
+
+  <rect x="50" y="234" width="1100" height="80" rx="12" fill="#FBEAF0" stroke="#F0D2D6"/>
+  <text x="78" y="266" fill="#8A3247" font-size="19" font-weight="700">Follow-up drafts are not sent emails</text>
+  <text x="78" y="294" fill="#8A3247" font-size="15">36 investors have a follow-up draft, but 0 have been sent. 28 threads have a duplicate.</text>
+
+  <g font-size="15" font-weight="700">
+    <rect x="50" y="336" width="130" height="120" rx="10" fill="#FFFFFF" stroke="#E2E0D8"/>
+    <text x="72" y="384" fill="#1D6B2E" font-size="34" font-weight="700">3</text>
+    <text x="72" y="410" fill="#6B6A64" font-size="14">Signed up</text>
+
+    <rect x="196" y="336" width="130" height="120" rx="10" fill="#FFFFFF" stroke="#E2E0D8"/>
+    <text x="218" y="384" fill="#8A6B1E" font-size="34" font-weight="700">26</text>
+    <text x="218" y="410" fill="#6B6A64" font-size="14">No answer</text>
+
+    <rect x="342" y="336" width="130" height="120" rx="10" fill="#FFFFFF" stroke="#E2E0D8"/>
+    <text x="364" y="384" fill="#A3231F" font-size="34" font-weight="700">4</text>
+    <text x="364" y="410" fill="#6B6A64" font-size="14">Not sent yet</text>
+
+    <rect x="488" y="336" width="130" height="120" rx="10" fill="#FFFFFF" stroke="#E2E0D8"/>
+    <text x="510" y="384" fill="#3A4A9E" font-size="34" font-weight="700">36</text>
+    <text x="510" y="410" fill="#6B6A64" font-size="14">Drafts ready</text>
+  </g>
+
+  <rect x="50" y="484" width="1100" height="190" rx="12" fill="#FFFFFF" stroke="#E2E0D8"/>
+  <text x="78" y="520" fill="#1E2761" font-size="19" font-weight="700">An investor</text>
+  <text x="78" y="544" fill="#6B6A64" font-size="15">their fund</text>
+  <rect x="78" y="558" width="90" height="26" rx="6" fill="#EAF6EE"/>
+  <text x="90" y="576" fill="#1D6B2E" font-size="13" font-weight="700">Signed up</text>
+  <rect x="78" y="600" width="200" height="26" rx="6" fill="#E8EAF6"/>
+  <text x="90" y="618" fill="#3A4A9E" font-size="13" font-weight="700">Open Gmail evidence</text>
+  <text x="78" y="656" fill="#6B6A64" font-size="14">...39 rows total, filterable by stage, searchable</text>
+</svg>
