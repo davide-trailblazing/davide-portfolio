@@ -22,6 +22,17 @@
   var MINQ = 2;                    // NN/g: the mean query is 2.0 words, so match early
   var MAXR = 40;
 
+  /* Every visible string, so an Italian page is Italian all the way through.
+     Override with t:{...} in the config; anything left out keeps the English. */
+  var T = {
+    label: 'Search', button: 'Search', start: 'Start here',
+    result: 'result', results: 'results',
+    placeholder: 'Search all N items',
+    zero: 'Nothing here matches',
+    hint: 'Try one word instead of three, or a word that would appear in the text itself.'
+  };
+  if (CFG.t) { for (var k in CFG.t) { if (CFG.t[k]) T[k] = CFG.t[k]; } }
+
   /* ---------------------------------------------------------- find records --- */
   /* A record is the smallest useful unit, never the whole page. Henikoff indexes
      the second of a video; on a one-page site that is the card or the point. */
@@ -289,19 +300,19 @@
 
     var bar = document.createElement('div');
     bar.className = 'ssbar';
-    var ph = CFG.label || ('Search all ' + records.length + ' items');
+    var ph = CFG.label || T.placeholder.replace('N', records.length);
     bar.innerHTML =
       '<form role="search" autocomplete="off">' +
-      '<label for="ss-q">🔎 Search</label>' +
+      '<label for="ss-q">🔎 ' + h(T.label) + '</label>' +
       '<input type="search" id="ss-q" name="q" spellcheck="false" placeholder="' + h(ph) + '">' +
-      '<button type="submit">Search</button></form>' +
+      '<button type="submit">' + h(T.button) + '</button></form>' +
       '<span class="sscount" id="ss-count" role="status" aria-live="polite"></span>';
 
     var starts = CFG.starts || [];
     if (starts.length) {
       var chips = document.createElement('div');
       chips.className = 'sschips';
-      chips.innerHTML = '<span class="sscount">Start here</span>' + starts.map(function (s) {
+      chips.innerHTML = '<span class="sscount">' + h(T.start) + '</span>' + starts.map(function (s) {
         return '<button class="sschip" type="button" data-q="' + h(s) + '">' + h(s) + '</button>';
       }).join('');
       bar.appendChild(chips);
@@ -340,12 +351,12 @@
       if (q.length < MINQ) { close(); count.textContent = ''; return; }
       var toks = q.toLowerCase().split(/\s+/).filter(Boolean);
       var hits = search(q);
-      count.textContent = hits.length + (hits.length === 1 ? ' result' : ' results');
+      count.textContent = hits.length + ' ' + (hits.length === 1 ? T.result : T.results);
 
       if (!hits.length) {
         /* NN/g no-results rules: say it plainly, keep the query, offer a way on. */
-        panel.innerHTML = '<div class="sszero"><b>Nothing here matches “' + h(q) + '”.</b>' +
-          'Try one word instead of three, or a word that would appear in the text itself.' +
+        panel.innerHTML = '<div class="sszero"><b>' + h(T.zero) + ' “' + h(q) + '”.</b>' +
+          h(T.hint) +
           chipRow() + '</div>';
         panel.hidden = false;
         return;
