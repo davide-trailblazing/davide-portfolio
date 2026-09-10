@@ -328,6 +328,27 @@
     if (mount) mount.insertBefore(bar, mount.firstChild);
     else document.body.insertBefore(bar, document.body.firstChild);
 
+    // Native section links need the same clearance as search-result links.
+    function reserveSearchHeight() {
+      document.documentElement.style.scrollPaddingTop = (bar.offsetHeight + 14) + 'px';
+    }
+    reserveSearchHeight();
+    new ResizeObserver(reserveSearchHeight).observe(bar);
+
+    function reveal(target) {
+      for (var parent = target; parent; parent = parent.parentElement) {
+        if (parent.tagName === 'DETAILS') parent.open = true;
+      }
+    }
+    function revealHash() {
+      var id;
+      try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+      var target = document.getElementById(id);
+      if (target) reveal(target);
+    }
+    revealHash();
+    window.addEventListener('hashchange', revealHash);
+
     var panel = document.createElement('div');
     panel.className = 'sspanel';
     panel.hidden = true;
@@ -377,6 +398,7 @@
       var t = document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
       if (!t) return;
       close();
+      reveal(t);
       /* Deliberately instant, and deliberately not scrollIntoView. Measured on a
          real page: scrollIntoView and behavior:"smooth" both silently do nothing
          when the site's own CSS sets scroll-behavior:smooth, and on a 29,000px

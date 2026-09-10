@@ -1,0 +1,264 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Project details · Davide Dantonio</title><style>
+  /* AI projects: readable context and full-resolution evidence. */
+  #blk-aios .container { max-width:1280px; }
+  .aios-kicker { color:var(--blue); font-size:14px; font-weight:700; margin:0 0 10px; }
+  .aios-heading { font:600 clamp(27px,4vw,38px)/1.15 Georgia,serif; color:var(--navy); margin:0 0 14px; max-width:900px; }
+  .aios-intro { font-size:16px; line-height:1.6; max-width:780px; margin:0 0 12px; }
+  .aios-note { color:#526078; font-size:13px; margin:0 0 28px; max-width:780px; }
+  .aios-project { display:grid; grid-template-columns:minmax(240px,.75fr) minmax(0,2.25fr); gap:36px; padding:36px 0; border-top:1px solid var(--border); align-items:start; break-inside:avoid; }
+  .aios-copy, .aios-project figure { min-width:0; }
+  .aios-for { font-size:12px; color:#526078; margin:0 0 7px; }
+  .aios-project h3 { color:var(--navy); font:600 25px/1.2 Georgia,serif; margin:0 0 20px; }
+  .aios-copy dl { display:grid; gap:15px; }
+  .aios-copy dl div { border-left:3px solid #a35032; padding-left:12px; }
+  .aios-copy dl .aios-solution { border-color:#277653; }
+  .aios-copy dt { font-size:12px; font-weight:750; color:#813b24; margin:0 0 3px; }
+  .aios-project .aios-solution dt { color:#216044; }
+  .aios-project dd { font-size:15px; line-height:1.6; }
+  .aios-access { font-size:12px; color:#526078; margin:20px 0 4px; }
+  .aios-source { font-size:14px; overflow-wrap:anywhere; }
+  .aios-source a { display:inline-flex; align-items:center; min-height:44px; font-weight:650; }
+  .aios-project figure { margin:0; }
+  .aios-shotwrap { display:block; border:1.5px solid #000; background:#fff; cursor:zoom-in; }
+  .aios-shotwrap img { display:block; width:100%; height:auto; }
+  .aios-shotwrap picture { display:block; }
+  .aios-project figcaption { margin-bottom:12px; line-height:1.4; }
+  .aios-project figcaption strong { display:block; font-size:19px; font-weight:600; color:var(--navy); }
+  .aios-image-actions { display:flex; justify-content:space-between; flex-wrap:wrap; gap:0 16px; margin-top:5px; }
+  .aios-evidence-link, .aios-enlarge { display:inline-flex; align-items:center; min-height:44px; font-size:14px; line-height:1.5; font-weight:650; }
+  .aios-image-note { font-size:12px; color:#526078; margin:2px 0 0; }
+  .aios-project--text { display:block; }
+  .aios-project--text .aios-copy { max-width:720px; }
+  .aios-unavailable { margin-top:12px; font-size:12px; color:#526078; }
+  #blk-aios a:hover { text-decoration-thickness:2px; }
+  #blk-aios a:focus-visible, #blk-aios summary:focus-visible { outline:3px solid #2E5A9E; outline-offset:4px; }
+  #blk-aios a:active { opacity:.8; }
+  .aios-cluster { border:1px solid var(--border); border-radius:8px; margin:12px 0; }
+  .aios-cluster summary { display:grid; grid-template-columns:minmax(0,1fr) auto 12px; align-items:center; gap:20px; cursor:pointer; padding:20px 24px; color:var(--navy); list-style:none; border-radius:8px; }
+  .aios-cluster summary::-webkit-details-marker { display:none; }
+  .aios-cluster summary::after { content:''; width:8px; height:8px; border:solid currentColor; border-width:0 2px 2px 0; transform:rotate(45deg); }
+  .aios-cluster[open] > summary::after { transform:rotate(225deg); }
+  .aios-cluster summary:hover, .aios-cluster[open] > summary { background:var(--bg-soft); }
+  .aios-cluster-text { display:grid; gap:4px; }
+  .aios-cluster-title { font-size:20px; font-weight:650; }
+  .aios-cluster-desc, .aios-cluster-count { font-size:14px; color:#526078; }
+  .aios-cluster-count { white-space:nowrap; }
+  .aios-cluster .aios-projects { padding:0 24px; }
+  .aios-cluster .aios-project:first-child { border-top:0; }
+  @media (max-width:1100px) { .aios-project { grid-template-columns:1fr; gap:18px; } .aios-copy dl { grid-template-columns:1fr 1fr; gap:24px; } .aios-project h3 { font-size:24px; } .aios-access { margin-top:12px; } }
+  @media (max-width:600px) { .aios-copy dl { grid-template-columns:1fr; gap:14px; } .aios-project figcaption strong { font-size:18px; } .aios-cluster summary { grid-template-columns:minmax(0,1fr) 12px; gap:8px 12px; padding:16px; } .aios-cluster-title { font-size:18px; } .aios-cluster-count { grid-row:2; } .aios-cluster summary::after { grid-column:2; grid-row:1 / 3; } .aios-cluster .aios-projects { padding:0 12px; } }
+  @media (max-width:600px) {
+    body .ssbar { padding:58px 16px 10px !important; }
+    body .ssbar .sschips { display:none; }
+  }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+  :root { --navy:#11315e; --blue:#2e5a9e; --border:#cbd5e0; --bg-soft:#f4f7fb; }
+  * { box-sizing:border-box; }
+  html { scroll-padding-top:90px; }
+  body { margin:0; color:#1a1a1a; background:#fff; font:15px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+  a { color:var(--blue); text-underline-offset:3px; }
+  a:focus-visible, summary:focus-visible { outline:3px solid #2e5a9e; outline-offset:4px; }
+  .container, #blk-aios .container { max-width:1080px; margin:auto; padding:0 24px; }
+  body .ssbar { padding:8px 16px !important; }
+  .skim-header { background:var(--navy); color:white; padding:24px 0 18px; }
+  .skim-header .container { display:grid; grid-template-columns:1fr auto; gap:8px 24px; align-items:center; }
+  .skim-header h1 { margin:0 0 4px; font:600 clamp(27px,4vw,34px)/1.2 Georgia,serif; }
+  .skim-header p { margin:4px 0; }
+  .skim-role { color:#cbd8ed; font-size:14px; }
+  .skim-header img { width:180px; height:112px; object-fit:cover; border-radius:6px; }
+  .skim-nav { grid-column:1 / -1; display:flex; gap:4px 24px; flex-wrap:wrap; }
+  .skim-nav a { color:#fff; min-height:44px; display:inline-flex; align-items:center; font-size:14px; }
+  .block { padding:24px 0; border-bottom:1px solid var(--border); }
+  .section-title { color:var(--navy); font-size:22px; margin:0 0 14px; }
+  .skim-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:0 0 16px; }
+  .skim-stats div { border-left:3px solid #c9a24b; padding-left:12px; }
+  .skim-stats dt { font:600 28px/1.2 Georgia,serif; color:var(--navy); }
+  .skim-stats dd { margin:4px 0 0; font-size:13px; color:#526078; }
+  .skim-wins { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .skim-wins p { margin:0; font-size:14px; }
+  .skim-wins strong { display:block; color:var(--navy); margin-bottom:4px; }
+  .skim-link { display:inline-flex; align-items:center; min-height:44px; font-size:14px; }
+  .aios-heading { max-width:790px; font-size:clamp(25px,3.5vw,32px); }
+  .aios-note { margin-bottom:16px; }
+  .aios-cluster { margin:8px 0; }
+  .aios-cluster summary { padding:14px 18px; }
+  .aios-cluster-title { font-size:18px; }
+  .aios-cluster-text { grid-column:1; grid-row:1; }
+  .aios-cluster-count { grid-column:2; grid-row:1; }
+  .aios-cluster-desc, .aios-cluster-count { font-size:13px; }
+  .aios-item { display:grid; grid-template-columns:minmax(0,1fr) 170px; gap:20px; align-items:center; padding:12px 0; border-top:1px solid var(--border); }
+  .aios-item:first-child { border-top:0; }
+  .aios-item h3 { font-size:17px; line-height:1.3; margin:0; }
+  .aios-item h3 a { display:inline-flex; align-items:center; min-height:44px; color:var(--navy); }
+  .aios-item p { margin:0; font-size:14px; max-width:560px; }
+  .aios-comparison { display:grid; gap:3px; }
+  .aios-standard { color:#596579; }
+  .aios-change { color:#216044; }
+  .aios-change--ai { color:var(--blue); }
+  .aios-thumbnail { display:block; font-size:12px; text-align:right; }
+  .aios-thumbnail img { display:block; width:100%; height:86px; object-fit:contain; border:1px solid #000; background:var(--bg-soft); }
+  .aios-thumbnail span { display:block; padding-top:4px; }
+  .aios-no-preview { font-size:12px; color:#526078; text-align:right; }
+  .skim-method { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .skim-method p { margin:0; font-size:14px; }
+  .skim-method strong { display:block; color:var(--navy); margin-bottom:4px; }
+  .skim-evidence { display:flex; flex-wrap:wrap; gap:4px 24px; }
+  .skim-evidence a { min-height:44px; display:inline-flex; align-items:center; }
+  .skim-footer { background:var(--bg-soft); padding:18px 0; font-size:14px; }
+  .skim-footer .container { display:flex; gap:12px 24px; flex-wrap:wrap; align-items:center; }
+  .skim-footer a { display:inline-flex; align-items:center; min-height:44px; }
+  .detail-nav { position:sticky; top:0; z-index:10; background:#fff; border-bottom:1px solid var(--border); padding:8px 24px; }
+  .detail-nav a { display:inline-flex; align-items:center; min-height:44px; }
+  .project-library { max-width:1280px; margin:auto; padding:24px; }
+  .project-library .aios-project { scroll-margin-top:75px; }
+  @media(max-width:600px) {
+    body .ssbar label { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+    .skim-header .container { grid-template-columns:1fr; }
+    .skim-header img { display:none; }
+    .skim-nav { gap:0 20px; }
+    .skim-stats { grid-template-columns:repeat(2,1fr); }
+    .skim-wins, .skim-method { grid-template-columns:1fr; gap:12px; }
+    .aios-cluster summary { grid-template-columns:minmax(0,1fr) auto 8px; gap:10px; padding:12px; }
+    .aios-cluster-count { grid-row:1; }
+    .aios-cluster summary::after { grid-column:3; grid-row:1; }
+    .aios-cluster-desc { font-size:12px; }
+    .aios-item { grid-template-columns:minmax(0,1fr) 90px; gap:12px; padding:10px 0; }
+    .aios-item h3 { font-size:16px; }
+    .aios-item p { font-size:13px; }
+    .aios-thumbnail img { height:66px; }
+    .aios-thumbnail span { font-size:11px; }
+  }
+  @media print { .skim-header { color:#11315e; background:white; } .skim-nav a { color:#11315e; } }
+</style></head><body><nav class='detail-nav'><a href='index.html#blk-aios'>← All AI projects</a></nav><main class='project-library'><h1>Project details</h1><article class="aios-project" id="project-founder-led">
+      <div class="aios-copy"><p class="aios-for">For business founders</p><h3>Turn business goals into weekly actions</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>A coach reads meeting notes and writes the weekly plan from scratch.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>AI drafts a seven-week plan from the notes, goal, and target. The coach reviews its priorities.</dd></div></dl>
+      <p class="aios-access">Sign-in required</p><div class="aios-source"><a href='https://founder-led-tractions.davide-trailblazing.workers.dev' target='_blank' rel='noopener' aria-label='Open tool ↗ for Turn business goals into weekly actions'>Open tool ↗</a></div></div><figure>
+        <figcaption><strong>Example: turn a sales goal into weekly actions.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/details/founder-led.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Turn business goals into weekly actions'><picture><source media='(max-width:600px)' srcset='aios/mobile/founder-led.png' width='688' height='912'><img src='aios/details/founder-led.png' alt='Example: turn a sales goal into weekly actions.' loading='lazy' width='1416' height='670'></picture></a>
+        <div class='aios-image-actions'><a class='aios-enlarge' href='aios/details/founder-led.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Turn business goals into weekly actions'>Enlarge preview ↗</a><a class='aios-evidence-link' href='aios/full-hd/founder-led.png' target='_blank' rel='noopener' aria-label='Full screenshot · Full HD ↗ for Turn business goals into weekly actions'>Full screenshot · Full HD ↗</a></div>
+        <p class='aios-image-note'>Original site’s sample roadmap · fictional company</p></figure>
+    </article><article class="aios-project" id="project-mentor-bench">
+      <div class="aios-copy"><p class="aios-for">For founders, mentors, and investors</p><h3>Prepare for mentor and investor meetings</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>Founders open individual profiles to work out who can help.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>I linked meeting dates to researched profiles and discussion topics. Ask about a business need; AI suggests relevant guests from the selected list. Founders can check the source links before requesting an introduction.</dd></div></dl>
+      <p class="aios-access">Passcode required</p><div class="aios-source"><a href='https://mentor-investors-1st-degree.davide-trailblazing.workers.dev' target='_blank' rel='noopener' aria-label='Open tool ↗ for Prepare for mentor and investor meetings'>Open tool ↗</a></div></div><figure>
+        <figcaption><strong>See who’s attending and what to discuss with each person.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/details/mentor-bench.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Prepare for mentor and investor meetings'><picture><source media='(max-width:600px)' srcset='aios/mobile/mentor-bench.png' width='724' height='764'><img src='aios/details/mentor-bench.png' alt='See who’s attending and what to discuss with each person.' loading='lazy' width='1864' height='722'></picture></a>
+        <div class='aios-image-actions'><a class='aios-enlarge' href='aios/details/mentor-bench.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Prepare for mentor and investor meetings'>Enlarge preview ↗</a><a class='aios-evidence-link' href='aios/full-hd/mentor-bench.png' target='_blank' rel='noopener' aria-label='Full screenshot · Full HD ↗ for Prepare for mentor and investor meetings'>Full screenshot · Full HD ↗</a></div>
+        <p class='aios-image-note'>Original directory · profiles shortened and identities anonymized</p></figure>
+    </article><article class="aios-project" id="project-swarm">
+      <div class="aios-copy"><p class="aios-for">For event organizers and participants</p><h3>Keep short meetings on schedule</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>Participants lose track of who meets next.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>One screen shows the meeting, place, and time remaining.</dd></div></dl>
+      <p class="aios-access">Sign-in required</p><div class="aios-source"><a href='https://mentor-swarm-scheduler.davide-trailblazing.workers.dev' target='_blank' rel='noopener' aria-label='Open tool ↗ for Keep short meetings on schedule'>Open tool ↗</a></div></div><figure>
+        <figcaption><strong>See who meets next and how much time remains.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/details/swarm.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Keep short meetings on schedule'><picture><source media='(max-width:600px)' srcset='aios/mobile/swarm.png' width='716' height='798'><img src='aios/details/swarm.png' alt='See who meets next and how much time remains.' loading='lazy' width='1856' height='424'></picture></a>
+        <div class='aios-image-actions'><a class='aios-enlarge' href='aios/details/swarm.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Keep short meetings on schedule'>Enlarge preview ↗</a><a class='aios-evidence-link' href='aios/full-hd/swarm.png' target='_blank' rel='noopener' aria-label='Full screenshot · Full HD ↗ for Keep short meetings on schedule'>Full screenshot · Full HD ↗</a></div>
+        <p class='aios-image-note'>Saved scheduler · participant names anonymized</p></figure>
+    </article><article class="aios-project" id="project-cohort-report">
+      <div class="aios-copy"><p class="aios-for">For program teams and sponsors</p><h3>Give program sponsors a clear weekly update</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>Sponsors chase progress updates across emails.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>One weekly report shows progress and where help is needed.</dd></div></dl>
+      <p class="aios-access">Sign-in required</p><div class="aios-source"><a href='https://gbeta-i4-cohort-report.davide-trailblazing.workers.dev' target='_blank' rel='noopener' aria-label='Open tool ↗ for Give program sponsors a clear weekly update'>Open tool ↗</a></div></div><figure>
+        <figcaption><strong>Read the week’s progress in one place.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/details/cohort-report.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Give program sponsors a clear weekly update'><picture><source media='(max-width:600px)' srcset='aios/mobile/cohort-report.png' width='684' height='1578'><img src='aios/details/cohort-report.png' alt='Read the week’s progress in one place.' loading='lazy' width='1520' height='920'></picture></a>
+        <div class='aios-image-actions'><a class='aios-enlarge' href='aios/details/cohort-report.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Give program sponsors a clear weekly update'>Enlarge preview ↗</a><a class='aios-evidence-link' href='aios/full-hd/cohort-report.png' target='_blank' rel='noopener' aria-label='Full screenshot · Full HD ↗ for Give program sponsors a clear weekly update'>Full screenshot · Full HD ↗</a></div>
+        <p class='aios-image-note'>Saved weekly report · participant names hidden</p></figure>
+    </article><article class="aios-project" id="project-deliverables">
+      <div class="aios-copy"><p class="aios-for">For business founders and program teams</p><h3>Keep program tasks and deadlines together</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>Dates and instructions get buried in messages.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>One checklist connects each task to its deadline and template.</dd></div></dl>
+      <p class="aios-access">Sign-in required</p><div class="aios-source"><a href='https://program-deliverables.davide-trailblazing.workers.dev' target='_blank' rel='noopener' aria-label='Open tool ↗ for Keep program tasks and deadlines together'>Open tool ↗</a></div></div><figure>
+        <figcaption><strong>Open the right template for each deadline.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/details/deliverables.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Keep program tasks and deadlines together'><picture><source media='(max-width:600px)' srcset='aios/mobile/deliverables.png' width='900' height='278'><img src='aios/details/deliverables.png' alt='Open the right template for each deadline.' loading='lazy' width='1920' height='806'></picture></a>
+        <div class='aios-image-actions'><a class='aios-enlarge' href='aios/details/deliverables.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Keep program tasks and deadlines together'>Enlarge preview ↗</a><a class='aios-evidence-link' href='aios/full-hd/deliverables.png' target='_blank' rel='noopener' aria-label='Full screenshot · Full HD ↗ for Keep program tasks and deadlines together'>Full screenshot · Full HD ↗</a></div>
+        <p class='aios-image-note'>Saved checklist · contact details hidden</p></figure>
+    </article><article class="aios-project" id="project-fundraising">
+      <div class="aios-copy"><p class="aios-for">For business founders</p><h3>Prepare for investor conversations</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>Founders browse folders and read each template to decide what fits.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>Ask what you need to prepare. AI answers from the template library and points to a document. The founder downloads and edits it.</dd></div></dl>
+      <p class="aios-access">Sign-in required</p><div class="aios-source"><a href='https://fundraising-for-founders.davide-trailblazing.workers.dev' target='_blank' rel='noopener' aria-label='Open tool ↗ for Prepare for investor conversations'>Open tool ↗</a></div></div><figure>
+        <figcaption><strong>Choose a document and download the template.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/details/fundraising.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Prepare for investor conversations'><picture><source media='(max-width:600px)' srcset='aios/mobile/fundraising.png' width='692' height='464'><img src='aios/details/fundraising.png' alt='Choose a document and download the template.' loading='lazy' width='1840' height='1210'></picture></a>
+        <div class='aios-image-actions'><a class='aios-enlarge' href='aios/details/fundraising.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Prepare for investor conversations'>Enlarge preview ↗</a><a class='aios-evidence-link' href='aios/full-hd/fundraising.png' target='_blank' rel='noopener' aria-label='Full screenshot · Full HD ↗ for Prepare for investor conversations'>Full screenshot · Full HD ↗</a></div>
+        <p class='aios-image-note'>Saved template library</p></figure>
+    </article><article class="aios-project" id="project-investor-picks">
+      <div class="aios-copy"><p class="aios-for">For program teams and business founders</p><h3>Track investor introductions and replies</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>Introductions and replies get lost across inboxes.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>See each conversation’s status and what needs attention.</dd></div></dl>
+      <p class="aios-access">Internal tool</p><div class="aios-source"><a href='https://investor-wishlist-picks-tracker.davide-trailblazing.workers.dev' target='_blank' rel='noopener' aria-label='Open tool ↗ for Track investor introductions and replies'>Open tool ↗</a></div></div><figure>
+        <figcaption><strong>Filter unanswered invitations. Review the next follow-up.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/details/investor-picks.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Track investor introductions and replies'><picture><source media='(max-width:600px)' srcset='aios/mobile/investor-picks.png' width='760' height='1490'><img src='aios/details/investor-picks.png' alt='Filter unanswered invitations. Review the next follow-up.' loading='lazy' width='1860' height='864'></picture></a>
+        <div class='aios-image-actions'><a class='aios-enlarge' href='aios/details/investor-picks.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Track investor introductions and replies'>Enlarge preview ↗</a><a class='aios-evidence-link' href='aios/full-hd/investor-picks.png' target='_blank' rel='noopener' aria-label='Full screenshot · Full HD ↗ for Track investor introductions and replies'>Full screenshot · Full HD ↗</a></div>
+        <p class='aios-image-note'>Saved tracker · names and messages anonymized</p></figure>
+    </article><article class="aios-project" id="project-weekly-wins">
+      <div class="aios-copy"><p class="aios-for">For business founders and program teams</p><h3>Track weekly business progress</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>Weekly updates mix achievements with unfinished work.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>Separate results, ongoing work, and requests for help.</dd></div></dl>
+      <p class="aios-access">Google document; access may be required</p><div class="aios-source"><a href='https://docs.google.com/document/d/1c5szd3-7V_D5Pa7dLqX5P_TmfUyzg-4wMM2C3P8qfKI/edit' target='_blank' rel='noopener' aria-label='Open document ↗ for Track weekly business progress'>Open document ↗</a></div></div><figure>
+        <figcaption><strong>Separate wins, ongoing work, and blockers.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/llm-md.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Track weekly business progress'><picture><img src='aios/llm-md.png' alt='Separate wins, ongoing work, and blockers.' loading='lazy' width='1100' height='715'></picture></a>
+        <div class='aios-image-actions'><a class='aios-evidence-link' href='aios/llm-md.png' target='_blank' rel='noopener' aria-label='Original screenshot ↗ for Track weekly business progress'>Original screenshot ↗</a></div>
+        <p class='aios-image-note'>Original document · private company updates hidden</p></figure>
+    </article><article class="aios-project" id="project-okrs">
+      <div class="aios-copy"><p class="aios-for">For business founders and program teams</p><h3>Connect business goals to weekly actions</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>Goals and weekly tasks drift apart.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>Connect annual goals, program goals, and a weekly action tracker.</dd></div></dl>
+      <p class="aios-access">Google spreadsheet; access may be required</p><div class="aios-source"><a href='https://docs.google.com/spreadsheets/d/1a0Dx3sNWGI0h_DBLlJPqoUC6PWsODUsUVyBs6vLa3EE/edit' target='_blank' rel='noopener' aria-label='Open document ↗ for Connect business goals to weekly actions'>Open document ↗</a></div></div><figure>
+        <figcaption><strong>Connect long-term goals to this week’s work.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/okrs.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Connect business goals to weekly actions'><picture><img src='aios/okrs.png' alt='Connect long-term goals to this week’s work.' loading='lazy' width='1100' height='714'></picture></a>
+        <div class='aios-image-actions'><a class='aios-evidence-link' href='aios/okrs.png' target='_blank' rel='noopener' aria-label='Original screenshot ↗ for Connect business goals to weekly actions'>Original screenshot ↗</a></div>
+        <p class='aios-image-note'>Original goals worksheet</p></figure>
+    </article><article class="aios-project" id="project-blindspots">
+      <div class="aios-copy"><p class="aios-for">For business founders</p><h3>Decide which business problem comes first</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>Too many problems make it hard to start.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>Rank the problems and choose the first action.</dd></div></dl>
+      <p class="aios-access">PDF; access may be required</p><div class="aios-source"><a href='https://drive.google.com/file/d/1PG-KlEn_dZ0VZwbr8tP5Z--VWwgO2JP1/view' target='_blank' rel='noopener' aria-label='Open document ↗ for Decide which business problem comes first'>Open document ↗</a></div></div><figure>
+        <figcaption><strong>Decide which business problem needs attention first.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/blindspots.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Decide which business problem comes first'><picture><img src='aios/blindspots.png' alt='Decide which business problem needs attention first.' loading='lazy' width='1100' height='714'></picture></a>
+        <div class='aios-image-actions'><a class='aios-evidence-link' href='aios/blindspots.png' target='_blank' rel='noopener' aria-label='Original screenshot ↗ for Decide which business problem comes first'>Original screenshot ↗</a></div>
+        <p class='aios-image-note'>Original guide</p></figure>
+    </article><article class="aios-project" id="project-overview">
+      <div class="aios-copy"><p class="aios-for">For business founders</p><h3>Understand the program before it starts</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>New founders have to piece together program expectations.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>One overview explains the schedule and preparation.</dd></div></dl>
+      <p class="aios-access">Sign-in required</p><div class="aios-source"><a href='https://program-overview.davide-trailblazing.workers.dev' target='_blank' rel='noopener' aria-label='Open tool ↗ for Understand the program before it starts'>Open tool ↗</a></div></div><figure>
+        <figcaption><strong>See what founders need to do.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/overview.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Understand the program before it starts'><picture><img src='aios/overview.png' alt='See what founders need to do.' loading='lazy' width='1100' height='709'></picture></a>
+        <div class='aios-image-actions'><a class='aios-evidence-link' href='aios/overview.png' target='_blank' rel='noopener' aria-label='Original screenshot ↗ for Understand the program before it starts'>Original screenshot ↗</a></div>
+        <p class='aios-image-note'>Original program website</p></figure>
+    </article><article class="aios-project" id="project-replies-tracker">
+      <div class="aios-copy"><p class="aios-for">For event organizers</p><h3>Allocate meeting places without overbooking</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>Investor meetings can fill before everyone is assigned.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>See which sessions still have space.</dd></div></dl>
+      <p class="aios-access">Internal tool</p><div class="aios-source"><a href='https://replies-tracker-2-allocate-slots.davide-trailblazing.workers.dev' target='_blank' rel='noopener' aria-label='Open tool ↗ for Allocate meeting places without overbooking'>Open tool ↗</a></div></div><figure>
+        <figcaption><strong>Choose a meeting with room for another organization.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/details/replies-tracker.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Allocate meeting places without overbooking'><picture><source media='(max-width:600px)' srcset='aios/mobile/replies-tracker.png' width='756' height='1240'><img src='aios/details/replies-tracker.png' alt='Choose a meeting with room for another organization.' loading='lazy' width='1862' height='778'></picture></a>
+        <div class='aios-image-actions'><a class='aios-enlarge' href='aios/details/replies-tracker.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Allocate meeting places without overbooking'>Enlarge preview ↗</a><a class='aios-evidence-link' href='aios/full-hd/replies-tracker.png' target='_blank' rel='noopener' aria-label='Full screenshot · Full HD ↗ for Allocate meeting places without overbooking'>Full screenshot · Full HD ↗</a></div>
+        <p class='aios-image-note'>Saved meeting tracker · participant details anonymized</p></figure>
+    </article><article class="aios-project aios-project--text" id="project-databases">
+      <div class="aios-copy"><p class="aios-for">For program teams</p><h3>Avoid inviting people who already signed up</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>Registered guests receive unnecessary reminders.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>Match registrations against invitations before preparing reminders.</dd></div></dl>
+      <p class="aios-access">Internal workflow</p><div class="aios-source">No public link.</div><p class='aios-unavailable'>Internal registration workflow. No verified application screenshot available.</p></div>
+    </article><article class="aios-project" id="project-inbox-triage">
+      <div class="aios-copy"><p class="aios-for">For program teams</p><h3>Find the investor replies that need attention</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>Important investor replies get buried in the inbox.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>Replies are grouped by who needs to act next.</dd></div></dl>
+      <p class="aios-access">Internal tool</p><div class="aios-source"><a href='https://replies-tracker-2-allocate-slots.davide-trailblazing.workers.dev' target='_blank' rel='noopener' aria-label='Open tool ↗ for Find the investor replies that need attention'>Open tool ↗</a></div></div><figure>
+        <figcaption><strong>Find the people waiting for your answer.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/details/inbox-triage.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Find the investor replies that need attention'><picture><source media='(max-width:600px)' srcset='aios/mobile/inbox-triage.png' width='732' height='1222'><img src='aios/details/inbox-triage.png' alt='Find the people waiting for your answer.' loading='lazy' width='1872' height='1024'></picture></a>
+        <div class='aios-image-actions'><a class='aios-enlarge' href='aios/details/inbox-triage.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Find the investor replies that need attention'>Enlarge preview ↗</a><a class='aios-evidence-link' href='aios/full-hd/inbox-triage.png' target='_blank' rel='noopener' aria-label='Full screenshot · Full HD ↗ for Find the investor replies that need attention'>Full screenshot · Full HD ↗</a></div>
+        <p class='aios-image-note'>Saved reply tracker · names and messages anonymized</p></figure>
+    </article><article class="aios-project" id="project-intro-drafts">
+      <div class="aios-copy"><p class="aios-for">For founders, mentors, and program teams</p><h3>Prepare introductions for human review</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>Useful introductions need context about both people.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>Enter founder details. Review a ready-to-forward introduction.</dd></div></dl>
+      <p class="aios-access">Sign-in required</p><div class="aios-source"><a href='https://founder-led-tractions.davide-trailblazing.workers.dev/#forwardable' target='_blank' rel='noopener' aria-label='Open tool ↗ for Prepare introductions for human review'>Open tool ↗</a></div></div><figure>
+        <figcaption><strong>Review the introduction. Then copy the note.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/details/intro-drafts.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Prepare introductions for human review'><picture><img src='aios/details/intro-drafts.png' alt='Review the introduction. Then copy the note.' loading='lazy' width='1780' height='1268'></picture></a>
+        <div class='aios-image-actions'><a class='aios-enlarge' href='aios/details/intro-drafts.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Prepare introductions for human review'>Enlarge preview ↗</a><a class='aios-evidence-link' href='aios/full-hd/intro-drafts.png' target='_blank' rel='noopener' aria-label='Full screenshot · Full HD ↗ for Prepare introductions for human review'>Full screenshot · Full HD ↗</a></div>
+        <p class='aios-image-note'>Real introduction builder · fictional example details</p></figure>
+    </article><article class="aios-project" id="project-alumni">
+      <div class="aios-copy"><p class="aios-for">For program teams</p><h3>Keep supporting companies after the program</h3>
+      <dl><div class="aios-pain"><dt>The problem</dt><dd>A company’s needs keep changing after the program.</dd></div><div class="aios-solution"><dt>The solution</dt><dd>Keep company updates and the next support need together.</dd></div></dl>
+      <p class="aios-access">Private records</p><div class="aios-source"><a href='https://startup-watchlist.davide-trailblazing.workers.dev' target='_blank' rel='noopener' aria-label='Open tool ↗ for Keep supporting companies after the program'>Open tool ↗</a></div></div><figure>
+        <figcaption><strong>See where an alumni company needs help.</strong></figcaption>
+        <a class='aios-shotwrap' href='aios/details/alumni.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Keep supporting companies after the program'><picture><source media='(max-width:600px)' srcset='aios/mobile/alumni.png' width='780' height='1700'><img src='aios/details/alumni.png' alt='See where an alumni company needs help.' loading='lazy' width='1920' height='1094'></picture></a>
+        <div class='aios-image-actions'><a class='aios-enlarge' href='aios/details/alumni.png' target='_blank' rel='noopener' aria-label='Enlarge preview for Keep supporting companies after the program'>Enlarge preview ↗</a><a class='aios-evidence-link' href='aios/full-hd/alumni.png' target='_blank' rel='noopener' aria-label='Full screenshot · Full HD ↗ for Keep supporting companies after the program'>Full screenshot · Full HD ↗</a></div>
+        <p class='aios-image-note'>Real watchlist · fictional example company details</p></figure>
+    </article></main><script>
+      document.querySelectorAll('.aios-shotwrap, .aios-enlarge').forEach(link => {
+        link.addEventListener('click', () => {
+          const picture = link.closest('figure').querySelector('img');
+          if (picture.currentSrc) link.href = picture.currentSrc;
+        });
+      });
+    </script></body></html>

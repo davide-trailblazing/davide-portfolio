@@ -1,1153 +1,178 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<link rel="icon" type="image/gif" href="/favicon.gif">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Davide Dantonio · Director of Accelerator Programs · Portfolio</title>
-<meta name="description" content="Davide Dantonio, gener8tor Director of Accelerator Programs. Portfolio of venture outcomes across 52 companies and 10 accelerator cohorts.">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Davide Dantonio · Venture portfolio</title><meta name="description" content="Accelerator programs, founder coaching, and practical AI projects by Davide Dantonio."><link rel="icon" href="favicon.gif">
 <style>
-  :root {
-    --navy: #11315E;
-    --blue: #2E5A9E;
-    --body: #1a1a1a;
-    --mid-gray: #4a5568;
-    --light-gray: #6b7686;
-    --border: #cbd5e0;
-    --bg-soft: #f4f7fb;
-    --bg-softer: #fafbfd;
+  /* AI projects: readable context and full-resolution evidence. */
+  #blk-aios .container { max-width:1280px; }
+  .aios-kicker { color:var(--blue); font-size:14px; font-weight:700; margin:0 0 10px; }
+  .aios-heading { font:600 clamp(27px,4vw,38px)/1.15 Georgia,serif; color:var(--navy); margin:0 0 14px; max-width:900px; }
+  .aios-intro { font-size:16px; line-height:1.6; max-width:780px; margin:0 0 12px; }
+  .aios-note { color:#526078; font-size:13px; margin:0 0 28px; max-width:780px; }
+  .aios-project { display:grid; grid-template-columns:minmax(240px,.75fr) minmax(0,2.25fr); gap:36px; padding:36px 0; border-top:1px solid var(--border); align-items:start; break-inside:avoid; }
+  .aios-copy, .aios-project figure { min-width:0; }
+  .aios-for { font-size:12px; color:#526078; margin:0 0 7px; }
+  .aios-project h3 { color:var(--navy); font:600 25px/1.2 Georgia,serif; margin:0 0 20px; }
+  .aios-copy dl { display:grid; gap:15px; }
+  .aios-copy dl div { border-left:3px solid #a35032; padding-left:12px; }
+  .aios-copy dl .aios-solution { border-color:#277653; }
+  .aios-copy dt { font-size:12px; font-weight:750; color:#813b24; margin:0 0 3px; }
+  .aios-project .aios-solution dt { color:#216044; }
+  .aios-project dd { font-size:15px; line-height:1.6; }
+  .aios-access { font-size:12px; color:#526078; margin:20px 0 4px; }
+  .aios-source { font-size:14px; overflow-wrap:anywhere; }
+  .aios-source a { display:inline-flex; align-items:center; min-height:44px; font-weight:650; }
+  .aios-project figure { margin:0; }
+  .aios-shotwrap { display:block; border:1.5px solid #000; background:#fff; cursor:zoom-in; }
+  .aios-shotwrap img { display:block; width:100%; height:auto; }
+  .aios-shotwrap picture { display:block; }
+  .aios-project figcaption { margin-bottom:12px; line-height:1.4; }
+  .aios-project figcaption strong { display:block; font-size:19px; font-weight:600; color:var(--navy); }
+  .aios-image-actions { display:flex; justify-content:space-between; flex-wrap:wrap; gap:0 16px; margin-top:5px; }
+  .aios-evidence-link, .aios-enlarge { display:inline-flex; align-items:center; min-height:44px; font-size:14px; line-height:1.5; font-weight:650; }
+  .aios-image-note { font-size:12px; color:#526078; margin:2px 0 0; }
+  .aios-project--text { display:block; }
+  .aios-project--text .aios-copy { max-width:720px; }
+  .aios-unavailable { margin-top:12px; font-size:12px; color:#526078; }
+  #blk-aios a:hover { text-decoration-thickness:2px; }
+  #blk-aios a:focus-visible, #blk-aios summary:focus-visible { outline:3px solid #2E5A9E; outline-offset:4px; }
+  #blk-aios a:active { opacity:.8; }
+  .aios-cluster { border:1px solid var(--border); border-radius:8px; margin:12px 0; }
+  .aios-cluster summary { display:grid; grid-template-columns:minmax(0,1fr) auto 12px; align-items:center; gap:20px; cursor:pointer; padding:20px 24px; color:var(--navy); list-style:none; border-radius:8px; }
+  .aios-cluster summary::-webkit-details-marker { display:none; }
+  .aios-cluster summary::after { content:''; width:8px; height:8px; border:solid currentColor; border-width:0 2px 2px 0; transform:rotate(45deg); }
+  .aios-cluster[open] > summary::after { transform:rotate(225deg); }
+  .aios-cluster summary:hover, .aios-cluster[open] > summary { background:var(--bg-soft); }
+  .aios-cluster-text { display:grid; gap:4px; }
+  .aios-cluster-title { font-size:20px; font-weight:650; }
+  .aios-cluster-desc, .aios-cluster-count { font-size:14px; color:#526078; }
+  .aios-cluster-count { white-space:nowrap; }
+  .aios-cluster .aios-projects { padding:0 24px; }
+  .aios-cluster .aios-project:first-child { border-top:0; }
+  @media (max-width:1100px) { .aios-project { grid-template-columns:1fr; gap:18px; } .aios-copy dl { grid-template-columns:1fr 1fr; gap:24px; } .aios-project h3 { font-size:24px; } .aios-access { margin-top:12px; } }
+  @media (max-width:600px) { .aios-copy dl { grid-template-columns:1fr; gap:14px; } .aios-project figcaption strong { font-size:18px; } .aios-cluster summary { grid-template-columns:minmax(0,1fr) 12px; gap:8px 12px; padding:16px; } .aios-cluster-title { font-size:18px; } .aios-cluster-count { grid-row:2; } .aios-cluster summary::after { grid-column:2; grid-row:1 / 3; } .aios-cluster .aios-projects { padding:0 12px; } }
+  @media (max-width:600px) {
+    body .ssbar { padding:58px 16px 10px !important; }
+    body .ssbar .sschips { display:none; }
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    color: var(--body);
-    background: #fff;
-    line-height: 1.55;
-    font-size: 15px;
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+  :root { --navy:#11315e; --blue:#2e5a9e; --border:#cbd5e0; --bg-soft:#f4f7fb; }
+  * { box-sizing:border-box; }
+  html { scroll-padding-top:90px; }
+  body { margin:0; color:#1a1a1a; background:#fff; font:15px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+  a { color:var(--blue); text-underline-offset:3px; }
+  a:focus-visible, summary:focus-visible { outline:3px solid #2e5a9e; outline-offset:4px; }
+  .container, #blk-aios .container { max-width:1080px; margin:auto; padding:0 24px; }
+  body .ssbar { padding:8px 16px !important; }
+  .skim-header { background:var(--navy); color:white; padding:24px 0 18px; }
+  .skim-header .container { display:grid; grid-template-columns:1fr auto; gap:8px 24px; align-items:center; }
+  .skim-header h1 { margin:0 0 4px; font:600 clamp(27px,4vw,34px)/1.2 Georgia,serif; }
+  .skim-header p { margin:4px 0; }
+  .skim-role { color:#cbd8ed; font-size:14px; }
+  .skim-header img { width:180px; height:112px; object-fit:cover; border-radius:6px; }
+  .skim-nav { grid-column:1 / -1; display:flex; gap:4px 24px; flex-wrap:wrap; }
+  .skim-nav a { color:#fff; min-height:44px; display:inline-flex; align-items:center; font-size:14px; }
+  .block { padding:24px 0; border-bottom:1px solid var(--border); }
+  .section-title { color:var(--navy); font-size:22px; margin:0 0 14px; }
+  .skim-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:0 0 16px; }
+  .skim-stats div { border-left:3px solid #c9a24b; padding-left:12px; }
+  .skim-stats dt { font:600 28px/1.2 Georgia,serif; color:var(--navy); }
+  .skim-stats dd { margin:4px 0 0; font-size:13px; color:#526078; }
+  .skim-wins { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .skim-wins p { margin:0; font-size:14px; }
+  .skim-wins strong { display:block; color:var(--navy); margin-bottom:4px; }
+  .skim-link { display:inline-flex; align-items:center; min-height:44px; font-size:14px; }
+  .aios-heading { max-width:790px; font-size:clamp(25px,3.5vw,32px); }
+  .aios-note { margin-bottom:16px; }
+  .aios-cluster { margin:8px 0; }
+  .aios-cluster summary { padding:14px 18px; }
+  .aios-cluster-title { font-size:18px; }
+  .aios-cluster-text { grid-column:1; grid-row:1; }
+  .aios-cluster-count { grid-column:2; grid-row:1; }
+  .aios-cluster-desc, .aios-cluster-count { font-size:13px; }
+  .aios-item { display:grid; grid-template-columns:minmax(0,1fr) 170px; gap:20px; align-items:center; padding:12px 0; border-top:1px solid var(--border); }
+  .aios-item:first-child { border-top:0; }
+  .aios-item h3 { font-size:17px; line-height:1.3; margin:0; }
+  .aios-item h3 a { display:inline-flex; align-items:center; min-height:44px; color:var(--navy); }
+  .aios-item p { margin:0; font-size:14px; max-width:560px; }
+  .aios-comparison { display:grid; gap:3px; }
+  .aios-standard { color:#596579; }
+  .aios-change { color:#216044; }
+  .aios-change--ai { color:var(--blue); }
+  .aios-thumbnail { display:block; font-size:12px; text-align:right; }
+  .aios-thumbnail img { display:block; width:100%; height:86px; object-fit:contain; border:1px solid #000; background:var(--bg-soft); }
+  .aios-thumbnail span { display:block; padding-top:4px; }
+  .aios-no-preview { font-size:12px; color:#526078; text-align:right; }
+  .skim-method { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .skim-method p { margin:0; font-size:14px; }
+  .skim-method strong { display:block; color:var(--navy); margin-bottom:4px; }
+  .skim-evidence { display:flex; flex-wrap:wrap; gap:4px 24px; }
+  .skim-evidence a { min-height:44px; display:inline-flex; align-items:center; }
+  .skim-footer { background:var(--bg-soft); padding:18px 0; font-size:14px; }
+  .skim-footer .container { display:flex; gap:12px 24px; flex-wrap:wrap; align-items:center; }
+  .skim-footer a { display:inline-flex; align-items:center; min-height:44px; }
+  .detail-nav { position:sticky; top:0; z-index:10; background:#fff; border-bottom:1px solid var(--border); padding:8px 24px; }
+  .detail-nav a { display:inline-flex; align-items:center; min-height:44px; }
+  .project-library { max-width:1280px; margin:auto; padding:24px; }
+  .project-library .aios-project { scroll-margin-top:75px; }
+  @media(max-width:600px) {
+    body .ssbar label { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+    .skim-header .container { grid-template-columns:1fr; }
+    .skim-header img { display:none; }
+    .skim-nav { gap:0 20px; }
+    .skim-stats { grid-template-columns:repeat(2,1fr); }
+    .skim-wins, .skim-method { grid-template-columns:1fr; gap:12px; }
+    .aios-cluster summary { grid-template-columns:minmax(0,1fr) auto 8px; gap:10px; padding:12px; }
+    .aios-cluster-count { grid-row:1; }
+    .aios-cluster summary::after { grid-column:3; grid-row:1; }
+    .aios-cluster-desc { font-size:12px; }
+    .aios-item { grid-template-columns:minmax(0,1fr) 90px; gap:12px; padding:10px 0; }
+    .aios-item h3 { font-size:16px; }
+    .aios-item p { font-size:13px; }
+    .aios-thumbnail img { height:66px; }
+    .aios-thumbnail span { font-size:11px; }
   }
-  .container { max-width: 980px; margin: 0 auto; padding: 0 24px; }
-  a { color: var(--blue); }
-
-  /* Version badge */
-  .version-badge {
-    position: fixed; top: 12px; right: 12px; z-index: 9999;
-    background: #b8654b; color: #fff;
-    font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
-    padding: 6px 12px; border-radius: 999px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
-  }
-
-  /* Infographic download pill */
-  .dl-infographic {
-    position: fixed; top: 44px; right: 12px; z-index: 9998;
-    background: var(--navy); color: #fff;
-    font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
-    padding: 8px 14px; border-radius: 999px; text-decoration: none;
-    box-shadow: 0 4px 14px rgba(10,37,64,0.28);
-  }
-  .dl-infographic:hover { box-shadow: 0 6px 18px rgba(10,37,64,0.38); }
-
-  /* Header */
-  header {
-    background: var(--navy);
-    color: #fff;
-    padding: 30px 0 0;
-  }
-  .header-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 24px;
-    align-items: end;
-    padding-bottom: 20px;
-  }
-  .name {
-    font-size: 36px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    line-height: 1.05;
-    color: #fff;
-  }
-  .tagline {
-    color: #c5d2e6;
-    margin-top: 8px;
-    font-size: 14px;
-  }
-  .header-right { text-align: right; }
-  .pill {
-    display: inline-block;
-    background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.35);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 6px 12px;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    border-radius: 3px;
-  }
-  .header-contact {
-    font-size: 12px;
-    color: #c5d2e6;
-    line-height: 1.7;
-  }
-  .header-contact a { color: #fff; text-decoration: underline; }
-
-  /* Personal note */
-  .personal-note {
-    background: var(--bg-soft);
-    padding: 18px 24px;
-    border-bottom: 1px solid var(--border);
-    text-align: center;
-  }
-  .personal-note p {
-    font-size: 13.5px;
-    color: var(--mid-gray);
-    max-width: 720px; margin: 0 auto;
-  }
-  .personal-note p b { color: var(--navy); }
-
-  /* Tab switcher */
-  .tabbar-wrap {
-    background: var(--navy);
-    border-top: 1px solid rgba(255,255,255,0.18);
-  }
-  .tabbar {
-    display: flex;
-    gap: 0;
-  }
-  .tab-btn {
-    flex: 1;
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    background: transparent;
-    border: none;
-    border-bottom: 4px solid transparent;
-    color: #c5d2e6;
-    font-family: inherit;
-    font-size: 13.5px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    padding: 14px 10px 12px;
-    cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
-  }
-  .tab-btn:hover { color: #fff; border-bottom-color: #fff; }
-  .tab-btn .tab-sub {
-    display: block;
-    font-weight: 400;
-    font-size: 11px;
-    color: #9fb2cf;
-    margin-top: 2px;
-  }
-  .tab-note {
-    text-align: center;
-    font-size: 11px;
-    color: #9fb2cf;
-    padding: 0 0 10px;
-  }
-
-  /* Audience intro strip */
-  .audience-intro {
-    background: var(--bg-softer);
-    border-bottom: 1px solid var(--border);
-    padding: 16px 0;
-  }
-  .audience-intro p {
-    font-size: 15px;
-    color: var(--navy);
-    font-weight: 500;
-    line-height: 1.6;
-  }
-  .audience-intro p + p { margin-top: 10px; }
-  .audience-intro p::before { content: "▸ "; color: var(--blue); font-weight: 700; }
-
-  /* Section blocks */
-  .stack { display: flex; flex-direction: column; }
-  .block { padding: 26px 0; border-bottom: 2px solid #C9A24B; }
-  .block:last-child { border-bottom: none; }
-  .block:nth-child(even) { background: var(--bg-softer); }
-
-  .section-title {
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 1.2px;
-    color: var(--navy);
-    background: #C9A24B;
-    text-transform: uppercase;
-    margin: 0 0 14px;
-    padding: 9px 14px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-  }
-  .section-title::before { content: "▸ "; color: var(--navy); }
-  .sub-title {
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: var(--navy);
-    text-transform: uppercase;
-    margin: 20px 0 8px;
-  }
-  .sub-title::before { content: "▸ "; color: var(--blue); }
-
-  /* KPI strip */
-  .kpi-row {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
-  }
-  .kpi-card {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--navy);
-    padding: 14px 10px;
-    text-align: center;
-    border-radius: 3px;
-  }
-  .kpi-num { font-size: 27px; font-weight: 800; color: var(--navy); line-height: 1; }
-  .kpi-lbl { font-size: 10px; color: var(--mid-gray); text-transform: uppercase; letter-spacing: 0.6px; margin-top: 6px; }
-  .kpi-foot { font-size: 12px; color: var(--mid-gray); margin-top: 10px; }
-  .kpi-foot b { color: var(--navy); }
-
-  /* Capital split */
-  .capital-split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
-  .capital-card { background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--navy); padding: 14px 18px; border-radius: 3px; }
-  .capital-num { font-size: 18px; font-weight: 800; color: var(--navy); }
-  .capital-desc { font-size: 13px; color: var(--mid-gray); margin-top: 6px; line-height: 1.45; }
-
-  /* Coaching steps */
-  .coach-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 8px 0 6px; }
-  .coach-step { background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--navy); padding: 10px 12px; border-radius: 3px; }
-  .coach-step .cs-h { font-weight: 700; color: var(--navy); font-size: 12.5px; }
-  .coach-step .cs-d { font-size: 11px; color: var(--light-gray); margin-top: 3px; line-height: 1.4; }
-  .coach-n { display: inline-block; background: var(--navy); color: #fff; width: 16px; height: 16px; border-radius: 50%; text-align: center; font-size: 9px; line-height: 16px; font-weight: 700; margin-right: 5px; vertical-align: middle; }
-
-  /* Method boxes */
-  .method-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-  .method-row.program-run-row { grid-template-columns: repeat(3, 1fr); }
-  .method-box { background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--blue); padding: 12px; border-radius: 3px; }
-  .method-stage { font-size: 10px; color: var(--blue); font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; }
-  .method-title { font-size: 13px; font-weight: 700; color: var(--navy); margin: 4px 0 6px; }
-  .method-desc { font-size: 12px; color: var(--body); line-height: 1.45; }
-  .method-lead { font-size: 12px; font-weight: 700; color: var(--navy); margin: 0 0 7px; }
-  .method-list { margin: 6px 0 0; padding-left: 15px; }
-  .method-list li { font-size: 11.5px; color: var(--body); line-height: 1.5; margin: 2px 0; }
-  .method-list li.hi { font-weight: 700; }
-
-  /* Sales foundations grid */
-  .sales-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 6px; }
-  .sales-card { background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--navy); padding: 10px 14px; border-radius: 3px; }
-  .sales-card .sc-h { font-size: 10px; font-weight: 800; color: var(--navy); text-transform: uppercase; letter-spacing: 0.4px; }
-  .sales-card .sc-d { font-size: 12px; color: var(--body); line-height: 1.5; margin-top: 4px; }
-
-  /* Program cornerstones cards */
-  .corner-card { background: #fff; border: 1px solid var(--border); border-left: 5px solid var(--navy); border-radius: 5px; padding: 12px 15px; margin-bottom: 11px; }
-  .corner-card:last-of-type { margin-bottom: 4px; }
-  .corner-kicker { font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; color: var(--blue); text-transform: uppercase; }
-  .corner-title { font-weight: 700; color: var(--navy); font-size: 15px; margin: 3px 0 5px; }
-  .corner-desc { font-size: 13px; line-height: 1.5; color: var(--body); }
-  .corner-chips { margin-top: 9px; font-size: 11px; }
-  .corner-chip { display: inline-block; background: #E7EEF7; color: var(--navy); border-radius: 11px; padding: 3px 10px; margin: 0 5px 5px 0; }
-
-  /* Sector rows */
-  .sector-row {
-    display: grid;
-    grid-template-columns: 0.2fr 1.2fr 3fr;
-    gap: 12px;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px;
-    align-items: center;
-  }
-  .sector-count { font-size: 18px; font-weight: 800; color: var(--blue); text-align: center; }
-  .sector-name { font-weight: 700; color: var(--navy); font-size: 12px; }
-  .sd { color: #707a89; font-weight: 400; }
-
-  /* Outcomes */
-  .outcome-row {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-top: none;
-    padding: 12px 14px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.2fr 2fr;
-    gap: 12px;
-    font-size: 12.5px;
-    align-items: start;
-  }
-  .outcome-row:first-of-type { border-top: 1px solid var(--border); }
-  .outcome-co { font-weight: 700; color: var(--navy); }
-  .outcome-metric { font-weight: 800; color: var(--blue); }
-
-  /* Founder quotes */
-  .founder-voices { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 4px; }
-  .voice { background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--blue); padding: 14px 18px; border-radius: 3px; }
-  .voice-quote { font-style: italic; color: var(--body); font-size: 13.5px; line-height: 1.5; }
-  .voice-attr { display: block; margin-top: 8px; font-size: 11px; color: var(--blue); }
-  .voice-attr b { color: var(--navy); }
-
-  /* NPS bars */
-  .nps-row { display: grid; grid-template-columns: 1.3fr 4fr; gap: 8px; align-items: center; padding: 5px 0; font-size: 12px; }
-  .nps-label { color: var(--navy); font-weight: 600; }
-  .nps-bar-wrap { background: #e2e8f0; height: 16px; position: relative; border-radius: 2px; overflow: hidden; }
-  .nps-bar { height: 100%; background: var(--blue); }
-  .nps-bar.me { background: var(--navy); }
-  .nps-value { position: absolute; right: 8px; top: 1px; font-size: 11px; font-weight: 700; color: var(--body); }
-
-  /* Org chips */
-  .org-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px 10px; margin: 10px 0 4px; }
-  .org-chip { padding: 9px 14px; border-radius: 5px; color: #fff; font-size: 12px; font-weight: 700; line-height: 1.25; }
-  .org-chip-adv { background: #11315E; }
-  .org-chip-jud { background: #2E5A9E; }
-  .org-chip-men { background: #b8654b; }
-  .org-legend { font-size: 10px; font-weight: 600; color: var(--mid-gray); margin-left: 10px; text-transform: none; letter-spacing: 0; }
-  .org-legend > span { margin-left: 10px; }
-  .org-legend .lgd-dot { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 3px; vertical-align: middle; }
-
-  /* Press wall */
-  .press-wall { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 6px; }
-  .press-item { background: #fff; border: 1px solid var(--border); padding: 10px 14px; font-size: 12px; display: flex; flex-direction: column; border-radius: 3px; }
-  .press-source { color: var(--blue); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-  .press-title { color: var(--navy); font-weight: 600; }
-  .press-item a { color: var(--navy); text-decoration: none; }
-  .press-item a:hover { text-decoration: underline; }
-
-  /* Big link cards */
-  .big-card { display: block; text-decoration: none; color: inherit; border: 1px solid var(--border); margin-bottom: 16px; background: #fff; transition: border-color 0.2s; border-radius: 3px; overflow: hidden; }
-  .big-card:hover { border-color: var(--blue); }
-  .big-card-grid { display: grid; grid-template-columns: 0.85fr 1.4fr; gap: 0; }
-  .big-card-left { display: flex; align-items: center; justify-content: center; padding: 24px; min-height: 130px; position: relative; overflow: hidden; }
-  .big-card-right { padding: 16px 20px; }
-  .bc-kicker { font-size: 10px; color: var(--blue); font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
-  .bc-title { font-weight: 700; color: var(--navy); font-size: 15px; margin-top: 6px; line-height: 1.3; }
-  .bc-desc { font-size: 12.5px; color: var(--mid-gray); margin-top: 6px; line-height: 1.45; }
-  .bc-cta { font-size: 11px; color: var(--blue); margin-top: 8px; font-weight: 600; }
-
-  /* Small link cards */
-  .links-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 6px; }
-  .link-card { background: #fff; border: 1px solid var(--border); padding: 12px 16px; display: flex; flex-direction: column; text-decoration: none; color: var(--body); transition: border-color 0.2s; border-radius: 3px; }
-  .link-card:hover { border-color: var(--blue); }
-  .link-card-label { font-size: 10px; color: var(--blue); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-  .link-card-title { color: var(--navy); font-weight: 700; font-size: 14px; margin-top: 3px; }
-  .link-card-desc { color: var(--mid-gray); font-size: 12px; margin-top: 3px; }
-
-  /* YouTube grid */
-  .yt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0 8px; }
-  .yt-kicker { font-size: 11px; color: var(--blue); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
-  .yt-frame { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 1px solid var(--border); background: #000; border-radius: 3px; }
-  .yt-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-  .yt-caption { font-size: 12px; color: var(--mid-gray); margin-top: 6px; }
-
-  /* Advisory list */
-  .adv-list { margin: 8px 0 4px; padding-left: 18px; font-size: 13px; line-height: 1.5; color: var(--body); }
-  .adv-list li { margin-bottom: 6px; }
-  .adv-list b { color: var(--navy); }
-
-  /* Footer */
-  footer { background: var(--navy); color: #fff; padding: 32px 0; }
-  footer .container { text-align: center; }
-  footer h4 { color: #c5d2e6; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
-  footer p { font-size: 13px; color: #e2e8f0; line-height: 1.7; }
-  footer a { color: #fff; text-decoration: underline; }
-  .footer-meta { margin-top: 18px; font-size: 11px; color: #9fb2cf; }
-
-  /* ===== One continuous page: every intro/footer line is always visible ===== */
-  .aud-line { display: block; }
-
-  /* Mobile */
-  @media (max-width: 720px) {
-    .header-grid, .kpi-row, .method-row, .method-row.program-run-row, .coach-strip, .founder-voices,
-    .press-wall, .links-grid, .outcome-row, .capital-split, .sales-grid,
-    .yt-grid, .big-card-grid { grid-template-columns: 1fr; }
-    .name { font-size: 27px; }
-    .header-right { text-align: left; margin-top: 12px; }
-    .tabbar { flex-direction: column; }
-    .tab-btn { border-bottom: none; border-left: 4px solid transparent; text-align: left; padding: 12px 16px; }
-    .tab-btn:hover { border-left-color: #fff; border-bottom: none; }
-    .org-grid { grid-template-columns: 1fr; }
-    .version-badge { top: 8px; right: 8px; font-size: 10px; }
-    .dl-infographic { top: 36px; right: 8px; font-size: 11px; padding: 7px 11px; }
-  }
-
-  .secid { display:inline-block; background:#F59E0B; color:#111; font:700 10px/1 Arial,sans-serif; padding:3px 7px; border-radius:9px; margin-right:7px; vertical-align:middle; letter-spacing:.04em; }
-
-
-  /* ---- The AI Operating System ---- */
-  .aios-intro { font-size:12.5px; line-height:1.55; color:#3a3a3a; margin:4px 0 14px; }
-  .aios-lenses { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px; }
-  .aios-lens {
-    font-family:inherit; font-size:12.5px; font-weight:700; cursor:pointer;
-    background:#fff; color:var(--navy); border:1.5px solid var(--border);
-    border-radius:999px; padding:8px 15px; line-height:1.2; transition:none;
-  }
-  .aios-lens:hover { border-color:var(--navy); }
-  .aios-lens[aria-selected="true"] { background:var(--navy); border-color:var(--navy); color:#fff; }
-  .aios-lens .aios-n { font-weight:800; opacity:.75; margin-left:5px; }
-  .aios-lenshint { font-size:12px; color:var(--light-gray); margin:0 0 14px; min-height:1.3em; }
-  .aios-spot { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:18px; }
-  .aios-card {
-    border:1px solid var(--border); border-radius:8px; background:#fff;
-    padding:12px; display:flex; flex-direction:column; min-width:0;
-  }
-  .aios-shotwrap { border:1.5px solid #000; border-radius:4px; overflow:hidden; margin-bottom:10px; background:#f4f7fb; }
-  .aios-shotwrap img { display:block; width:100%; height:132px; object-fit:cover; object-position:top center; }
-  .aios-tag {
-    display:inline-block; align-self:flex-start; font-size:9.5px; font-weight:800; letter-spacing:.06em;
-    text-transform:uppercase; padding:3px 8px; border-radius:999px; margin-bottom:7px;
-  }
-  .aios-tag.founders { background:#E7F0FB; color:#1F4C8C; }
-  .aios-tag.back     { background:#F1EEE4; color:#7A5C12; }
-  .aios-tag.front    { background:#E7F3EC; color:#1B6B47; }
-  .aios-card-t { font-size:13.5px; font-weight:800; color:var(--navy); line-height:1.3; margin-bottom:6px; }
-  .aios-card-d { font-size:12px; line-height:1.5; color:#3a3a3a; flex:1; }
-  .aios-card-l { font-size:11.5px; margin-top:9px; word-break:break-word; }
-  .aios-card-l a { color:var(--blue); font-weight:700; text-decoration:none; }
-  .aios-card-l a:hover { text-decoration:underline; }
-  .aios-card-l .aios-nolink { color:var(--light-gray); font-weight:700; }
-  .aios-restlabel {
-    font-size:11px; font-weight:800; letter-spacing:.9px; text-transform:uppercase;
-    color:var(--light-gray); margin:0 0 7px; padding-top:12px; border-top:1px solid var(--border);
-  }
-  .aios-rest { display:flex; flex-direction:column; }
-  .aios-row {
-    display:flex; align-items:baseline; gap:10px; padding:8px 2px;
-    border-bottom:1px solid #edf1f7; font-size:12.5px; min-width:0;
-  }
-  .aios-row:last-child { border-bottom:none; }
-  .aios-row-e { flex:none; font-size:13px; }
-  .aios-row-t { flex:1; min-width:0; color:var(--navy); font-weight:700; }
-  .aios-row-t span { display:block; font-weight:400; color:#4a5568; font-size:11.5px; line-height:1.45; margin-top:2px; }
-  .aios-row-a { flex:none; font-size:11.5px; font-weight:700; color:var(--blue); text-decoration:none; white-space:nowrap; }
-  .aios-row-a:hover { text-decoration:underline; }
-  .aios-row-a.off { color:var(--light-gray); }
-  .aios-lock {
-    display:flex; gap:14px; align-items:center; flex-wrap:wrap;
-    border:1.5px dashed #7A5C12; background:#FBF3DC; border-radius:8px;
-    padding:13px 15px; margin-top:16px;
-  }
-  .aios-lock-b { flex:1; min-width:230px; }
-  .aios-lock-t { font-size:13px; font-weight:800; color:#5E4708; margin-bottom:4px; }
-  .aios-lock-d { font-size:12px; line-height:1.5; color:#6E5A26; }
-  .aios-lock-a {
-    flex:none; font-size:12px; font-weight:800; text-decoration:none;
-    background:#7A5C12; color:#fff; padding:9px 15px; border-radius:6px; white-space:nowrap;
-  }
-  .aios-lock-a:hover { background:#5E4708; }
-  @media (max-width:760px) {
-    .aios-spot { grid-template-columns:1fr; }
-    .aios-shotwrap img { height:150px; }
-    .aios-row { flex-wrap:wrap; }
-  }
-  @media print { .aios-lenses { display:none; } }
-
-  /* Print */
-  @media print {
-    .version-badge, .dl-infographic, .tabbar-wrap { display: none !important; }
-    .block { break-inside: avoid; page-break-inside: avoid; }
-    body { font-size: 12px; }
-    header { background: #fff !important; color: var(--navy) !important; border-bottom: 3px solid var(--navy); }
-    .name, .tagline, .header-contact, .header-contact a, .pill { color: var(--navy) !important; }
-    .pill { background: #fff; border: 1px solid var(--navy); }
-    footer { background: #fff !important; color: var(--navy) !important; border-top: 3px solid var(--navy); }
-    footer p, footer h4, footer a, .footer-meta { color: var(--navy) !important; }
-    .yt-frame { display: none; }
-    /* Print shows every section in document order */
-  }
-
-  /* Connect dropdown (replaces infographic pill) */
-  .connect-wrap { position: fixed; top: 12px; right: 12px; z-index: 9999; }
-  .connect-btn { background:#C9A24B; color:#11315E; font-size:12.5px; font-weight:800; letter-spacing:.02em; padding:9px 16px; border:0; border-radius:999px; box-shadow:0 4px 14px rgba(0,0,0,0.30); cursor:pointer; }
-  .connect-btn:hover { background:#d8b25e; box-shadow:0 6px 18px rgba(0,0,0,0.40); }
-  .connect-panel { display:none; position:absolute; top:44px; right:0; width:300px; background:#fff; border:1px solid var(--border); border-radius:10px; box-shadow:0 10px 34px rgba(10,37,64,0.22); padding:14px; text-align:left; }
-  .connect-panel.open { display:block; }
-  .connect-panel h5 { margin:0 0 3px; font-size:13px; color:var(--navy); }
-  .connect-panel .cp-sub { font-size:11px; color:var(--mid-gray); margin-bottom:10px; line-height:1.45; }
-  .connect-panel input, .connect-panel select, .connect-panel textarea { width:100%; padding:8px 9px; margin-bottom:8px; border:1px solid var(--border); border-radius:5px; font-size:12.5px; font-family:inherit; color:var(--body); background:#fff; }
-  .connect-panel textarea { resize:vertical; min-height:48px; }
-  .connect-panel .cp-send { background:var(--navy); color:#fff; font-weight:700; border:0; border-radius:5px; padding:8px 18px; font-size:12.5px; cursor:pointer; width:100%; }
-  .connect-panel .cp-send:hover { background:#0b2444; }
-  .connect-panel .cp-note { font-size:10.5px; color:var(--light-gray); margin-top:7px; text-align:center; }
-  @media print { .connect-wrap { display:none !important; } }
-  /* Industry chips + per-vertical impact line */
-  .sector-impact { font-size:12px; color:var(--mid-gray); font-style:italic; line-height:1.45; margin:0 0 7px; }
-  .chips { display:flex; flex-wrap:wrap; gap:6px; }
-  .chip { display:inline-flex; align-items:baseline; gap:5px; background:var(--bg-soft); border:1px solid var(--border); border-radius:999px; padding:3px 10px; font-size:12px; line-height:1.5; color:var(--navy); }
-  .chip b { font-weight:700; color:var(--navy); }
-  .chip .sd { color:var(--light-gray); font-weight:400; }
-  .chip .star { color:#C9A24B; font-weight:700; }
-  @media print { .chip { background:transparent; } }
-</style>
-<script>window.SITE_SEARCH={item:'.block',title:'.section-title',tag:false,label:'Search my portfolio',starts:['gBETA','funding','Indiana','mentors'],padRight:170};</script><script src="sitesearch.js" defer></script></head>
-<body>
-<div class="connect-wrap">
-  <button class="connect-btn" id="connectBtn" aria-haspopup="true" aria-expanded="false" onclick="toggleConnect(event)">✉ Get in touch</button>
-  <div class="connect-panel" id="connectPanel" role="dialog" aria-label="Get in touch">
-    <h5>Let’s connect</h5>
-    <div class="cp-sub">Fill what you like, then send. Blanks you can complete in your email app.</div>
-    <form onsubmit="return composeConnect(event)">
-      <input id="cName" type="text" placeholder="Your full name" autocomplete="name">
-      <input id="cLinkedIn" type="url" placeholder="Your LinkedIn URL">
-      <select id="cRole">
-        <option value="" disabled selected>I am a…</option>
-        <option>Founder</option>
-        <option>Investor</option>
-        <option>Industry expert</option>
-        <option>Other</option>
-      </select>
-      <textarea id="cWhy" placeholder="Why you’d like to connect"></textarea>
-      <button class="cp-send" type="submit">✉ Compose email</button>
-      <div class="cp-note">Opens a pre-filled email to Davide.</div>
-    </form>
-  </div>
-</div>
-
-<header>
-  <div class="container">
-    <div class="header-grid">
-      <div>
-        <div class="name">DAVIDE DANTONIO</div>
-        <div class="tagline">Director of Accelerator Programs · Innovation Scouter, Startup Advisor and Founder Connector · gener8tor · Indianapolis, IN</div>
-      </div>
-      <div class="header-right">
-        <div class="pill">Venture Acceleration · Pre-Seed and Seed Founder Coach</div>
-        <div class="header-contact">
-          <a href="mailto:davide.trailblazing@gmail.com">davide.trailblazing@gmail.com</a> · 317-499-6920<br>
-          <a href="https://www.linkedin.com/in/davide-dantonio">linkedin.com/in/davide-dantonio</a>
-        </div>
-        <div class="dd-sidenote">This is my portfolio of work in the venture space, directing pre-Seed and Seed accelerator cohorts. Built for founders, investors, and partners I cross paths with in the venture ecosystem.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Section navigation: pure anchors, one continuous page -->
-  <div class="tabbar-wrap">
-    <div class="container">
-      <nav class="tabbar" aria-label="Jump to a section">
-        <a class="tab-btn" href="#blk-kpi">
-          Numbers
-          <span class="tab-sub">Headline portfolio results</span>
-        </a>
-        <a class="tab-btn" href="#blk-sectors">
-          Industry Breadth
-          <span class="tab-sub">52 companies, 11 sectors</span>
-        </a>
-        <a class="tab-btn" href="#blk-outcomes">
-          Outcomes
-          <span class="tab-sub">Named founder achievements</span>
-        </a>
-        <a class="tab-btn" href="#blk-coaching">
-          Coaching Method
-          <span class="tab-sub">How the program works</span>
-        </a>
-        <a class="tab-btn" href="#blk-aios">
-          AI Operating System
-          <span class="tab-sub">15 tools I built and run</span>
-        </a>
-        <a class="tab-btn" href="#blk-network">
-          Network
-          <span class="tab-sub">Mentors, investors, orgs</span>
-        </a>
-        <a class="tab-btn" href="#blk-press">
-          Press
-          <span class="tab-sub">Awards and validation</span>
-        </a>
-      </nav>
-      <div class="tab-note">One continuous page. These links scroll to each section.</div>
-    </div>
-  </div>
-</header>
-
-<style>
-.dd-intro{padding:18px 0 4px}
-.dd-intro .dd-kicker{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#2E5A9E;font-weight:700}
-.dd-intro .dd-title{font-size:26px;font-weight:700;color:#11315E;line-height:1.18;margin:6px 0 12px}
-.dd-intro .dd-p{font-size:13.5px;line-height:1.6;color:#3a3a3a;margin:0 0 10px;max-width:1010px}
-.header-right .dd-sidenote{font-size:11.5px;line-height:1.5;color:#aebfd6;font-style:italic;margin-top:10px;max-width:360px;text-align:right;margin-left:auto}
-.tabbar{gap:8px;padding:12px 0}
-.tab-btn{background:#C9A24B;border:1px solid #C9A24B;border-radius:10px;padding:10px 8px 8px;color:#11315E}
-.tab-btn:hover{background:#d8b25e;border-color:#d8b25e;color:#11315E}
-.tab-btn .tab-sub{color:#5a4a1f}
-.tab-btn::after{content:"\25BE";display:block;font-size:24px;line-height:.7;color:#11315E;margin-top:6px}
-.cohort-band{padding:6px 0 8px}
-.cohort-band .cb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.cohort-band .cb-grid img{width:100%;height:230px;object-fit:cover;object-position:center;border-radius:10px;display:block;cursor:zoom-in}
-#cohort-lb{display:none;position:fixed;inset:0;z-index:99999;background:rgba(8,15,30,.93);align-items:center;justify-content:center;cursor:zoom-out;padding:20px}
-#cohort-lb img{max-width:94vw;max-height:92vh;border-radius:8px}
-#blk-kpi .k2scope{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:8px 0 14px}
-#blk-kpi .k2box{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:13px 8px;text-align:center}
-#blk-kpi .k2box .n{font-size:21px;font-weight:800;color:#11315E;line-height:1}
-#blk-kpi .k2box .l{font-size:11px;font-weight:600;color:#5f6b7a;text-transform:uppercase;letter-spacing:.03em;margin-top:5px;line-height:1.3}
-#blk-kpi .k2impact{font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2E5A9E;margin:4px 2px 10px}
-#blk-kpi .k2cap-row{display:grid;grid-template-columns:1.45fr .8fr 1.6fr;gap:10px}
-#blk-kpi .k2cap{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px}
-#blk-kpi .k2cap-top{display:flex;align-items:baseline;gap:8px;border-bottom:1px solid #eef1f5;padding-bottom:8px;margin-bottom:10px}
-#blk-kpi .k2cap-top .n{font-size:23px;font-weight:800;color:#11315E}
-#blk-kpi .k2cap-top .l{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#5f6b7a}
-#blk-kpi .k2src{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#2E5A9E;margin-bottom:6px}
-#blk-kpi .k2line{padding:9px 0;border-top:1px solid #eef1f5}
-#blk-kpi .k2line .ka{font-size:14px;font-weight:800;color:#11315E}
-#blk-kpi .k2line .kt{font-size:11.5px;font-weight:600;color:#33414f}
-#blk-kpi .k2line .kd{font-size:11px;line-height:1.5;color:#5f6b7a;margin-top:2px}
-#blk-kpi .k2jobs{background:#11315E;border-radius:12px;padding:0;display:flex;flex-direction:column;text-align:center}
-#blk-kpi .k2jpart{flex:1;display:flex;flex-direction:column;justify-content:center;padding:12px 10px}
-#blk-kpi .k2jpart .n{font-size:25px;font-weight:800;color:#fff;line-height:1}
-#blk-kpi .k2jpart .l{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#C9A24B;margin-top:5px;line-height:1.25}
-#blk-kpi .k2jdiv{height:1px;background:rgba(255,255,255,.18);margin:0 12px}
-#blk-kpi .k2nps{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:13px;display:flex;flex-direction:column}
-#blk-kpi .k2bars{flex:1;display:flex;flex-direction:column;justify-content:center}
-#blk-kpi .k2take{margin-top:10px;padding-top:9px;border-top:1px solid #eef1f5;font-size:11px;font-weight:700;color:#11315E;line-height:1.4}
-#blk-kpi .k2nps-top{display:flex;align-items:baseline;gap:7px}
-#blk-kpi .k2nps-top .n{font-size:23px;font-weight:800;color:#11315E;line-height:1}
-#blk-kpi .k2nps-top .l{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#5f6b7a}
-#blk-kpi .k2note{font-size:10px;color:#8a93a0;margin:2px 0 9px;line-height:1.4}
-#blk-kpi .k2brow{display:grid;grid-template-columns:92px 1fr 22px;align-items:center;gap:7px;margin-bottom:8px}
-#blk-kpi .k2bl{font-size:10px;color:#33414f;font-weight:600}
-#blk-kpi .k2bt{height:10px;background:#eef1f5;border-radius:5px;overflow:hidden}
-#blk-kpi .k2bf{display:block;height:100%;border-radius:5px;background:#2E5A9E}
-#blk-kpi .k2bf.me{background:#C9A24B}
-#blk-kpi .k2bv{font-size:10px;font-weight:800;color:#11315E;text-align:right}
-@media(max-width:760px){#blk-kpi .k2scope{grid-template-columns:repeat(2,1fr)}#blk-kpi .k2cap-row{grid-template-columns:1fr}}
-@media(max-width:760px){.cohort-band .cb-grid{grid-template-columns:repeat(2,1fr)}.cohort-band .cb-grid img{height:188px}.header-right .dd-sidenote{text-align:left;margin-left:0}.tab-btn{text-align:left;padding:11px 14px}}
-</style>
-<div class="dd-intro">
-  <div class="container">
-    <div class="dd-kicker">Founders I've coached</div>
-    <div class="dd-title">52 founders. 10 cohorts. One ecosystem.</div>
-    <p class="dd-p">Sole director of 10 gener8tor pre-Seed and Seed accelerator cohorts across the US and Italy. I source, vet, coach, and structure capital for the best and most diverse founders, from customer discovery to fundraising, in an intensive 7-week program.</p>
-    <p class="dd-p">600+ startups sourced to coach 52 founders to $7.84M raised ($5.43M equity + $2.42M non-dilutive), 60+ investor introductions each, and 220 US jobs created, backed by a working network of 331 mentors and 265 investors.</p>
-  </div>
-</div>
-
-<!-- BLOCK: Cohort photo band (all 8) -->
-<div class="cohort-band">
-  <div class="container">
-    <div class="cb-grid">
-        <img src="cohort-2.jpg" alt="A full gBETA Indiana cohort on the staircase" loading="lazy">
-        <img src="cohort-7.jpg" alt="Founders at a gBETA Indiana cohort kickoff" loading="lazy">
-        <img src="cohort-4.jpg" alt="Cohort featured in Entrepreneurship Indiana" loading="lazy">
-        <img src="cohort-5.jpg" alt="Hard Tech recognition at Indiana for the Bold" loading="lazy">
-        <img src="cohort-8.jpg" alt="Founders with Indiana mentors and partners" loading="lazy">
-        <img src="cohort-3.jpg" alt="A founder pitching in a working session" loading="lazy">
-        <img src="cohort-6.jpg" alt="A gBETA cohort on the steps" loading="lazy">
-        <img src="cohort-1.jpg" alt="gBETA Indiana, grow your startup with us" loading="lazy">
-    </div>
-  </div>
-</div>
-<div id="cohort-lb"><img id="cohort-lb-img" src="" alt=""></div>
-<script>
-(function(){var lb=document.getElementById('cohort-lb'),li=document.getElementById('cohort-lb-img');if(!lb)return;lb.addEventListener('click',function(){lb.style.display='none';});document.querySelectorAll('.cohort-band img').forEach(function(im){im.addEventListener('click',function(){li.src=im.src;li.alt=im.alt||'';lb.style.display='flex';});});})();
-</script>
-
-<!-- ===== Section stack: one continuous page, all sections always visible ===== -->
-<main id="main-stack" class="stack">
-
-  <!-- BLOCK: KPI strip -->
-<section class="block" id="blk-kpi">
-    <div class="container">
-      <div class="section-title">The Startup Portfolio I Directly Coached · Headline Numbers</div>
-      <div class="k2scope">
-        <div class="k2box"><div class="n">600+</div><div class="l">Startups sourced</div></div>
-        <div class="k2box"><div class="n">52</div><div class="l">Founders coached</div></div>
-        <div class="k2box"><div class="n">9</div><div class="l">US-based cohorts directed</div></div>
-        <div class="k2box"><div class="n">1</div><div class="l">International program</div></div>
-        <div class="k2box"><div class="n">11</div><div class="l">Sectors impacted</div></div>
-      </div>
-      <div class="k2impact">Real-world impact &middot; capital, jobs, and founder satisfaction</div>
-      <div class="k2cap-row">
-        <div class="k2cap">
-          <div class="k2cap-top"><span class="n">$7.84M</span><span class="l">Capital raised</span></div>
-          <div class="k2src">Source of the $7.84M</div>
-          <div class="k2line"><span class="ka">$5.43M</span> <span class="kt">Dilutive equity</span><div class="kd">Institutional investors, milestones-based capital plans, and 60+ investor introductions per founder.</div></div>
-          <div class="k2line"><span class="ka">$2.42M</span> <span class="kt">Non-dilutive capital</span><div class="kd">Federal NSF grants, Indiana state incentive packages, and authored commercialization strategies.</div></div>
-        </div>
-        <div class="k2jobs"><div class="k2jpart"><div class="n">220</div><div class="l">US jobs created</div></div><div class="k2jdiv"></div><div class="k2jpart"><div class="n">10</div><div class="l">University staff turned into entrepreneurs</div></div></div>
-        <div class="k2nps">
-          <div class="k2nps-top"><span class="n">86</span><span class="l">Avg NPS across my cohorts</span></div>
-          <div class="k2note">Net Promoter Score, how strongly founders would recommend the program</div>
-          <div class="k2bars">
-          <div class="k2brow"><span class="k2bl">My cohorts</span><span class="k2bt"><span class="k2bf me" style="width:86%"></span></span><span class="k2bv">86</span></div>
-          <div class="k2brow"><span class="k2bl">Y Combinator</span><span class="k2bt"><span class="k2bf" style="width:60%"></span></span><span class="k2bv">60</span></div>
-          <div class="k2brow"><span class="k2bl">Techstars</span><span class="k2bt"><span class="k2bf" style="width:40%"></span></span><span class="k2bv">40</span></div>
-          <div class="k2brow"><span class="k2bl">Industry avg</span><span class="k2bt"><span class="k2bf" style="width:38%"></span></span><span class="k2bv">38</span></div>
-          </div>
-          <div class="k2take">86 is above Y Combinator and Techstars, and 2.3&times; the industry average.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOCK: Sector / company chip wall -->
-  <section class="block" id="blk-sectors">
-    <div class="container">
-      <div class="section-title">Industry Breadth · 52 Companies, 11 Sectors (★ Featured Outcome)</div>
-      <div class="sector-row"><div class="sector-count">4</div><div class="sector-name">Dual-Use Tech (military and industrial purposes)</div><div class="sector-cell"><div class="sector-impact">Technology that defends American critical infrastructure and military systems while serving commercial and industrial markets.</div><div class="chips"><span class="chip"><b>Covert Defenses</b> <span class="star">★</span> <span class="sd">nuclear/critical-infra cyber (DHS)</span></span><span class="chip"><b>Wolfberry</b> <span class="sd">IoT cybersecurity</span></span><span class="chip"><b>XPHERA</b> <span class="star">★</span> <span class="sd">GPS-denied positioning</span></span><span class="chip"><b>Zernike Precision Optics</b> <span class="sd">defense/semi lenses</span></span></div></div></div>
-      <div class="sector-row"><div class="sector-count">4</div><div class="sector-name">Supply Chain, Logistics &amp; Transportation</div><div class="sector-cell"><div class="sector-impact">Keeping American freight, roads, ports, and product returns moving safely and onshore.</div><div class="chips"><span class="chip"><b>Motoring Labs</b> <span class="sd">automated truck inspection</span></span><span class="chip"><b>PaveX</b> <span class="star">★</span> <span class="sd">AI road inspection</span></span><span class="chip"><b>OVUE</b> <span class="sd">maritime crew-safety</span></span><span class="chip"><b>rScan</b> <span class="star">★</span> <span class="sd">reverse logistics infrastructure for consumer goods</span></span></div></div></div>
-      <div class="sector-row"><div class="sector-count">4</div><div class="sector-name">Energy &amp; Grid Resilience</div><div class="sector-cell"><div class="sector-impact">Strengthening domestic energy storage, nuclear power, and a dependable American grid.</div><div class="chips"><span class="chip"><b>Voltest</b> <span class="sd">EV battery diagnostics</span></span><span class="chip"><b>Novac</b> <span class="star">★</span> <span class="sd">solid-state supercapacitors</span></span><span class="chip"><b>Animo Technologies</b> <span class="sd">nuclear micro-batteries</span></span><span class="chip"><b>Diamond Power</b> <span class="sd">multi-fuel generators</span></span></div></div></div>
-      <div class="sector-row"><div class="sector-count">6</div><div class="sector-name">Industrial 4.0, Robotics &amp; Advanced Manufacturing</div><div class="sector-cell"><div class="sector-impact">Making American factories safer and more productive and bringing advanced manufacturing back home.</div><div class="chips"><span class="chip"><b>GEKOT Robotics</b> <span class="sd">active safety, light EVs</span></span><span class="chip"><b>WPR Services</b> <span class="sd">factory-safety AI</span></span><span class="chip"><b>Fitasy</b> <span class="sd">3D-printed footwear</span></span><span class="chip"><b>Electric Vehicle Gear</b> <span class="sd">3D-printed EV accessories</span></span><span class="chip"><b>Pumkin AI</b> <span class="sd">AI for manufacturers</span></span><span class="chip"><b>Kronfeld Motor</b> <span class="sd">energy-regenerating EV</span></span></div></div></div>
-      <div class="sector-row"><div class="sector-count">5</div><div class="sector-name">SpaceTech &amp; Aerospace</div><div class="sector-cell"><div class="sector-impact">Dual-use space and aviation technology for U.S. security, connectivity, and leadership in orbit.</div><div class="chips"><span class="chip"><b>Involve Space</b> <span class="sd">stratospheric GeoAI</span></span><span class="chip"><b>REA Space</b> <span class="sd">bionic spacesuit</span></span><span class="chip"><b>O-Boot</b> <span class="sd">aerospace tech</span></span><span class="chip"><b>X-ENDER Space</b> <span class="sd">secure orbital data</span></span><span class="chip"><b>Intuos</b> <span class="sd">aviation flight-ops IoT</span></span></div></div></div>
-      <div class="sector-row"><div class="sector-count">7</div><div class="sector-name">Agriculture &amp; Food Security</div><div class="sector-cell"><div class="sector-impact">Helping American farmers grow more with less and strengthening U.S. food security.</div><div class="chips"><span class="chip"><b>Aropha</b> <span class="star">★</span> <span class="sd">AI biodegradability testing</span></span><span class="chip"><b>AgroNet ZERO</b> <span class="sd">biochar for soil</span></span><span class="chip"><b>ArborMapper</b> <span class="sd">LiDAR forest analytics</span></span><span class="chip"><b>BioFique</b> <span class="sd">livestock-feed saponin</span></span><span class="chip"><b>NourishFlow Dynamics</b> <span class="sd">cuts food-bank waste</span></span><span class="chip"><b>Terroir from Space</b> <span class="sd">satellite vineyard analytics</span></span><span class="chip"><b>JUA Technologies</b> <span class="sd">solar crop-drying</span></span></div></div></div>
-      <div class="sector-row"><div class="sector-count">8</div><div class="sector-name">Artificial Intelligence &amp; Enterprise Software</div><div class="sector-cell"><div class="sector-impact">Helping American businesses adopt artificial intelligence and stay globally competitive.</div><div class="chips"><span class="chip"><b>Desync.ai</b> <span class="sd">on-demand AI for SMBs</span></span><span class="chip"><b>Dapto</b> <span class="sd">makes data AI-ready</span></span><span class="chip"><b>HUMN Capital</b> <span class="sd">AI manager-coaching</span></span><span class="chip"><b>Second Opinion</b> <span class="sd">AI legal review</span></span><span class="chip"><b>Authentic Ink</b> <span class="sd">AI personalized customer outreach</span></span><span class="chip"><b>Human Singularity</b> <span class="sd">workforce skills</span></span><span class="chip"><b>DiversiFind</b> <span class="sd">supplier-diversity software</span></span><span class="chip"><b>ITER IDEA</b> <span class="sd">cloud/AI software house</span></span></div></div></div>
-      <div class="sector-row"><div class="sector-count">4</div><div class="sector-name">Workforce Development</div><div class="sector-cell"><div class="sector-impact">Building the American workforce: AI that coaches managers, skills-upskilling platforms, immersive VR job training, and hands-on STEM education.</div><div class="chips"><span class="chip"><b>HUMN Capital</b> <span class="sd">AI manager-coaching</span></span><span class="chip"><b>Human Singularity</b> <span class="sd">workforce skills</span></span><span class="chip"><b>Dellstar VR</b> <span class="sd">VR workforce training</span></span><span class="chip"><b>Nyla Nova STEM</b> <span class="sd">STEM kits for the future workforce</span></span></div></div></div>
-      <div class="sector-row"><div class="sector-count">7</div><div class="sector-name">FinTech, InsurTech &amp; Blockchain</div><div class="sector-cell"><div class="sector-impact">Widening access to credit, payments, and trusted digital commerce led by American technology.</div><div class="chips"><span class="chip"><b>Guama</b> <span class="star">★</span> <span class="sd">LatAm credit card</span></span><span class="chip"><b>VitalSwap</b> <span class="sd">US–Africa payments</span></span><span class="chip"><b>ONOW Ascent</b> <span class="sd">AI cash-flow &amp; credit for small businesses</span></span><span class="chip"><b>PoliStock</b> <span class="sd">market intel &amp; trading</span></span><span class="chip"><b>DigsFact</b> <span class="sd">AI insurance claims</span></span><span class="chip"><b>Prospect XR</b> <span class="sd">Web3 community/DAO</span></span><span class="chip"><b>Timbucktoo</b> <span class="sd">blockchain authentication</span></span></div></div></div>
-      <div class="sector-row"><div class="sector-count">3</div><div class="sector-name">Human Health (Food as Medicine, HealthTech)</div><div class="sector-cell"><div class="sector-impact">Expanding Americans' access to care and easing the U.S. healthcare-workforce shortage.</div><div class="chips"><span class="chip"><b>Home Health Pro</b> <span class="sd">home-care staffing</span></span><span class="chip"><b>Therapprove</b> <span class="star">★</span> <span class="sd">pediatric-therapy referrals</span></span><span class="chip"><b>RiteCarbs</b> <span class="sd">precision prebiotic fibers</span></span></div></div></div>
-      <div class="sector-row"><div class="sector-count">2</div><div class="sector-name">Gaming, Sports &amp; Immersive Media</div><div class="sector-cell"><div class="sector-impact">Growing the U.S. digital-media, creator, and immersive-training economy.</div><div class="chips"><span class="chip"><b>Feenix Group</b> <span class="star">★</span> <span class="sd">gaming &amp; esports</span></span><span class="chip"><b>Vertikal X</b> <span class="star">★</span> <span class="sd">endurance-sports creator platform</span></span></div></div></div>
-    </div>
-  </section>
-
-
-<!-- BLOCK: Flagship outcomes -->
-  <section class="block" id="blk-outcomes">
-    <div class="container">
-      <div class="section-title">Some of the great achievements from founders I helped scale</div>
-      <div class="outcome-row"><div class="outcome-co">Vertikal X, Feenix Group, ITER Idea</div><div>International · SportTech, Media, SaaS</div><div class="outcome-metric">US operations + state-backed programs + $2M+ revenue</div><div>Drove the US-market entry of three international startups, Feenix (MediaTech), ITER IDEA (resource-planning tech), and Vertikal X (SportsTech), by introducing their founders to American commercial and investment partners and state Economic Development Corporations: Vertikal X relocated operations to Indiana; Feenix Group (Ireland) established US operations in Indiana and joined the <a href="https://sthq.org/2025/07/16/feenix-group-announces-indiana-expansion-joins-sports-tech-hq-collective/" target="_blank" rel="noopener">Sports Tech HQ collective</a>; and ITER Idea (Italy) launched its US presence in Wisconsin through the State-backed <a href="https://wedc.org/wisconsin-draws-international-talent-to-boost-the-states-startup-ecosystem/" target="_blank" rel="noopener">Accelerate Wisconsin</a> program. Feenix Group and ITER Idea each report more than $2M in annual customer revenue (founder-reported).</div></div>
-      <div class="outcome-row"><div class="outcome-co">rScan</div><div>Commerce, Supply Chain</div><div class="outcome-metric">Startup of the Year, TechPoint 2025 Mira</div><div>$1.2M Indiana state tax credits, 152 Indiana jobs committed by 2028; headquarters expansion 15K → 53K sq ft; founder named to TechPoint Tech 25</div></div>
-      <div class="outcome-row"><div class="outcome-co">Guama (Colombia)</div><div>FinTech / Credit Access</div><div class="outcome-metric">$1.5M seed + 6,000+ customers</div><div>Salkantay, Hustle Fund, Story Ventures, Techstars; 75K+ credit apps (60% no prior credit history) vs Bancolombia/BBVA; Forbes Colombia 100 Startups</div></div>
-      <div class="outcome-row"><div class="outcome-co">Aropha (Cleveland)</div><div>AgBio AI / Biodegradation</div><div class="outcome-metric">$1M institutional seed</div><div>Comeback Capital, Lightbank, Right Side Capital; founder to Forbes Cleveland 30 Under 30; launched Biodegradation Studio AI (May 2025)</div></div>
-      <div class="outcome-row"><div class="outcome-co">Covert Defense (Purdue)</div><div>Cybersecurity / Energy</div><div class="outcome-metric">$1M Homeland Security award within ~$2.57M total federal awards (sbir.gov)</div><div>Authored commercialization strategy; Department of Energy award (part of the sbir.gov total); multi-state expansion (Indiana, Kentucky, Tennessee); 2→5 full-time hires in 3 months</div></div>
-      <div class="outcome-row"><div class="outcome-co">XPhera</div><div>GovTech / Geo-positioning</div><div class="outcome-metric">$500K client pipeline + $100K+ airport contract</div><div>Built a $500K client pipeline by connecting the CEO with a VP-of-Sales hire and installing sales frameworks (MEDDPIC, SPIN, client ROI calculators); renewed a $100K+ contract with the Indianapolis Airport</div></div>
-      <div class="outcome-row"><div class="outcome-co">Motoring Labs, Timbucktoo, Voltest</div><div>Logistics CV, Blockchain, Battery</div><div class="outcome-metric">Into nationally-ranked accelerators post-gBETA</div><div>After gBETA, accepted into top accelerators: Timbucktoo into Andreessen Horowitz (a16z) TxO; Voltest into Techstars; Motoring Labs into the gener8tor investment accelerator</div></div>
-      <div class="outcome-row"><div class="outcome-co">Novac (Italy)</div><div>SpaceTech / Supercapacitors</div><div class="outcome-metric">€3.5M seed (~$4.37M)</div><div>CDP Venture Capital, Eureka! Venture, Galaxia; all 4 co-founders to Forbes Italia Under 30 (2024); Dallara IndyCar partnership; European Space Agency incubator in Turin</div></div>
-    </div>
-  </section>
-
-  <!-- BLOCK: Coaching program (4 stages quick strip + 4-stage method detail) -->
-  <section class="block" id="blk-coaching">
-    <div class="container">
-      <div class="section-title">My coaching method, across the venture lifecycle</div>
-      <p style="font-size:12.5px;line-height:1.55;color:#3a3a3a;margin:4px 0 12px;">The method delivers strategic support to each founder by building the venture's growth roadmap across the investment lifecycle and planning milestone-based fundraising rounds that prove the return on investment that venture capitalists look for, and it guides each startup through the critical maturity phases: customer discovery to achieve problem-solution fit (Customer Persona), sales discovery to map the buying decision (Customer Buying Decision), repeatable go-to-market actions to validate product-market fit (Customer Journey), and scaling a proven business model and its underlying infrastructure (Customer Economics). At every step I connect founders, through a warm first introduction, to the industry leaders, venture experts, institutional partners, customers, and investors they need to grow.</p>
-      <div class="method-row">
-        <div class="method-box" style="border-top:3px solid #2E5A9E">
-          <div class="method-stage" style="color:#2E5A9E"><span class="coach-n" style="background:#2E5A9E">1</span> Customer Persona</div>
-          <div class="method-title">Problem-Solution Fit</div>
-          <div class="method-lead">Customer discovery, "don't sell, just ask."</div>
-          <ul class="method-list">
-            <li class="hi" style="color:#2E5A9E">Riskiest-assumption testing</li>
-            <li>Customer-discovery interviews</li>
-            <li>Mom Test framing</li>
-            <li>Pain Funnel</li>
-            <li>Early-adopter ID</li>
-            <li>Problem-solution canvas</li>
-          </ul>
-        </div>
-        <div class="method-box" style="border-top:3px solid #2F8F5B">
-          <div class="method-stage" style="color:#2F8F5B"><span class="coach-n" style="background:#2F8F5B">2</span> Customer Buying Decision</div>
-          <div class="method-title">Product-Market Fit</div>
-          <div class="method-lead">Business model, OKRs, cash-flow management.</div>
-          <ul class="method-list">
-            <li class="hi" style="color:#2F8F5B">Willingness-to-pay tests</li>
-            <li>Retention/expansion signals</li>
-            <li>Quarterly objectives tied to a single North-Star metric</li>
-            <li>Learn-Build-Measure loops</li>
-            <li>Minimum-viable-product iteration</li>
-          </ul>
-        </div>
-        <div class="method-box" style="border-top:3px solid #C77F2E">
-          <div class="method-stage" style="color:#C77F2E"><span class="coach-n" style="background:#C77F2E">3</span> Customer Journey</div>
-          <div class="method-title">Go-to-Market Scaling</div>
-          <div class="method-lead">Pipeline systems, repeatable demand-supply.</div>
-          <ul class="method-list">
-            <li class="hi" style="color:#C77F2E">Pipeline construction</li>
-            <li>Structured sales-qualification methods (MEDDPIC, SPIN)</li>
-            <li>Return-on-investment calculators</li>
-            <li>Ideal-customer-profile and persona definition</li>
-            <li>Demand staging</li>
-            <li>Customer-journey mapping</li>
-          </ul>
-        </div>
-        <div class="method-box" style="border-top:3px solid #6B4EA3">
-          <div class="method-stage" style="color:#6B4EA3"><span class="coach-n" style="background:#6B4EA3">4</span> Customer Economics</div>
-          <div class="method-title">Fundraising</div>
-          <div class="method-lead">Milestones, comparables, ROI storytelling.</div>
-          <ul class="method-list">
-            <li class="hi" style="color:#6B4EA3">Milestones-to-funds plans</li>
-            <li>Dilutive vs. non-dilutive (federal/state incentive/strategic)</li>
-            <li>Investor storytelling</li>
-            <li>Comparables</li>
-            <li>Data room</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- BLOCK: The AI Operating System (15 tools, 4 lenses) -->
-  <section class="block" id="blk-aios">
-    <div class="container">
-      <div class="section-title">The AI Operating System &middot; 15 tools I built to run the programmes</div>
-      <p class="aios-intro">The outcomes above came out of a system, not out of luck. These are the fifteen things I built and run: what a founder opens themselves, the machinery only I touch, and what a mentor, an investor or the sponsor sees. Most of them are live and you can open them right now.</p>
-      <div class="aios-lenses" role="tablist" aria-label="Choose a lens"><button type="button" class="aios-lens" role="tab" aria-selected="true" data-lens="all" data-hint="Everything I built to run a programme">All<span class="aios-n">15</span></button><button type="button" class="aios-lens" role="tab" aria-selected="false" data-lens="founders" data-hint="What a founder opens themselves">For founders<span class="aios-n">6</span></button><button type="button" class="aios-lens" role="tab" aria-selected="false" data-lens="back" data-hint="The machinery only I run">Programme back end<span class="aios-n">5</span></button><button type="button" class="aios-lens" role="tab" aria-selected="false" data-lens="front" data-hint="What mentors, investors and the sponsor see">Programme front end<span class="aios-n">4</span></button></div>
-      <p class="aios-lenshint">Everything I built to run a programme</p>
-      <div class="aios-panel" data-panel="all"><div class="aios-spot"><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/mentor-bench.png" alt="A bench of 1,661 mentors and investors that updates itself" loading="lazy"></div><span class="aios-tag front">Programme front end</span><div class="aios-card-t">🤝 A bench of 1,661 mentors and investors that updates itself</div><div class="aios-card-d">1,042 mentors and 619 investors, refreshed from my calendar within the hour, with an AI that answers who a founder should meet.</div><div class="aios-card-l"><a href="https://mentor-investors-1st-degree.davide-trailblazing.workers.dev" target="_blank" rel="noopener">mentor-investors-1st-degree.davide-trailblazing.workers.dev &rarr;</a></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/founder-led.png" alt="A founder&#x27;s whole growth plan in one place" loading="lazy"></div><span class="aios-tag founders">For founders</span><div class="aios-card-t">🌱 A founder&#x27;s whole growth plan in one place</div><div class="aios-card-d">Goals, sales plan and live deals on one link, with an AI that writes the first version of their goals so a 1:1 never starts from a blank page.</div><div class="aios-card-l"><a href="https://founder-led-tractions.davide-trailblazing.workers.dev" target="_blank" rel="noopener">founder-led-tractions.davide-trailblazing.workers.dev &rarr;</a></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/cohort-report.png" alt="A cohort progress report for the sponsor, week by week" loading="lazy"></div><span class="aios-tag front">Programme front end</span><div class="aios-card-t">🗓️ A cohort progress report for the sponsor, week by week</div><div class="aios-card-d">The IEDC can open the programme any week and see where each founder stands, without asking me for an update.</div><div class="aios-card-l"><a href="https://gbeta-i4-cohort-report.davide-trailblazing.workers.dev" target="_blank" rel="noopener">gbeta-i4-cohort-report.davide-trailblazing.workers.dev &rarr;</a></div></div></div><div class="aios-restlabel">The other 12, one line each</div><div class="aios-rest"><div class="aios-row"><span class="aios-row-e">⏱️</span><span class="aios-row-t">One calm timer that runs the whole swarm night<span>Rotation, room and clock for every founder and mentor pair, on one screen the whole room follows.</span></span><a class="aios-row-a" href="https://mentor-swarm-scheduler.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🎯</span><span class="aios-row-t">Live OKRs, shared so mentors can prepare<span>Every founder keeps theirs current, so a mentor reads the whole picture in 60 seconds before a session starts.</span></span><a class="aios-row-a" href="https://docs.google.com/spreadsheets/d/1a0Dx3sNWGI0h_DBLlJPqoUC6PWsODUsUVyBs6vLa3EE/edit" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🧭</span><span class="aios-row-t">The blindspots and prioritisation map<span>One map, 25 minutes, run by every founder. It names the blindspot, ranks the actions by impact, and puts the first three moves on paper.</span></span><a class="aios-row-a" href="https://drive.google.com/file/d/1PG-KlEn_dZ0VZwbr8tP5Z--VWwgO2JP1/view" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">💰</span><span class="aios-row-t">Every fundraising template, one click, no login<span>The data room, the deck outline, the investor update, the pipeline. A founder takes what they need and starts the same day.</span></span><a class="aios-row-a" href="https://fundraising-for-founders.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🧩</span><span class="aios-row-t">An LLM.md a founder plugs into their own AI<span>One prompt guide, pasted into any AI, so the coaching keeps running after week seven with no tool to learn and nothing to set up.</span></span><a class="aios-row-a" href="https://docs.google.com/document/d/1c5szd3-7V_D5Pa7dLqX5P_TmfUyzg-4wMM2C3P8qfKI/edit" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">✅</span><span class="aios-row-t">The checklist that chases founders, so I do not have to<span>Every deadline visible, both in-person dates in the same view, and nobody has to be reminded twice.</span></span><a class="aios-row-a" href="https://program-deliverables.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🗺️</span><span class="aios-row-t">The whole kickoff on one page founders actually finish<span>What happens, when, and what they owe, in one place instead of a stack of separate documents.</span></span><a class="aios-row-a" href="https://program-overview.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🗂️</span><span class="aios-row-t">Databases that never re-ask someone who already signed up<span>One base per job, showcase attendees, showcase outreach, investor outreach. A routine hearts every new registrant and drops them off the chase list.</span></span><span class="aios-row-a off">Internal, no public link</span></div><div class="aios-row"><span class="aios-row-e">📬</span><span class="aios-row-t">The investor inbox, triaged before I open it<span>Every reply sorted each morning into who said yes, who wants a date, and who went quiet. It sorts, it never sends.</span></span><span class="aios-row-a off">Internal, sorts only</span></div><div class="aios-row"><span class="aios-row-e">✉️</span><span class="aios-row-t">Ready-to-forward introductions, drafted and waiting<span>The warm introduction already written and matched to the founder and the person. It drafts only, I read every one and press send myself.</span></span><span class="aios-row-a off">Internal, drafts only</span></div><div class="aios-row"><span class="aios-row-e">📌</span><span class="aios-row-t">Where every founder-picked investor stands, at a glance<span>Each investor a founder chose, and whether they replied, booked, or went quiet, in one view instead of five inboxes.</span></span><a class="aios-row-a" href="https://investor-wishlist-picks-tracker.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🧮</span><span class="aios-row-t">Slot capacity and replies, kept from overbooking a swarm<span>Every slot, who is in it, and how close it is to full, so no session ends up with more investors in the room than founders.</span></span><a class="aios-row-a" href="https://replies-tracker-2-allocate-slots.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div></div></div><div class="aios-panel" data-panel="founders" hidden><div class="aios-spot"><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/blindspots.png" alt="The blindspots and prioritisation map" loading="lazy"></div><span class="aios-tag founders">For founders</span><div class="aios-card-t">🧭 The blindspots and prioritisation map</div><div class="aios-card-d">One map, 25 minutes, run by every founder. It names the blindspot, ranks the actions by impact, and puts the first three moves on paper.</div><div class="aios-card-l"><a href="https://drive.google.com/file/d/1PG-KlEn_dZ0VZwbr8tP5Z--VWwgO2JP1/view" target="_blank" rel="noopener">PDF on Google Drive &rarr;</a></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/fundraising.png" alt="Every fundraising template, one click, no login" loading="lazy"></div><span class="aios-tag founders">For founders</span><div class="aios-card-t">💰 Every fundraising template, one click, no login</div><div class="aios-card-d">The data room, the deck outline, the investor update, the pipeline. A founder takes what they need and starts the same day.</div><div class="aios-card-l"><a href="https://fundraising-for-founders.davide-trailblazing.workers.dev" target="_blank" rel="noopener">fundraising-for-founders.davide-trailblazing.workers.dev &rarr;</a></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/llm-md.png" alt="An LLM.md a founder plugs into their own AI" loading="lazy"></div><span class="aios-tag founders">For founders</span><div class="aios-card-t">🧩 An LLM.md a founder plugs into their own AI</div><div class="aios-card-d">One prompt guide, pasted into any AI, so the coaching keeps running after week seven with no tool to learn and nothing to set up.</div><div class="aios-card-l"><a href="https://docs.google.com/document/d/1c5szd3-7V_D5Pa7dLqX5P_TmfUyzg-4wMM2C3P8qfKI/edit" target="_blank" rel="noopener">Google Doc &rarr;</a></div></div></div><div class="aios-restlabel">The other 3, one line each</div><div class="aios-rest"><div class="aios-row"><span class="aios-row-e">🌱</span><span class="aios-row-t">A founder&#x27;s whole growth plan in one place<span>Goals, sales plan and live deals on one link, with an AI that writes the first version of their goals so a 1:1 never starts from a blank page.</span></span><a class="aios-row-a" href="https://founder-led-tractions.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">✅</span><span class="aios-row-t">The checklist that chases founders, so I do not have to<span>Every deadline visible, both in-person dates in the same view, and nobody has to be reminded twice.</span></span><a class="aios-row-a" href="https://program-deliverables.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🗺️</span><span class="aios-row-t">The whole kickoff on one page founders actually finish<span>What happens, when, and what they owe, in one place instead of a stack of separate documents.</span></span><a class="aios-row-a" href="https://program-overview.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div></div></div><div class="aios-panel" data-panel="back" hidden><div class="aios-spot"><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/databases.svg" alt="Databases that never re-ask someone who already signed up" loading="lazy"></div><span class="aios-tag back">Programme back end</span><div class="aios-card-t">🗂️ Databases that never re-ask someone who already signed up</div><div class="aios-card-d">One base per job, showcase attendees, showcase outreach, investor outreach. A routine hearts every new registrant and drops them off the chase list.</div><div class="aios-card-l"><span class="aios-nolink">Internal, no public link</span></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/inbox-triage.svg" alt="The investor inbox, triaged before I open it" loading="lazy"></div><span class="aios-tag back">Programme back end</span><div class="aios-card-t">📬 The investor inbox, triaged before I open it</div><div class="aios-card-d">Every reply sorted each morning into who said yes, who wants a date, and who went quiet. It sorts, it never sends.</div><div class="aios-card-l"><span class="aios-nolink">Internal, sorts only</span></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/intro-drafts.svg" alt="Ready-to-forward introductions, drafted and waiting" loading="lazy"></div><span class="aios-tag back">Programme back end</span><div class="aios-card-t">✉️ Ready-to-forward introductions, drafted and waiting</div><div class="aios-card-d">The warm introduction already written and matched to the founder and the person. It drafts only, I read every one and press send myself.</div><div class="aios-card-l"><span class="aios-nolink">Internal, drafts only</span></div></div></div><div class="aios-restlabel">The other 2, one line each</div><div class="aios-rest"><div class="aios-row"><span class="aios-row-e">📌</span><span class="aios-row-t">Where every founder-picked investor stands, at a glance<span>Each investor a founder chose, and whether they replied, booked, or went quiet, in one view instead of five inboxes.</span></span><a class="aios-row-a" href="https://investor-wishlist-picks-tracker.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div><div class="aios-row"><span class="aios-row-e">🧮</span><span class="aios-row-t">Slot capacity and replies, kept from overbooking a swarm<span>Every slot, who is in it, and how close it is to full, so no session ends up with more investors in the room than founders.</span></span><a class="aios-row-a" href="https://replies-tracker-2-allocate-slots.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div></div></div><div class="aios-panel" data-panel="front" hidden><div class="aios-spot"><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/swarm.png" alt="One calm timer that runs the whole swarm night" loading="lazy"></div><span class="aios-tag front">Programme front end</span><div class="aios-card-t">⏱️ One calm timer that runs the whole swarm night</div><div class="aios-card-d">Rotation, room and clock for every founder and mentor pair, on one screen the whole room follows.</div><div class="aios-card-l"><a href="https://mentor-swarm-scheduler.davide-trailblazing.workers.dev" target="_blank" rel="noopener">mentor-swarm-scheduler.davide-trailblazing.workers.dev &rarr;</a></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/okrs.png" alt="Live OKRs, shared so mentors can prepare" loading="lazy"></div><span class="aios-tag front">Programme front end</span><div class="aios-card-t">🎯 Live OKRs, shared so mentors can prepare</div><div class="aios-card-d">Every founder keeps theirs current, so a mentor reads the whole picture in 60 seconds before a session starts.</div><div class="aios-card-l"><a href="https://docs.google.com/spreadsheets/d/1a0Dx3sNWGI0h_DBLlJPqoUC6PWsODUsUVyBs6vLa3EE/edit" target="_blank" rel="noopener">Google Sheet and Slides &rarr;</a></div></div><div class="aios-card"><div class="aios-shotwrap"><img src="/aios/mentor-bench.png" alt="A bench of 1,661 mentors and investors that updates itself" loading="lazy"></div><span class="aios-tag front">Programme front end</span><div class="aios-card-t">🤝 A bench of 1,661 mentors and investors that updates itself</div><div class="aios-card-d">1,042 mentors and 619 investors, refreshed from my calendar within the hour, with an AI that answers who a founder should meet.</div><div class="aios-card-l"><a href="https://mentor-investors-1st-degree.davide-trailblazing.workers.dev" target="_blank" rel="noopener">mentor-investors-1st-degree.davide-trailblazing.workers.dev &rarr;</a></div></div></div><div class="aios-restlabel">The other 1, one line each</div><div class="aios-rest"><div class="aios-row"><span class="aios-row-e">🗓️</span><span class="aios-row-t">A cohort progress report for the sponsor, week by week<span>The IEDC can open the programme any week and see where each founder stands, without asking me for an update.</span></span><a class="aios-row-a" href="https://gbeta-i4-cohort-report.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open &rarr;</a></div></div></div>
-      <div class="aios-lock"><div class="aios-lock-b"><div class="aios-lock-t">&#128274; Alumni watchlist &middot; password</div><div class="aios-lock-d">Five companies from past cohorts I still keep track of, with their revenue, their fundraising, and what each one needs next. Private, because the numbers are theirs and not mine to publish.</div></div><a class="aios-lock-a" href="https://startup-watchlist.davide-trailblazing.workers.dev" target="_blank" rel="noopener">Open the watchlist &rarr;</a></div>
-    </div>
-  <script>
-(function(){
-  var root = document.getElementById('blk-aios');
-  if (!root) return;
-  var btns = root.querySelectorAll('.aios-lens');
-  var panels = root.querySelectorAll('.aios-panel');
-  var hint = root.querySelector('.aios-lenshint');
-  function pick(key){
-    for (var i=0;i<btns.length;i++){
-      var on = btns[i].getAttribute('data-lens') === key;
-      btns[i].setAttribute('aria-selected', on ? 'true' : 'false');
-      if (on && hint) hint.textContent = btns[i].getAttribute('data-hint');
-    }
-    for (var j=0;j<panels.length;j++){
-      panels[j].hidden = panels[j].getAttribute('data-panel') !== key;
-    }
-  }
-  for (var b=0;b<btns.length;b++){
-    btns[b].addEventListener('click', function(){ pick(this.getAttribute('data-lens')); });
-  }
-  pick('all');
-})();
-</script>
-  </section>
-
-  <!-- BLOCK: How the 7-week program runs (3-phase timeline) -->
-  <section class="block" id="blk-program">
-    <div class="container">
-      <div class="section-title">From promising technology to fundable business in 7 weeks</div>
-      <div class="method-row program-run-row">
-        <div class="method-box"><div class="method-stage">Week 0 · in person</div><div class="method-title">2-day kickoff</div><div class="method-desc">Cohort time syncs, goal-setting, and OKR-based strategy planning.</div></div>
-        <div class="method-box"><div class="method-stage">Weeks 1-6 · virtual</div><div class="method-title">Core programming</div><div class="method-desc">Weekly cohort standup, funding-focused Lunch &amp; Learn, expert speed-networking, and a 45-minute 1:1 strategy session. Popup workshops picked by cohort needs.</div></div>
-        <div class="method-box"><div class="method-stage">Week 7 · finale</div><div class="method-title">Investor meetings</div><div class="method-desc">Final 1:1 pitch meetings with 25+ investors and ecosystem partners, in person and virtual.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOCK: Program cornerstones for founders (3 cornerstone cards + deliverable chips) -->
-  <section class="block" id="blk-cornerstones">
-    <div class="container">
-      <div class="section-title">Program Cornerstones for Founders</div>
-      <p style="font-size:12.5px;line-height:1.55;color:#3a3a3a;margin:4px 0 12px;">Every founder I coach works toward three cornerstones. Each one produces concrete, tangible deliverables they keep and can share across the venture ecosystem.</p>
-      <div class="corner-card">
-        <div class="corner-kicker">CORNERSTONE 01 &middot; PLAN FORWARD</div>
-        <div class="corner-title">Talk the walk: a clear 3 to 5 year story</div>
-        <div class="corner-desc">Sharpen how the business is communicated to investors (return on investment) and to customers (value proposition and product).</div>
-        <div class="corner-chips">
-          <span class="corner-chip">Overview for Press Release</span>
-          <span class="corner-chip">Executive Summary for Investors</span>
-          <span class="corner-chip">Sales Collateral for Customers</span>
-          <span class="corner-chip">Pitch Deck</span>
-          <span class="corner-chip">Cash flow, financing &amp; milestones</span>
-        </div>
-      </div>
-      <div class="corner-card">
-        <div class="corner-kicker">CORNERSTONE 02 &middot; EXECUTE WEEKLY</div>
-        <div class="corner-title">Walk the talk: win 5 stakeholders a week</div>
-        <div class="corner-desc">Over three months, reach 5 industry stakeholders a week: customers (customer discovery, problem-solution fit) and revenue (sales discovery, product-market fit).</div>
-        <div class="corner-chips">
-          <span class="corner-chip">OKRs &amp; ICPs (root hypothesis)</span>
-          <span class="corner-chip">Weekly Sales Priorities (with blockers)</span>
-          <span class="corner-chip">Bespoke sales: do things that don't scale</span>
-          <span class="corner-chip">Customer pipeline: the scalable engine</span>
-        </div>
-      </div>
-      <div class="corner-card">
-        <div class="corner-kicker">CORNERSTONE 03 &middot; CONNECT TO THE ECOSYSTEM</div>
-        <div class="corner-title">Care and share: build the network</div>
-        <div class="corner-desc">I introduce 5 venture experts a week, for fast feedback now and lasting mentors, funders, customers, and partners over time.</div>
-        <div class="corner-chips">
-          <span class="corner-chip">Wishlist sheet for Mentors &amp; Investors</span>
-          <span class="corner-chip">Expert sessions: 5 a week (weeks 1 to 6)</span>
-          <span class="corner-chip">Investors &amp; partners days (25, week 7)</span>
-          <span class="corner-chip">Accountability newsletter (highlights &amp; lowlights)</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOCK: Sales foundations · weekly sales challenge -->
-  <section class="block" id="blk-sales">
-    <div class="container">
-      <div class="section-title">Founders Sales Foundations · Weekly Sales Challenge</div>
-      <div class="sales-grid">
-        <div class="sales-card"><div class="sc-h">ICP &amp; Persona</div><div class="sc-d">Ideal-Customer-Profile worksheets, day-in-the-life personas, buying-committee mapping.</div></div>
-        <div class="sales-card"><div class="sc-h">Customer Discovery</div><div class="sc-d">Mom Test interview script, Pain Funnel, jobs-to-be-done framing, surfaces real pain, not vanity validation.</div></div>
-        <div class="sales-card"><div class="sc-h">Sales Discovery</div><div class="sc-d">MEDDPIC + SPIN qualification, ROI calculators, objection-handling library, used in the gener8tor 7-week sales challenge.</div></div>
-        <div class="sales-card"><div class="sc-h">Customer Journey</div><div class="sc-d">End-to-end journey map (awareness → expansion), conversion-rate review, churn-cause taxonomy.</div></div>
-        <div class="sales-card"><div class="sc-h">OKRs &amp; North Star</div><div class="sc-d">Quarterly OKRs tied to one North-Star metric, leading vs. lagging indicators, weekly review cadence.</div></div>
-        <div class="sales-card"><div class="sc-h">Investor Storytelling</div><div class="sc-d">Narrative arc (problem → wedge → why-now → traction → ask), data-room build, 60+ curated investor intros per founder.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOCK: Founder voices -->
-  <section class="block" id="blk-voices">
-    <div class="container">
-      <div class="section-title">Founder Voices: the revenue and funding we raised together (from signed recommendation letters)</div>
-      <div class="founder-voices">
-        <div class="voice">
-          <div class="voice-quote">"rScan joined the gBETA accelerator with a $720,000 annual revenue. Under Mr. Dantonio's guidance ... the company's revenue has more than doubled to $1.8 million, and it has hired six new employees."</div>
-          <span class="voice-attr"><b>Rod Baradaran</b>, Founder &amp; CEO · rScan · <a href="https://drive.google.com/file/d/1LyekSJu_0f1f6dU5_W0R4rSxlioPWu4P/view" target="_blank" rel="noopener">signed recommendation letter</a></span>
-        </div>
-        <div class="voice">
-          <div class="voice-quote">"Following our participation in the gBETA program and under Mr. Dantonio's guidance, Feenix Group successfully raised $250,000 in funding ... a direct reflection of the work we did during the program ... and the network and introductions that Mr. Dantonio facilitated."</div>
-          <span class="voice-attr"><b>Trev Keane</b>, Founder · Feenix Group · <a href="https://drive.google.com/file/d/1FRZJkGtzU5I_NskOPd_0yq5uQuu5_YsU/view" target="_blank" rel="noopener">signed recommendation letter</a></span>
-        </div>
-        <div class="voice">
-          <div class="voice-quote">"Davide's group coaching ... enabled Covert Defenses to pursue confidently and secure funding: $1,000,000 from the Department of Homeland Security to develop electric-grid-modeling solutions and $70,000 in National Science Foundation and National Security Innovation Network grants for customer discovery ... His mentorship on proposal positioning and investor communication further aligned our growth strategy."</div>
-          <span class="voice-attr"><b>Dr. Arvind Sundaram</b>, Co-Founder · Covert Defenses · <a href="https://drive.google.com/file/d/1ou_7qt3Ce3dxN6mmXvsePrAndBApXlf8/view" target="_blank" rel="noopener">signed recommendation letter</a></span>
-        </div>
-        <div class="voice">
-          <div class="voice-quote">"He played a critical role in helping us complete a $100k pre-seed round with Elevate Ventures ... our pursuit of a $750k seed round leverages the investor relationships and outreach discipline Davide instilled in our approach."</div>
-          <span class="voice-attr"><b>Scott Willison</b>, CEO &amp; Founder · Motoring Labs · <a href="https://drive.google.com/file/d/1dsCBbG9_UNXWWSO8UoZzVD8wMyuyA82F/view" target="_blank" rel="noopener">signed recommendation letter</a></span>
-        </div>
-        <div class="voice">
-          <div class="voice-quote">"His milestone-based strategy for financing helped us secure stronger footing in fundraising discussions, culminating in successfully closing a lead investor ... Davide's mentorship helped Vertikal X secure letters of intent from major brands like Gatorade, Hino, and The Feed."</div>
-          <span class="voice-attr"><b>Jose Carlos Sarmiento</b>, Founder &amp; CEO · Vertikal X · <a href="https://drive.google.com/file/d/1wuVKlmNcxYdWB0Gtu_RyqIa67gXyk2-Q/view" target="_blank" rel="noopener">signed recommendation letter</a></span>
-        </div>
-        <div class="voice">
-          <div class="voice-quote">"During and following gBETA, we raised a $90,000 pre-seed round, and Davide was instrumental in preparing us for those conversations and connecting us with funders who became part of our round."</div>
-          <span class="voice-attr"><b>Matthew Wallace</b>, Co-Founder &amp; CEO · ONOW Ascent · <a href="https://drive.google.com/file/d/1twYY7cPge8vRDaQNvgAHX66Kj3-FDHEs/view" target="_blank" rel="noopener">signed recommendation letter</a></span>
-        </div>
-        <div class="voice">
-          <div class="voice-quote">"Thanks to Davide's mentorship, we achieved several major milestones, including securing $100,000 in funding from a prominent venture capital group, which provided us with the resources needed to grow our operations."</div>
-          <span class="voice-attr"><b>Andrew Couch</b>, CEO · Wolfberry LLC · <a href="https://drive.google.com/file/d/1YfCIk74EjwiZO8y0wGZIHhksp7mHGtBE/view" target="_blank" rel="noopener">signed recommendation letter</a></span>
-        </div>
-        <div class="voice">
-          <div class="voice-quote">"Whether the conversation involves business model refinement, partnerships, fundraising readiness, or market positioning, Davide approaches each challenge with clarity and insight. Founders leave his programs ... better equipped to scale their businesses."</div>
-          <span class="voice-attr"><b>Tiffney Vivo</b>, Founder &amp; CEO · Therapprove · <a href="https://drive.google.com/file/d/1XsmIW3F2j2Fphq1mWrfbMcqFM9faQa1h/view" target="_blank" rel="noopener">signed recommendation letter</a></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOCK: NPS benchmark -->
-  <section class="block" id="blk-nps">
-    <div class="container">
-      <div class="section-title">Where my cohorts land on the NPS benchmark</div>
-      <div class="nps-row"><div class="nps-label">My Programs</div><div class="nps-bar-wrap"><div class="nps-bar me" style="width:86%"></div><span class="nps-value">86</span></div></div>
-      <div class="nps-row"><div class="nps-label">Y Combinator</div><div class="nps-bar-wrap"><div class="nps-bar" style="width:60%"></div><span class="nps-value">60</span></div></div>
-      <div class="nps-row"><div class="nps-label">Techstars</div><div class="nps-bar-wrap"><div class="nps-bar" style="width:40%"></div><span class="nps-value">40</span></div></div>
-      <div class="nps-row"><div class="nps-label">Industry Average</div><div class="nps-bar-wrap"><div class="nps-bar" style="width:38%"></div><span class="nps-value">38</span></div></div>
-    </div>
-  </section>
-
-  <!-- BLOCK: Network stats + org chips -->
-  <section class="block" id="blk-network">
-    <div class="container">
-      <div class="section-title">My Network in the Venture Ecosystem</div>
-      <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);">
-        <div class="kpi-card"><div class="kpi-num">331</div><div class="kpi-lbl">Mentors in My Network</div></div>
-        <div class="kpi-card"><div class="kpi-num">265</div><div class="kpi-lbl">Investors in My Network</div></div>
-        <div class="kpi-card"><div class="kpi-num">10+</div><div class="kpi-lbl">Startup Competitions Judged</div></div>
-        <div class="kpi-card"><div class="kpi-num">20+</div><div class="kpi-lbl">Universities &amp; Ecosystem-Support Orgs</div></div>
-      </div>
-      <div class="sub-title">Advisor · Judge · Mentor · 27 Organizations + 4 Startups Advised Beyond gener8tor<span class="org-legend"><span><span class="lgd-dot" style="background:#11315E;"></span>Advisor</span><span><span class="lgd-dot" style="background:#2E5A9E;"></span>Judge</span><span><span class="lgd-dot" style="background:#b8654b;"></span>Mentor</span></span></div>
-      <div class="org-grid">
-        <div class="org-chip org-chip-adv">Born Global</div>
-        <div class="org-chip org-chip-adv">Indiana Hardtech</div>
-        <div class="org-chip org-chip-adv">Rally Conf 2025</div>
-        <div class="org-chip org-chip-adv">Rally Conf 2024</div>
-        <div class="org-chip org-chip-adv">Venture Club of IN</div>
-        <div class="org-chip org-chip-adv">Global Entrepreneur-in-Residence Network</div>
-        <div class="org-chip org-chip-adv">McNair Institute · USC</div>
-        <div class="org-chip org-chip-jud">McCloskey · ND</div>
-        <div class="org-chip org-chip-jud">McGinnis · CMU</div>
-        <div class="org-chip org-chip-jud">SaaStock Austin 2025</div>
-        <div class="org-chip org-chip-jud">Moonshot · Purdue</div>
-        <div class="org-chip org-chip-jud">New Venture Challenge</div>
-        <div class="org-chip org-chip-jud">MIT Enterprise Forum</div>
-        <div class="org-chip org-chip-jud">Go Global World Sharks</div>
-        <div class="org-chip org-chip-jud">Indiana DECA</div>
-        <div class="org-chip org-chip-jud">Crossroads · The Mill</div>
-        <div class="org-chip org-chip-jud">Pitch Mayhem</div>
-        <div class="org-chip org-chip-jud">Entrepreneur-in-Residence Vetting Committee</div>
-        <div class="org-chip org-chip-men">Purdue Innovates</div>
-        <div class="org-chip org-chip-men">NSF I-Corps</div>
-        <div class="org-chip org-chip-men">VillageCapital</div>
-        <div class="org-chip org-chip-men">Techstars · Pittsburgh</div>
-        <div class="org-chip org-chip-men">Notre Dame · Idea Center</div>
-        <div class="org-chip org-chip-men">STARTedUP Foundation</div>
-        <div class="org-chip org-chip-men">Zionsville HS</div>
-        <div class="org-chip org-chip-men">Indiana University</div>
-        <div class="org-chip org-chip-men">Purdue Pitch · Global Accelerator Network</div>
-      </div>
-      <div class="sub-title">Advisory &amp; Community</div>
-      <ul class="adv-list">
-        <li><b>Selected to judge 10+ startup competitions</b>, present 15+ founder workshops, and advise founders in 10+ mentoring sessions for venture capital (Village Capital), university venture arms (Purdue Research Foundation), federal programs (National Science Foundation I-Corps, Akron and Purdue), and state initiatives (STARTedUP Foundation).</li>
-        <li><b>Vice-President of Platform, Born Global</b> (2025): led the Founders' Roundtable and Venture Lab advisory.</li>
-        <li><b>Founder, Young Outcasts Podcast</b> (2024): interviewed 10+ guests across 20+ hours on resilience and reinvention.</li>
-        <li><b>Operations Coordinator, BX Group</b> growth-hacking agency (2022 to 2023): built a cross-sell strategy preempting 5,000 alerts.</li>
-        <li><b>Advisory Council, McNair Institute</b>, University of South Carolina (2022 to 2023): mentored 100+ student founders.</li>
-        <li><b>Founder, EarOnAir</b> wellbeing platform (2022): led a peer team to a minimum-viable product.</li>
-        <li><b>Founder, LushTech</b> micro-mobility startup (2020): secured a $25K seed via incubation programs.</li>
-        <li><b>Growth Analyst, Build It Up</b> student consulting (2020): shipped a CO&#8322;-offset plugin used by 800+ users.</li>
-        <li><b>Earlier:</b> Teaching Associate, UIBE Business School (2019); Project Coordinator, Euronatale trade-show operations (2017 to 2018).</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- BLOCK: Press wall -->
-  <section class="block" id="blk-press">
-    <div class="container">
-      <div class="section-title">Press, Awards &amp; Public Validation · Where my founders showed up</div>
-      <div class="press-wall">
-        <div class="press-item">
-          <div class="press-source">TechPoint</div>
-          <div class="press-title">Two Founders' Journeys in gBETA Indiana Industry 4.0</div>
-          <a href="https://techpoint.org/two-founders-journeys-in-gbeta-indiana-industry-4-0/" target="_blank" rel="noopener">techpoint.org →</a>
-        </div>
-        <div class="press-item">
-          <div class="press-source">NW Indiana Business</div>
-          <div class="press-title">rScan founder Rod Baradaran on growth from $720K to $1.8M revenue</div>
-          <span style="color:var(--mid-gray);font-size:11px;margin-top:4px;">2025 magazine feature</span>
-        </div>
-        <div class="press-item">
-          <div class="press-source">Indianapolis Business Journal</div>
-          <div class="press-title">My award from IBJ</div>
-          <a href="https://drive.google.com/file/d/1LPcgePbbC_p0rZSPuQmDOeWnOU8UZ4B2/view" target="_blank" rel="noopener">View certificate →</a>
-        </div>
-        <div class="press-item">
-          <div class="press-source">TechPoint Mira Awards</div>
-          <div class="press-title">rScan, Startup of the Year (statewide)</div>
-          <span style="color:var(--mid-gray);font-size:11px;margin-top:4px;">Ceremony Feb 27, 2025, Carmel IN</span>
-        </div>
-        <div class="press-item">
-          <div class="press-source">Forbes Colombia</div>
-          <div class="press-title">Guama named to 100 Startups to Watch 2025</div>
-        </div>
-        <div class="press-item">
-          <div class="press-source">Forbes Cleveland 30 Under 30</div>
-          <div class="press-title">Aropha founder Kuan Huang on inaugural list (2023)</div>
-        </div>
-        <div class="press-item">
-          <div class="press-source">Forbes Italia Under 30</div>
-          <div class="press-title">All 4 Novac co-founders on 2024 list (Manufacturing &amp; Industry)</div>
-        </div>
-        <div class="press-item">
-          <div class="press-source">Crain's Cleveland Business</div>
-          <div class="press-title">Aropha $1M seed coverage (with PR Newswire, Cleveland Inno)</div>
-        </div>
-        <div class="press-item">
-          <div class="press-source">Inside Indiana Business</div>
-          <div class="press-title">rScan HQ expansion via Sikich (Jenny Massey quoted)</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOCK: Resources, videos, get in touch -->
-  <section class="block" id="blk-resources">
-    <div class="container">
-      <div class="section-title">Resources &amp; Live Previews</div>
-
-      <div class="yt-grid">
-        <div>
-          <div class="yt-kicker">▶ My Startup Workshops · YouTube playlist</div>
-          <div class="yt-frame"><iframe src="https://www.youtube.com/embed/videoseries?list=PLUzPXV2xvS7GuLPyDD2-HlZ0-NhbgMjiW" title="My startup workshops playlist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-          <div class="yt-caption">Customer Discovery, Playbook for International Founders, Market Sizing, How to Pitch, and more.</div>
-        </div>
-        <div>
-          <div class="yt-kicker">▶ AgriNovus Indiana Podcast · gBETA AgBioScience</div>
-          <div class="yt-frame"><iframe src="https://www.youtube.com/embed/OHGXFfGwXOk?start=293" title="Davide Dantonio on gBETA AgBioScience" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-          <div class="yt-caption">Davide on connecting university research to startup development.</div>
-        </div>
-      </div>
-
-      <!-- TechPoint article card -->
-      <a class="big-card" href="https://techpoint.org/two-founders-journeys-in-gbeta-indiana-industry-4-0/" target="_blank" rel="noopener">
-        <div class="big-card-grid">
-          <div class="big-card-left" style="background:#0f6e5d;">
-            <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border:18px solid rgba(255,255,255,0.08);border-radius:50%;"></div>
-            <div style="position:absolute;bottom:-22px;left:-22px;width:90px;height:90px;border:14px solid rgba(255,255,255,0.06);border-radius:50%;"></div>
-            <div style="text-align:center;color:#fff;position:relative;z-index:1;">
-              <div style="font-weight:700;font-size:30px;line-height:1;letter-spacing:-1px;">TechPoint</div>
-              <div style="font-size:9px;font-weight:600;letter-spacing:2px;margin-top:8px;text-transform:uppercase;opacity:0.85;">Innovation<br>Article</div>
-            </div>
-          </div>
-          <div class="big-card-right">
-            <div class="bc-kicker">TechPoint · Innovation · Apr 2025</div>
-            <div class="bc-title">Two Founders' Journeys in gBETA Indiana Industry 4.0</div>
-            <div class="bc-desc">Rod Baradaran (rScan) and Scott Willison (Motoring Labs) write about the demand–supply–funding framework I taught them during the program.</div>
-            <div class="bc-cta">techpoint.org →</div>
-          </div>
-        </div>
-      </a>
-
-      <!-- LinkedIn recommendations card -->
-      <a class="big-card" href="https://www.linkedin.com/in/davide-dantonio/details/recommendations/" target="_blank" rel="noopener">
-        <div class="big-card-grid">
-          <div class="big-card-left" style="background:#0a66c2;">
-            <div style="text-align:center;color:#fff;">
-              <div style="font-weight:900;font-size:50px;line-height:1;letter-spacing:-2px;">in</div>
-              <div style="font-size:10px;font-weight:600;letter-spacing:2px;margin-top:6px;text-transform:uppercase;">Recommendations</div>
-            </div>
-          </div>
-          <div class="big-card-right">
-            <div class="bc-kicker">LinkedIn · Signed Endorsements</div>
-            <div class="bc-title">25+ founder recommendations</div>
-            <div class="bc-desc">Direct quotes from founders I've coached, including Tiffney Vivo (Therapprove), Trev Keane (Feenix Group), and Rod Baradaran (rScan).</div>
-            <div class="bc-cta">linkedin.com/in/davide-dantonio →</div>
-          </div>
-        </div>
-      </a>
-
-      <!-- IBJ award card -->
-      <a class="big-card" href="https://drive.google.com/file/d/1LPcgePbbC_p0rZSPuQmDOeWnOU8UZ4B2/view" target="_blank" rel="noopener">
-        <div class="big-card-grid">
-          <div class="big-card-left" style="background:var(--navy);">
-            <div style="text-align:center;color:#c5d2e6;">
-              <div style="font-weight:700;font-size:32px;line-height:1;">IBJ</div>
-              <div style="font-size:9px;font-weight:600;letter-spacing:1.5px;margin-top:6px;text-transform:uppercase;color:#fff;">Indianapolis<br>Business Journal</div>
-            </div>
-          </div>
-          <div class="big-card-right">
-            <div class="bc-kicker">Award Certificate · PDF</div>
-            <div class="bc-title">My IBJ recognition</div>
-            <div class="bc-desc">Indianapolis Business Journal acknowledged my work directing the Indiana accelerator cohorts.</div>
-            <div class="bc-cta">View certificate →</div>
-          </div>
-        </div>
-      </a>
-
-      <div class="sub-title">More Resources</div>
-      <div class="links-grid">
-        <a class="link-card" href="https://www.linkedin.com/in/davide-dantonio" target="_blank" rel="noopener">
-          <span class="link-card-label">LinkedIn Profile</span>
-          <span class="link-card-title">linkedin.com/in/davide-dantonio</span>
-          <span class="link-card-desc">Full professional history and network</span>
-        </a>
-        <a class="link-card" href="resume.html">
-          <span class="link-card-label">Resume</span>
-          <span class="link-card-title">Full resume (web version)</span>
-          <span class="link-card-desc">One-page detail of roles, programs, and outcomes</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="container">
-    <h4>Get in Touch</h4>
-    <p>
-      <a href="mailto:davide.trailblazing@gmail.com">davide.trailblazing@gmail.com</a> &nbsp;·&nbsp;
-      317-499-6920 &nbsp;·&nbsp;
-      <a href="https://www.linkedin.com/in/davide-dantonio">LinkedIn</a>
-    </p>
-    <p style="margin-top:8px;" class="aud-line">Indianapolis, IN · Always happy to talk to ambitious pre-Seed and Seed founders</p>
-    <div class="footer-meta">
-      This page is hand-curated; numbers cross-checked against named investors and third-party press coverage.
-    </div>
-  </div>
-</footer>
-
-
-<script>
-function toggleConnect(e){if(e)e.stopPropagation();var p=document.getElementById("connectPanel"),b=document.getElementById("connectBtn");var o=p.classList.toggle("open");b.setAttribute("aria-expanded",o);}
-function _v(id){var el=document.getElementById(id);var v=(el&&el.value||"").trim();return v?v:"[ ]";}
-function composeConnect(e){if(e)e.preventDefault();var name=_v("cName"),li=_v("cLinkedIn"),role=(document.getElementById("cRole").value||"[ ]"),why=_v("cWhy");var subject="I have checked out your website";var body="My full name is "+name+"\nMy LinkedIn is "+li+"\nI am a "+role+" and I am reaching out to you because: "+why;window.location.href="mailto:davide@gener8tor.com,davide.trailblazing@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);return false;}
-document.addEventListener("click",function(e){var w=document.querySelector(".connect-wrap");if(w&&!w.contains(e.target)){document.getElementById("connectPanel").classList.remove("open");document.getElementById("connectBtn").setAttribute("aria-expanded","false");}});
-document.addEventListener("keydown",function(e){if(e.key==="Escape"){document.getElementById("connectPanel").classList.remove("open");}});
-</script>
-</body>
-</html>
+  @media print { .skim-header { color:#11315e; background:white; } .skim-nav a { color:#11315e; } }
+</style><script>window.SITE_SEARCH={item:'.block:not(#blk-aios), .aios-item',title:'.section-title',tag:false,label:'Search my portfolio'};</script><script src="sitesearch.js" defer></script></head><body>
+<header class="skim-header"><div class="container"><div><h1>Davide Dantonio</h1><p class="skim-role">Director of Accelerator Programs · gener8tor</p><p>I coach founders, arrange investor introductions, and build tools for program teams.</p></div><a href="full-background.html#blk-kpi" aria-label="See the full venture portfolio"><img src="cohort-2.jpg" alt="gBETA Indiana cohort on the staircase" width="180" height="112"></a><nav class="skim-nav" aria-label="Portfolio sections"><a href="#blk-kpi">Results</a><a href="#blk-aios">AI projects</a><a href="#blk-coaching">How I work</a><a href="#blk-evidence">Evidence</a><a href="resume.html">Resume</a><a href="mailto:davide.trailblazing@gmail.com">Contact</a></nav></div></header>
+<main>
+<section class="block" id="blk-kpi"><div class="container"><h2 class="section-title">Accelerator work across the US and Italy</h2><dl class="skim-stats"><div><dt>52</dt><dd>founders coached</dd></div><div><dt>10</dt><dd>cohorts directed</dd></div><div><dt>$7.84M</dt><dd>raised by portfolio companies</dd></div><div><dt>220</dt><dd>US jobs created by portfolio companies</dd></div></dl><div class="skim-wins"><p><strong>rScan</strong>Founder reports revenue grew from $720K to $1.8M.</p><p><strong>Covert Defenses</strong>Wrote a plan to bring research to market. Company received a $1M federal award.</p><p><strong>Vertikal X</strong>Introduced US partners; the company relocated to Indiana.</p></div><a class="skim-link" href="full-background.html#blk-outcomes">Company outcomes &amp; sources ↗</a></div></section>
+<section class="block" id="blk-aios" aria-labelledby="aios-title"><div class="container">
+      <p class="aios-kicker">AI projects</p>
+      <h2 class="aios-heading" id="aios-title">Systems that scale, to augment things that don’t scale.</h2>
+      <p class="aios-note">Usual approach → What changes. AI features are labeled. Private details hidden or replaced.</p>
+      <details class="aios-cluster" id="aios-coaching">
+          <summary><span class="aios-cluster-text"><span class="aios-cluster-title">Founder coaching</span><span class="aios-cluster-desc">Priorities and action plans</span></span><span class="aios-cluster-count">3 projects</span></summary>
+          <div class="aios-projects"><article class="aios-item" id="project-founder-led"><div><h3><a href="project-details.html#project-founder-led" aria-label="Details for Weekly action plans">Weekly action plans</a></h3><p class="aios-comparison"><span class="aios-standard">Write plans from notes</span><span class="aios-change aios-change--ai">→ <strong>AI</strong> drafts seven weeks of priorities</span></p></div><a class="aios-thumbnail" href="aios/details/founder-led.png" target="_blank" rel="noopener" aria-label="Enlarge Weekly action plans screenshot"><img src="aios/details/founder-led.png" alt="Example: turn a sales goal into weekly actions." width="1416" height="670" loading="lazy"><span>Screenshot ↗</span></a></article>
+<article class="aios-item" id="project-okrs"><div><h3><a href="project-details.html#project-okrs" aria-label="Details for Goals tracker">Goals tracker</a></h3><p class="aios-comparison"><span class="aios-standard">Separate goal and task sheets</span><span class="aios-change">→ <strong>Tool</strong> connects goals to weekly actions</span></p></div><a class="aios-thumbnail" href="aios/okrs.png" target="_blank" rel="noopener" aria-label="Enlarge Goals tracker screenshot"><img src="aios/okrs.png" alt="Connect long-term goals to this week’s work." width="1100" height="714" loading="lazy"><span>Screenshot ↗</span></a></article>
+<article class="aios-item" id="project-blindspots"><div><h3><a href="project-details.html#project-blindspots" aria-label="Details for Business priorities">Business priorities</a></h3><p class="aios-comparison"><span class="aios-standard">List business problems</span><span class="aios-change">→ <strong>Guide</strong> helps choose the first priority</span></p></div><a class="aios-thumbnail" href="aios/blindspots.png" target="_blank" rel="noopener" aria-label="Enlarge Business priorities screenshot"><img src="aios/blindspots.png" alt="Decide which business problem needs attention first." width="1100" height="714" loading="lazy"><span>Screenshot ↗</span></a></article></div>
+        </details><details class="aios-cluster" id="aios-relationships">
+          <summary><span class="aios-cluster-text"><span class="aios-cluster-title">Investor &amp; mentor connections</span><span class="aios-cluster-desc">Preparation, introductions, and follow-ups</span></span><span class="aios-cluster-count">5 projects</span></summary>
+          <div class="aios-projects"><article class="aios-item" id="project-mentor-bench"><div><h3><a href="project-details.html#project-mentor-bench" aria-label="Details for Meeting preparation">Meeting preparation</a></h3><p class="aios-comparison"><span class="aios-standard">Read profiles individually</span><span class="aios-change aios-change--ai">→ <strong>AI</strong> suggests guests for your question</span></p></div><a class="aios-thumbnail" href="aios/details/mentor-bench.png" target="_blank" rel="noopener" aria-label="Enlarge Meeting preparation screenshot"><img src="aios/details/mentor-bench.png" alt="See who’s attending and what to discuss with each person." width="1864" height="722" loading="lazy"><span>Screenshot ↗</span></a></article>
+<article class="aios-item" id="project-fundraising"><div><h3><a href="project-details.html#project-fundraising" aria-label="Details for Fundraising templates">Fundraising templates</a></h3><p class="aios-comparison"><span class="aios-standard">Browse template folders</span><span class="aios-change aios-change--ai">→ <strong>AI</strong> suggests a document for your need</span></p></div><a class="aios-thumbnail" href="aios/details/fundraising.png" target="_blank" rel="noopener" aria-label="Enlarge Fundraising templates screenshot"><img src="aios/details/fundraising.png" alt="Choose a document and download the template." width="1840" height="1210" loading="lazy"><span>Screenshot ↗</span></a></article>
+<article class="aios-item" id="project-intro-drafts"><div><h3><a href="project-details.html#project-intro-drafts" aria-label="Details for Introduction drafts">Introduction drafts</a></h3><p class="aios-comparison"><span class="aios-standard">Rewrite each introduction</span><span class="aios-change">→ <strong>Template</strong> fills in founder details for review</span></p></div><a class="aios-thumbnail" href="aios/details/intro-drafts.png" target="_blank" rel="noopener" aria-label="Enlarge Introduction drafts screenshot"><img src="aios/details/intro-drafts.png" alt="Review the introduction. Then copy the note." width="1780" height="1268" loading="lazy"><span>Screenshot ↗</span></a></article>
+<article class="aios-item" id="project-investor-picks"><div><h3><a href="project-details.html#project-investor-picks" aria-label="Details for Investor follow-ups">Investor follow-ups</a></h3><p class="aios-comparison"><span class="aios-standard">Search investor email threads</span><span class="aios-change">→ <strong>Tool</strong> groups unanswered invitations</span></p></div><a class="aios-thumbnail" href="aios/details/investor-picks.png" target="_blank" rel="noopener" aria-label="Enlarge Investor follow-ups screenshot"><img src="aios/details/investor-picks.png" alt="Filter unanswered invitations. Review the next follow-up." width="1860" height="864" loading="lazy"><span>Screenshot ↗</span></a></article>
+<article class="aios-item" id="project-inbox-triage"><div><h3><a href="project-details.html#project-inbox-triage" aria-label="Details for Reply tracker">Reply tracker</a></h3><p class="aios-comparison"><span class="aios-standard">Re-read your inbox</span><span class="aios-change">→ <strong>Tool</strong> groups replies by next action</span></p></div><a class="aios-thumbnail" href="aios/details/inbox-triage.png" target="_blank" rel="noopener" aria-label="Enlarge Reply tracker screenshot"><img src="aios/details/inbox-triage.png" alt="Find the people waiting for your answer." width="1872" height="1024" loading="lazy"><span>Screenshot ↗</span></a></article></div>
+        </details><details class="aios-cluster" id="aios-coordination">
+          <summary><span class="aios-cluster-text"><span class="aios-cluster-title">Program delivery</span><span class="aios-cluster-desc">Tasks, schedules, and registrations</span></span><span class="aios-cluster-count">5 projects</span></summary>
+          <div class="aios-projects"><article class="aios-item" id="project-overview"><div><h3><a href="project-details.html#project-overview" aria-label="Details for Program guide">Program guide</a></h3><p class="aios-comparison"><span class="aios-standard">Read scattered onboarding emails</span><span class="aios-change">→ <strong>Tool</strong> combines schedule and preparation</span></p></div><a class="aios-thumbnail" href="aios/overview.png" target="_blank" rel="noopener" aria-label="Enlarge Program guide screenshot"><img src="aios/overview.png" alt="See what founders need to do." width="1100" height="709" loading="lazy"><span>Screenshot ↗</span></a></article>
+<article class="aios-item" id="project-deliverables"><div><h3><a href="project-details.html#project-deliverables" aria-label="Details for Founder checklist">Founder checklist</a></h3><p class="aios-comparison"><span class="aios-standard">Hunt through deadline emails</span><span class="aios-change">→ <strong>Tool</strong> links tasks, dates, and templates</span></p></div><a class="aios-thumbnail" href="aios/details/deliverables.png" target="_blank" rel="noopener" aria-label="Enlarge Founder checklist screenshot"><img src="aios/details/deliverables.png" alt="Open the right template for each deadline." width="1920" height="806" loading="lazy"><span>Screenshot ↗</span></a></article>
+<article class="aios-item" id="project-swarm"><div><h3><a href="project-details.html#project-swarm" aria-label="Details for Meeting scheduler">Meeting scheduler</a></h3><p class="aios-comparison"><span class="aios-standard">Timetable plus stopwatch</span><span class="aios-change">→ <strong>Tool</strong> shows assignments and countdown together</span></p></div><a class="aios-thumbnail" href="aios/details/swarm.png" target="_blank" rel="noopener" aria-label="Enlarge Meeting scheduler screenshot"><img src="aios/details/swarm.png" alt="See who meets next and how much time remains." width="1856" height="424" loading="lazy"><span>Screenshot ↗</span></a></article>
+<article class="aios-item" id="project-replies-tracker"><div><h3><a href="project-details.html#project-replies-tracker" aria-label="Details for Meeting allocation">Meeting allocation</a></h3><p class="aios-comparison"><span class="aios-standard">Count available meeting places</span><span class="aios-change">→ <strong>Tool</strong> shows each session’s capacity</span></p></div><a class="aios-thumbnail" href="aios/details/replies-tracker.png" target="_blank" rel="noopener" aria-label="Enlarge Meeting allocation screenshot"><img src="aios/details/replies-tracker.png" alt="Choose a meeting with room for another organization." width="1862" height="778" loading="lazy"><span>Screenshot ↗</span></a></article>
+<article class="aios-item" id="project-databases"><div><h3><a href="project-details.html#project-databases" aria-label="Details for Registration matching">Registration matching</a></h3><p class="aios-comparison"><span class="aios-standard">Compare invite and signup lists</span><span class="aios-change">→ <strong>Check</strong> matches registrations before reminders</span></p></div><span class="aios-no-preview">No public screenshot</span></article></div>
+        </details><details class="aios-cluster" id="aios-support">
+          <summary><span class="aios-cluster-text"><span class="aios-cluster-title">Progress &amp; follow-up</span><span class="aios-cluster-desc">Founder updates and sponsor reports</span></span><span class="aios-cluster-count">3 projects</span></summary>
+          <div class="aios-projects"><article class="aios-item" id="project-weekly-wins"><div><h3><a href="project-details.html#project-weekly-wins" aria-label="Details for Weekly progress">Weekly progress</a></h3><p class="aios-comparison"><span class="aios-standard">Read unstructured updates</span><span class="aios-change">→ <strong>Template</strong> separates wins, blockers, and help needed</span></p></div><a class="aios-thumbnail" href="aios/llm-md.png" target="_blank" rel="noopener" aria-label="Enlarge Weekly progress screenshot"><img src="aios/llm-md.png" alt="Separate wins, ongoing work, and blockers." width="1100" height="715" loading="lazy"><span>Screenshot ↗</span></a></article>
+<article class="aios-item" id="project-cohort-report"><div><h3><a href="project-details.html#project-cohort-report" aria-label="Details for Sponsor reports">Sponsor reports</a></h3><p class="aios-comparison"><span class="aios-standard">Collect progress emails</span><span class="aios-change">→ <strong>Tool</strong> puts company updates in one report</span></p></div><a class="aios-thumbnail" href="aios/details/cohort-report.png" target="_blank" rel="noopener" aria-label="Enlarge Sponsor reports screenshot"><img src="aios/details/cohort-report.png" alt="Read the week’s progress in one place." width="1520" height="920" loading="lazy"><span>Screenshot ↗</span></a></article>
+<article class="aios-item" id="project-alumni"><div><h3><a href="project-details.html#project-alumni" aria-label="Details for Alumni support">Alumni support</a></h3><p class="aios-comparison"><span class="aios-standard">Keep separate company notes</span><span class="aios-change">→ <strong>Tool</strong> puts updates beside support needs</span></p></div><a class="aios-thumbnail" href="aios/details/alumni.png" target="_blank" rel="noopener" aria-label="Enlarge Alumni support screenshot"><img src="aios/details/alumni.png" alt="See where an alumni company needs help." width="1920" height="1094" loading="lazy"><span>Screenshot ↗</span></a></article></div>
+        </details>
+    </div><script>
+      document.querySelectorAll('.aios-shotwrap, .aios-enlarge').forEach(link => {
+        link.addEventListener('click', () => {
+          const picture = link.closest('figure').querySelector('img');
+          if (picture.currentSrc) link.href = picture.currentSrc;
+        });
+      });
+    </script></section>
+<section class="block" id="blk-coaching"><div class="container"><h2 class="section-title">How I work with founders</h2><div class="skim-method"><p><strong>Find customers</strong>Test customer needs and plan outreach.</p><p><strong>Build the business</strong>Set weekly goals and review progress.</p><p><strong>Prepare for funding</strong>Plan milestones and introduce relevant investors.</p></div><a class="skim-link" href="full-background.html#blk-coaching">Full coaching approach ↗</a></div></section>
+<section class="block" id="blk-evidence"><div class="container"><h2 class="section-title">More of my work</h2><div class="skim-evidence"><a href="full-background.html#blk-sectors">Companies &amp; sectors</a><a href="full-background.html#blk-network">Network &amp; advisory roles</a><a href="full-background.html#blk-voices">Founder recommendations</a><a href="full-background.html#blk-press">Press &amp; awards</a><a href="full-background.html#blk-resources">Workshops &amp; interviews</a></div></div></section>
+</main><footer class="skim-footer"><div class="container"><span>Indianapolis, Indiana</span><a href="mailto:davide.trailblazing@gmail.com">Email Davide</a><a href="https://www.linkedin.com/in/davide-dantonio">LinkedIn</a><a href="resume.html">Resume</a></div></footer></body></html>
