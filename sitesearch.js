@@ -329,25 +329,42 @@
     else document.body.insertBefore(bar, document.body.firstChild);
 
     // Native section links need the same clearance as search-result links.
+    function searchClearance() {
+      var navigation = document.querySelector('.site-nav');
+      return (navigation ? navigation.offsetHeight : bar.offsetHeight) + 14;
+    }
     function reserveSearchHeight() {
-      document.documentElement.style.scrollPaddingTop = (bar.offsetHeight + 14) + 'px';
+      document.documentElement.style.scrollPaddingTop = searchClearance() + 'px';
     }
     reserveSearchHeight();
-    new ResizeObserver(reserveSearchHeight).observe(bar);
+    var sizing = new ResizeObserver(reserveSearchHeight);
+    sizing.observe(bar);
+    var navigation = document.querySelector('.site-nav');
+    if (navigation) sizing.observe(navigation);
 
     function reveal(target) {
       for (var parent = target; parent; parent = parent.parentElement) {
         if (parent.tagName === 'DETAILS') parent.open = true;
       }
+      // A legacy section URL opens its body as well as any enclosing category.
+      var sectionBody = target.querySelector(':scope > .container > .section-fold');
+      if (sectionBody) sectionBody.open = true;
     }
     function revealHash() {
       var id;
       try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
       var target = document.getElementById(id);
-      if (target) reveal(target);
+      if (target) {
+        reveal(target);
+        requestAnimationFrame(function () { target.scrollIntoView({block:'start',behavior:'instant'}); });
+      }
     }
     revealHash();
     window.addEventListener('hashchange', revealHash);
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest('a[href^="#"]');
+      if (link && link.hash === location.hash) revealHash();
+    });
 
     var panel = document.createElement('div');
     panel.className = 'sspanel';
@@ -398,6 +415,8 @@
       var t = document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
       if (!t) return;
       close();
+      var disclosure = bar.closest('details');
+      if (disclosure) disclosure.open = false;
       reveal(t);
       /* Deliberately instant, and deliberately not scrollIntoView. Measured on a
          real page: scrollIntoView and behavior:"smooth" both silently do nothing
@@ -405,7 +424,7 @@
          page a slow glide is worse than arriving. The flash below is what tells
          the eye where it landed. */
       var top = t.getBoundingClientRect().top + (window.pageYOffset || 0)
-                - (bar.offsetHeight + 14);
+                - searchClearance();
       if (top < 0) top = 0;
       /* The page's own CSS scroll-behavior wins over the two-argument scrollTo,
          so neutralise it for this one call, then put it back. Measured: without
@@ -415,6 +434,8 @@
       try { window.scrollTo({ top: top, behavior: 'instant' }); }
       catch (e) { window.scrollTo(0, top); }
       root.style.scrollBehavior = prev;
+      t.tabIndex = -1;
+      t.focus({ preventScroll: true });
       if (window.history && history.replaceState) {
         try { history.replaceState(null, '', '#' + t.id); } catch (e) {}
       }
@@ -464,7 +485,7 @@
         el.tagName === 'TEXTAREA' || el.isContentEditable);
       if ((e.key === '/' && !typing && !e.metaKey && !e.ctrlKey) ||
           ((e.metaKey || e.ctrlKey) && e.key === 'k')) {
-        e.preventDefault(); input.focus(); input.select();
+        e.preventDefault(); reveal(input); input.focus(); input.select();
       }
     });
     document.addEventListener('click', function (e) {
@@ -474,7 +495,7 @@
     /* ?q= makes a search shareable and the back button work, like a real page. */
     var q0 = null;
     try { q0 = new URLSearchParams(location.search).get('q'); } catch (e) {}
-    if (q0) { input.value = q0; run(q0); }
+    if (q0) { reveal(input); input.value = q0; run(q0); }
     window.SiteSearch = { records: records, run: run, search: search };
   }
 
